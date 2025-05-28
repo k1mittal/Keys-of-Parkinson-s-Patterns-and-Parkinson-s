@@ -107,6 +107,59 @@
             pointer-events: none;
             box-shadow: 0 2px 6px rgba(0,0,0,0.2);
         }
+
+        /* Writeup Styles */
+        .container + h1 {
+            margin-top: 50px;
+            font-size: 32px;
+            color: var(--text-color);
+            border-bottom: 3px solid #4CAF50;
+            padding-bottom: 10px;
+            width: 80%;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .container + h1 + p {
+            width: 80%;
+            max-width: 1200px;
+            margin: 20px auto 40px;
+            line-height: 1.6;
+            font-size: 18px;
+            color: var(--text-color);
+            padding: 20px;
+            background-color: var(--container-bg);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Style for the second h1 and p */
+        .container + h1 + p + h1 {
+            margin-top: 50px;
+            font-size: 32px;
+            color: var(--text-color);
+            border-bottom: 3px solid #4CAF50;
+            padding-bottom: 10px;
+            width: 80%;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .container + h1 + p + h1 + p {
+            width: 80%;
+            max-width: 1200px;
+            margin: 20px auto 40px;
+            line-height: 1.6;
+            font-size: 18px;
+            color: var(--text-color);
+            padding: 20px;
+            background-color: var(--container-bg);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+</style>
     </style>
 </head>
 <body>
@@ -119,5 +172,23 @@
         </div>
         <div id="keyboard"></div>
     </div>
+
+    <h1>1. What have you done so far?</h1>
+    <p>
+      So far, we have built the initial prototype of our interactive web visualization using D3.js and published it through GitHub Pages.
+      We’ve implemented a heatmap in the shape of a keyboard that compares frequencies of which keys are pressed between individuals with Parkinson’s Disease and the control group.
+      For each key on the keyboard, the heatmap shows how frequently that key is pressed across both groups.
+      This allows viewers to spot patterns and differences.
+      In addition, we have a toggle feature that lets users switch between viewing the Parkinson's heatmap and the control group heatmap.
+    </p>
+
+    <h1>2. What will be the most challenging part of your project to design and why?</h1>
+    <p>
+      The most challenging part of our project will be developing the live typing interface that compares a user’s real-time typing patterns to the patterns in the dataset.
+      This means we have to capture keystroke events in the browser and sync them with visual updates in real time.
+      We’ll also need to handle edge cases like backspaces and special keys while making sure the performance stays smooth across different devices.
+      Furthermore, we’ll also need to design the interface so that the comparisons are clear without overwhelming the user.
+    </p>
+
 </body>
 </html>

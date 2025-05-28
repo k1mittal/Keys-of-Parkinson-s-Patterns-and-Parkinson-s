@@ -77,8 +77,6 @@
 
 ### Built With
 
-* [RStudio](https://www.rstudio.com)
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 

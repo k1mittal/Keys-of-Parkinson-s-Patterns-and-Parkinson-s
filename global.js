@@ -2,16 +2,25 @@
 const themeToggle = document.getElementById("theme-toggle");
 const root = document.documentElement;
 
-// Check for saved theme preference
-const savedTheme = localStorage.getItem("theme") || "light";
+// Check for saved theme preference or default to dark mode
+const savedTheme = localStorage.getItem("theme") || "dark";
 root.setAttribute("data-theme", savedTheme);
+
+// Update theme toggle button text based on current theme
+if (themeToggle) {
+  themeToggle.textContent = savedTheme === "light" ? "🌙" : "☀️";
+}
 
 themeToggle.addEventListener("click", () => {
   const currentTheme = root.getAttribute("data-theme");
   const newTheme = currentTheme === "light" ? "dark" : "light";
   root.setAttribute("data-theme", newTheme);
   localStorage.setItem("theme", newTheme);
+
+  // Update button text
+  themeToggle.textContent = newTheme === "light" ? "🌙" : "☀️";
 });
+
 // Keyboard layout configuration
 const keyboard = [
   "qwertyuiop".split(""),

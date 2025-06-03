@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Typing Analysis - Parkinson's Pattern Comparison</title>
+    <link rel="stylesheet" href="interactive-typing.css" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Interactive Typing Pattern Analysis</h1>
+        <p>
+          Compare your typing patterns with Parkinson's disease patients in
+          real-time
+        </p>
+        <button id="theme-toggle" class="theme-toggle">🌙</button>
+      </header>
+
+      <section class="typing-test-section">
+        <div class="instructions">
+          <h2>Typing Test</h2>
+          <p>Type the following text to compare your typing patterns:</p>
+          <div class="test-text" id="test-text">
+            the quick brown fox jumps over the lazy dog
+          </div>
+        </div>
+
+        <div class="input-container">
+          <textarea
+            id="typing-input"
+            placeholder="Click here and start typing..."
+            rows="3"
+          ></textarea>
+          <button id="reset-btn" class="reset-btn">Reset Test</button>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </section>
+
+      <section class="visualization-section">
+        <div class="keyboards-container">
+          <div class="keyboard-wrapper">
+            <h3>Your Typing</h3>
+            <div id="user-keyboard"></div>
+            <div class="stats">
+              <span>WPM: <span id="user-wpm">--</span></span>
+              <span>Keys: <span id="user-keys">0</span></span>
+            </div>
+          </div>
+
+          <div class="metrics-container" id="metrics-charts">
+            <!-- Metrics charts will be inserted here -->
+          </div>
+
+          <div class="keyboard-wrapper">
+            <h3>
+              Parkinson's Patient (pID: <span id="pd-patient-id">1001</span>)
+            </h3>
+            <div id="pd-keyboard"></div>
+            <div class="stats">
+              <span>WPM: <span id="pd-wpm">--</span></span>
+              <span>Keys: <span id="pd-keys">0</span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="analysis-section">
+        <h2>Analysis Results</h2>
+        <div class="analysis-grid">
+          <div class="analysis-card">
+            <h3>Average Delay</h3>
+            <div class="comparison">
+              <div class="stat-item">
+                <span class="label">You:</span>
+                <span class="value" id="user-avg-delay">-- ms</span>
+              </div>
+              <div class="stat-item">
+                <span class="label">PD Patient:</span>
+                <span class="value" id="pd-avg-delay">-- ms</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="analysis-card">
+            <h3>Average Duration</h3>
+            <div class="comparison">
+              <div class="stat-item">
+                <span class="label">You:</span>
+                <span class="value" id="user-avg-duration">-- ms</span>
+              </div>
+              <div class="stat-item">
+                <span class="label">PD Patient:</span>
+                <span class="value" id="pd-avg-duration">-- ms</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="analysis-card">
+            <h3>Pattern Similarity</h3>
+            <div class="similarity-score">
+              <div class="score-circle" id="similarity-score">
+                <span>--%</span>
+              </div>
+              <p id="similarity-interpretation"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="interactive-typing.js"></script>
+  </body>
+</html>

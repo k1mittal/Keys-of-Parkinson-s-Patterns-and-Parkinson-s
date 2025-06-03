@@ -1,0 +1,5788 @@
+{
+  "the quick brown fox jumps over the lazy dog": {
+    "pd": [
+      {
+        "key": "t",
+        "delay": 523.08,
+        "duration": 50,
+        "press_time": 523.08,
+        "release_time": 573.08
+      },
+      {
+        "key": "h",
+        "delay": 352.97,
+        "duration": 423.34,
+        "press_time": 876.05,
+        "release_time": 1299.39
+      },
+      {
+        "key": "e",
+        "delay": 353.67,
+        "duration": 434.27,
+        "press_time": 1229.72,
+        "release_time": 1663.99
+      },
+      {
+        "key": "space",
+        "delay": 381.59,
+        "duration": 330.82,
+        "press_time": 1611.31,
+        "release_time": 1942.13
+      },
+      {
+        "key": "q",
+        "delay": 372.24,
+        "duration": 179.91,
+        "press_time": 1983.55,
+        "release_time": 2163.46
+      },
+      {
+        "key": "u",
+        "delay": 468.08,
+        "duration": 384.59,
+        "press_time": 2451.63,
+        "release_time": 2836.22
+      },
+      {
+        "key": "i",
+        "delay": 336.92,
+        "duration": 424.65,
+        "press_time": 2788.55,
+        "release_time": 3213.2
+      },
+      {
+        "key": "c",
+        "delay": 333.79,
+        "duration": 240.0,
+        "press_time": 3122.34,
+        "release_time": 3362.34
+      },
+      {
+        "key": "k",
+        "delay": 394.05,
+        "duration": 202.14,
+        "press_time": 3516.39,
+        "release_time": 3718.53
+      },
+      {
+        "key": "space",
+        "delay": 360.67,
+        "duration": 399.92,
+        "press_time": 3877.06,
+        "release_time": 4276.98
+      },
+      {
+        "key": "b",
+        "delay": 342.19,
+        "duration": 309.2,
+        "press_time": 4219.26,
+        "release_time": 4528.45
+      },
+      {
+        "key": "r",
+        "delay": 342.52,
+        "duration": 382.41,
+        "press_time": 4561.78,
+        "release_time": 4944.19
+      },
+      {
+        "key": "o",
+        "delay": 416.25,
+        "duration": 324.91,
+        "press_time": 4978.03,
+        "release_time": 5302.94
+      },
+      {
+        "key": "w",
+        "delay": 358.02,
+        "duration": 369.69,
+        "press_time": 5336.04,
+        "release_time": 5705.73
+      },
+      {
+        "key": "n",
+        "delay": 295.25,
+        "duration": 417.36,
+        "press_time": 5631.29,
+        "release_time": 6048.65
+      },
+      {
+        "key": "space",
+        "delay": 311.98,
+        "duration": 252.12,
+        "press_time": 5943.27,
+        "release_time": 6195.39
+      },
+      {
+        "key": "f",
+        "delay": 378.05,
+        "duration": 210.8,
+        "press_time": 6321.33,
+        "release_time": 6532.12
+      },
+      {
+        "key": "o",
+        "delay": 354.82,
+        "duration": 308.0,
+        "press_time": 6676.14,
+        "release_time": 6984.15
+      },
+      {
+        "key": "x",
+        "delay": 353.97,
+        "duration": 281.21,
+        "press_time": 7030.11,
+        "release_time": 7311.32
+      },
+      {
+        "key": "space",
+        "delay": 420.6,
+        "duration": 324.22,
+        "press_time": 7450.71,
+        "release_time": 7774.93
+      },
+      {
+        "key": "j",
+        "delay": 400.58,
+        "duration": 318.8,
+        "press_time": 7851.29,
+        "release_time": 8170.09
+      },
+      {
+        "key": "u",
+        "delay": 337.13,
+        "duration": 399.2,
+        "press_time": 8188.42,
+        "release_time": 8587.62
+      },
+      {
+        "key": "m",
+        "delay": 369.63,
+        "duration": 412.21,
+        "press_time": 8558.05,
+        "release_time": 8970.26
+      },
+      {
+        "key": "p",
+        "delay": 402.6,
+        "duration": 178.42,
+        "press_time": 8960.65,
+        "release_time": 9139.07
+      },
+      {
+        "key": "s",
+        "delay": 400.59,
+        "duration": 230.92,
+        "press_time": 9361.24,
+        "release_time": 9592.16
+      },
+      {
+        "key": "space",
+        "delay": 303.92,
+        "duration": 367.78,
+        "press_time": 9665.16,
+        "release_time": 10032.94
+      },
+      {
+        "key": "o",
+        "delay": 408.68,
+        "duration": 262.91,
+        "press_time": 10073.84,
+        "release_time": 10336.75
+      },
+      {
+        "key": "v",
+        "delay": 370.89,
+        "duration": 197.6,
+        "press_time": 10444.74,
+        "release_time": 10642.34
+      },
+      {
+        "key": "e",
+        "delay": 399.55,
+        "duration": 345.67,
+        "press_time": 10844.29,
+        "release_time": 11189.96
+      },
+      {
+        "key": "r",
+        "delay": 338.3,
+        "duration": 105.52,
+        "press_time": 11182.59,
+        "release_time": 11288.11
+      },
+      {
+        "key": "space",
+        "delay": 337.57,
+        "duration": 323.27,
+        "press_time": 11520.16,
+        "release_time": 11843.44
+      },
+      {
+        "key": "t",
+        "delay": 330.49,
+        "duration": 192.5,
+        "press_time": 11850.65,
+        "release_time": 12043.16
+      },
+      {
+        "key": "h",
+        "delay": 330.04,
+        "duration": 609.48,
+        "press_time": 12180.69,
+        "release_time": 12790.17
+      },
+      {
+        "key": "e",
+        "delay": 363.66,
+        "duration": 359.68,
+        "press_time": 12544.35,
+        "release_time": 12904.03
+      },
+      {
+        "key": "space",
+        "delay": 386.5,
+        "duration": 388.16,
+        "press_time": 12930.86,
+        "release_time": 13319.02
+      },
+      {
+        "key": "l",
+        "delay": 374.24,
+        "duration": 317.52,
+        "press_time": 13305.09,
+        "release_time": 13622.61
+      },
+      {
+        "key": "a",
+        "delay": 388.33,
+        "duration": 391.36,
+        "press_time": 13693.42,
+        "release_time": 14084.78
+      },
+      {
+        "key": "z",
+        "delay": 322.5,
+        "duration": 416.13,
+        "press_time": 14015.92,
+        "release_time": 14432.04
+      },
+      {
+        "key": "y",
+        "delay": 329.38,
+        "duration": 388.1,
+        "press_time": 14345.29,
+        "release_time": 14733.39
+      },
+      {
+        "key": "space",
+        "delay": 330.08,
+        "duration": 297.09,
+        "press_time": 14675.37,
+        "release_time": 14972.45
+      },
+      {
+        "key": "d",
+        "delay": 389.43,
+        "duration": 156.86,
+        "press_time": 15064.8,
+        "release_time": 15221.66
+      },
+      {
+        "key": "o",
+        "delay": 395.99,
+        "duration": 281.83,
+        "press_time": 15460.79,
+        "release_time": 15742.62
+      },
+      {
+        "key": "g",
+        "delay": 442.41,
+        "duration": 433.04,
+        "press_time": 15903.2,
+        "release_time": 16336.24
+      }
+    ],
+    "control": [
+      {
+        "key": "t",
+        "delay": 313.69,
+        "duration": 253.28,
+        "press_time": 313.69,
+        "release_time": 566.98
+      },
+      {
+        "key": "h",
+        "delay": 165.62,
+        "duration": 270.13,
+        "press_time": 479.32,
+        "release_time": 749.45
+      },
+      {
+        "key": "e",
+        "delay": 205.9,
+        "duration": 183.68,
+        "press_time": 685.22,
+        "release_time": 868.9
+      },
+      {
+        "key": "space",
+        "delay": 257.12,
+        "duration": 188.46,
+        "press_time": 942.33,
+        "release_time": 1130.8
+      },
+      {
+        "key": "q",
+        "delay": 252.65,
+        "duration": 223.62,
+        "press_time": 1194.98,
+        "release_time": 1418.6
+      },
+      {
+        "key": "u",
+        "delay": 166.82,
+        "duration": 237.38,
+        "press_time": 1361.8,
+        "release_time": 1599.18
+      },
+      {
+        "key": "i",
+        "delay": 225.06,
+        "duration": 274.33,
+        "press_time": 1586.87,
+        "release_time": 1861.2
+      },
+      {
+        "key": "c",
+        "delay": 213.58,
+        "duration": 216.02,
+        "press_time": 1800.45,
+        "release_time": 2016.46
+      },
+      {
+        "key": "k",
+        "delay": 241.81,
+        "duration": 346.61,
+        "press_time": 2042.25,
+        "release_time": 2388.86
+      },
+      {
+        "key": "space",
+        "delay": 196.6,
+        "duration": 154.54,
+        "press_time": 2238.85,
+        "release_time": 2393.39
+      },
+      {
+        "key": "b",
+        "delay": 254.74,
+        "duration": 375.65,
+        "press_time": 2493.59,
+        "release_time": 2869.24
+      },
+      {
+        "key": "r",
+        "delay": 229.68,
+        "duration": 381.68,
+        "press_time": 2723.28,
+        "release_time": 3104.96
+      },
+      {
+        "key": "o",
+        "delay": 220.56,
+        "duration": 197.5,
+        "press_time": 2943.84,
+        "release_time": 3141.34
+      },
+      {
+        "key": "w",
+        "delay": 249.25,
+        "duration": 371.13,
+        "press_time": 3193.08,
+        "release_time": 3564.22
+      },
+      {
+        "key": "n",
+        "delay": 249.14,
+        "duration": 50,
+        "press_time": 3442.23,
+        "release_time": 3492.23
+      },
+      {
+        "key": "space",
+        "delay": 184.62,
+        "duration": 324.36,
+        "press_time": 3626.85,
+        "release_time": 3951.21
+      },
+      {
+        "key": "f",
+        "delay": 198.51,
+        "duration": 281.99,
+        "press_time": 3825.36,
+        "release_time": 4107.35
+      },
+      {
+        "key": "o",
+        "delay": 193.83,
+        "duration": 288.84,
+        "press_time": 4019.18,
+        "release_time": 4308.02
+      },
+      {
+        "key": "x",
+        "delay": 236.44,
+        "duration": 230.86,
+        "press_time": 4255.63,
+        "release_time": 4486.48
+      },
+      {
+        "key": "space",
+        "delay": 222.21,
+        "duration": 274.86,
+        "press_time": 4477.84,
+        "release_time": 4752.7
+      },
+      {
+        "key": "j",
+        "delay": 258.43,
+        "duration": 253.77,
+        "press_time": 4736.27,
+        "release_time": 4990.04
+      },
+      {
+        "key": "u",
+        "delay": 184.44,
+        "duration": 378.76,
+        "press_time": 4920.71,
+        "release_time": 5299.47
+      },
+      {
+        "key": "m",
+        "delay": 243.15,
+        "duration": 347.02,
+        "press_time": 5163.86,
+        "release_time": 5510.87
+      },
+      {
+        "key": "p",
+        "delay": 253.6,
+        "duration": 138.42,
+        "press_time": 5417.46,
+        "release_time": 5555.88
+      },
+      {
+        "key": "s",
+        "delay": 194.04,
+        "duration": 175.74,
+        "press_time": 5611.5,
+        "release_time": 5787.24
+      },
+      {
+        "key": "space",
+        "delay": 198.49,
+        "duration": 202.95,
+        "press_time": 5809.99,
+        "release_time": 6012.94
+      },
+      {
+        "key": "o",
+        "delay": 197.31,
+        "duration": 299.89,
+        "press_time": 6007.3,
+        "release_time": 6307.19
+      },
+      {
+        "key": "v",
+        "delay": 248.15,
+        "duration": 305.66,
+        "press_time": 6255.44,
+        "release_time": 6561.1
+      },
+      {
+        "key": "e",
+        "delay": 248.47,
+        "duration": 357.61,
+        "press_time": 6503.92,
+        "release_time": 6861.53
+      },
+      {
+        "key": "r",
+        "delay": 280.83,
+        "duration": 418.57,
+        "press_time": 6784.75,
+        "release_time": 7203.32
+      },
+      {
+        "key": "space",
+        "delay": 259.15,
+        "duration": 50,
+        "press_time": 7043.9,
+        "release_time": 7093.9
+      },
+      {
+        "key": "t",
+        "delay": 210.05,
+        "duration": 365.16,
+        "press_time": 7253.95,
+        "release_time": 7619.11
+      },
+      {
+        "key": "h",
+        "delay": 227.22,
+        "duration": 350.81,
+        "press_time": 7481.16,
+        "release_time": 7831.97
+      },
+      {
+        "key": "e",
+        "delay": 219.52,
+        "duration": 355.46,
+        "press_time": 7700.68,
+        "release_time": 8056.14
+      },
+      {
+        "key": "space",
+        "delay": 214.87,
+        "duration": 166.76,
+        "press_time": 7915.55,
+        "release_time": 8082.31
+      },
+      {
+        "key": "l",
+        "delay": 216.58,
+        "duration": 338.29,
+        "press_time": 8132.13,
+        "release_time": 8470.42
+      },
+      {
+        "key": "a",
+        "delay": 259.93,
+        "duration": 345.33,
+        "press_time": 8392.06,
+        "release_time": 8737.39
+      },
+      {
+        "key": "z",
+        "delay": 228.37,
+        "duration": 332.45,
+        "press_time": 8620.43,
+        "release_time": 8952.88
+      },
+      {
+        "key": "y",
+        "delay": 226.92,
+        "duration": 164.29,
+        "press_time": 8847.35,
+        "release_time": 9011.64
+      },
+      {
+        "key": "space",
+        "delay": 220.65,
+        "duration": 235.33,
+        "press_time": 9068.0,
+        "release_time": 9303.33
+      },
+      {
+        "key": "d",
+        "delay": 207.6,
+        "duration": 362.64,
+        "press_time": 9275.6,
+        "release_time": 9638.25
+      },
+      {
+        "key": "o",
+        "delay": 231.42,
+        "duration": 345.01,
+        "press_time": 9507.03,
+        "release_time": 9852.04
+      },
+      {
+        "key": "g",
+        "delay": 222.87,
+        "duration": 369.46,
+        "press_time": 9729.9,
+        "release_time": 10099.36
+      }
+    ]
+  },
+  "pack my box with five dozen liquor jugs": {
+    "pd": [
+      {
+        "key": "p",
+        "delay": 511.75,
+        "duration": 274.43,
+        "press_time": 511.75,
+        "release_time": 786.18
+      },
+      {
+        "key": "a",
+        "delay": 344.69,
+        "duration": 496.33,
+        "press_time": 856.44,
+        "release_time": 1352.76
+      },
+      {
+        "key": "c",
+        "delay": 333.36,
+        "duration": 497.6,
+        "press_time": 1189.79,
+        "release_time": 1687.39
+      },
+      {
+        "key": "k",
+        "delay": 332.74,
+        "duration": 305.13,
+        "press_time": 1522.53,
+        "release_time": 1827.66
+      },
+      {
+        "key": "space",
+        "delay": 419.37,
+        "duration": 238.66,
+        "press_time": 1941.9,
+        "release_time": 2180.56
+      },
+      {
+        "key": "m",
+        "delay": 383.73,
+        "duration": 262.16,
+        "press_time": 2325.63,
+        "release_time": 2587.79
+      },
+      {
+        "key": "y",
+        "delay": 414.57,
+        "duration": 196.59,
+        "press_time": 2740.2,
+        "release_time": 2936.79
+      },
+      {
+        "key": "space",
+        "delay": 340.22,
+        "duration": 338.71,
+        "press_time": 3080.42,
+        "release_time": 3419.13
+      },
+      {
+        "key": "b",
+        "delay": 334.77,
+        "duration": 589.29,
+        "press_time": 3415.2,
+        "release_time": 4004.48
+      },
+      {
+        "key": "o",
+        "delay": 355.81,
+        "duration": 86.68,
+        "press_time": 3771.01,
+        "release_time": 3857.69
+      },
+      {
+        "key": "x",
+        "delay": 363.41,
+        "duration": 278.38,
+        "press_time": 4134.42,
+        "release_time": 4412.8
+      },
+      {
+        "key": "space",
+        "delay": 401.79,
+        "duration": 307.37,
+        "press_time": 4536.21,
+        "release_time": 4843.58
+      },
+      {
+        "key": "w",
+        "delay": 435.31,
+        "duration": 113.03,
+        "press_time": 4971.52,
+        "release_time": 5084.55
+      },
+      {
+        "key": "i",
+        "delay": 412.43,
+        "duration": 321.54,
+        "press_time": 5383.95,
+        "release_time": 5705.49
+      },
+      {
+        "key": "t",
+        "delay": 410.54,
+        "duration": 311.22,
+        "press_time": 5794.49,
+        "release_time": 6105.71
+      },
+      {
+        "key": "h",
+        "delay": 322.86,
+        "duration": 362.18,
+        "press_time": 6117.35,
+        "release_time": 6479.53
+      },
+      {
+        "key": "space",
+        "delay": 412.23,
+        "duration": 425.36,
+        "press_time": 6529.58,
+        "release_time": 6954.94
+      },
+      {
+        "key": "f",
+        "delay": 373.54,
+        "duration": 281.52,
+        "press_time": 6903.12,
+        "release_time": 7184.63
+      },
+      {
+        "key": "i",
+        "delay": 421.87,
+        "duration": 258.91,
+        "press_time": 7324.99,
+        "release_time": 7583.89
+      },
+      {
+        "key": "v",
+        "delay": 392.81,
+        "duration": 327.4,
+        "press_time": 7717.8,
+        "release_time": 8045.2
+      },
+      {
+        "key": "e",
+        "delay": 439.92,
+        "duration": 421.64,
+        "press_time": 8157.72,
+        "release_time": 8579.36
+      },
+      {
+        "key": "space",
+        "delay": 351.06,
+        "duration": 370.34,
+        "press_time": 8508.78,
+        "release_time": 8879.12
+      },
+      {
+        "key": "d",
+        "delay": 322.1,
+        "duration": 392.49,
+        "press_time": 8830.87,
+        "release_time": 9223.37
+      },
+      {
+        "key": "o",
+        "delay": 383.09,
+        "duration": 221.7,
+        "press_time": 9213.96,
+        "release_time": 9435.66
+      },
+      {
+        "key": "z",
+        "delay": 435.48,
+        "duration": 62.36,
+        "press_time": 9649.44,
+        "release_time": 9711.8
+      },
+      {
+        "key": "e",
+        "delay": 395.23,
+        "duration": 190.3,
+        "press_time": 10044.67,
+        "release_time": 10234.97
+      },
+      {
+        "key": "n",
+        "delay": 429.52,
+        "duration": 312.78,
+        "press_time": 10474.19,
+        "release_time": 10786.97
+      },
+      {
+        "key": "space",
+        "delay": 357.09,
+        "duration": 290.0,
+        "press_time": 10831.28,
+        "release_time": 11121.28
+      },
+      {
+        "key": "l",
+        "delay": 393.38,
+        "duration": 50,
+        "press_time": 11224.66,
+        "release_time": 11274.66
+      },
+      {
+        "key": "i",
+        "delay": 406.16,
+        "duration": 215.74,
+        "press_time": 11630.82,
+        "release_time": 11846.56
+      },
+      {
+        "key": "q",
+        "delay": 352.06,
+        "duration": 141.7,
+        "press_time": 11982.88,
+        "release_time": 12124.58
+      },
+      {
+        "key": "u",
+        "delay": 353.3,
+        "duration": 119.61,
+        "press_time": 12336.17,
+        "release_time": 12455.78
+      },
+      {
+        "key": "o",
+        "delay": 323.89,
+        "duration": 294.1,
+        "press_time": 12660.07,
+        "release_time": 12954.17
+      },
+      {
+        "key": "r",
+        "delay": 358.81,
+        "duration": 470.64,
+        "press_time": 13018.88,
+        "release_time": 13489.52
+      },
+      {
+        "key": "space",
+        "delay": 345.63,
+        "duration": 422.47,
+        "press_time": 13364.51,
+        "release_time": 13786.98
+      },
+      {
+        "key": "j",
+        "delay": 364.14,
+        "duration": 424.11,
+        "press_time": 13728.65,
+        "release_time": 14152.76
+      },
+      {
+        "key": "u",
+        "delay": 388.88,
+        "duration": 299.46,
+        "press_time": 14117.53,
+        "release_time": 14416.99
+      },
+      {
+        "key": "g",
+        "delay": 439.22,
+        "duration": 387.91,
+        "press_time": 14556.75,
+        "release_time": 14944.66
+      },
+      {
+        "key": "s",
+        "delay": 421.4,
+        "duration": 462.23,
+        "press_time": 14978.15,
+        "release_time": 15440.38
+      }
+    ],
+    "control": [
+      {
+        "key": "p",
+        "delay": 263.78,
+        "duration": 447.09,
+        "press_time": 263.78,
+        "release_time": 710.87
+      },
+      {
+        "key": "a",
+        "delay": 284.13,
+        "duration": 251.49,
+        "press_time": 547.91,
+        "release_time": 799.41
+      },
+      {
+        "key": "c",
+        "delay": 270.5,
+        "duration": 270.66,
+        "press_time": 818.42,
+        "release_time": 1089.08
+      },
+      {
+        "key": "k",
+        "delay": 211.74,
+        "duration": 101.88,
+        "press_time": 1030.16,
+        "release_time": 1132.03
+      },
+      {
+        "key": "space",
+        "delay": 265.43,
+        "duration": 348.51,
+        "press_time": 1295.59,
+        "release_time": 1644.1
+      },
+      {
+        "key": "m",
+        "delay": 241.11,
+        "duration": 273.6,
+        "press_time": 1536.71,
+        "release_time": 1810.31
+      },
+      {
+        "key": "y",
+        "delay": 186.27,
+        "duration": 266.15,
+        "press_time": 1722.97,
+        "release_time": 1989.12
+      },
+      {
+        "key": "space",
+        "delay": 227.9,
+        "duration": 292.82,
+        "press_time": 1950.87,
+        "release_time": 2243.69
+      },
+      {
+        "key": "b",
+        "delay": 227.21,
+        "duration": 328.12,
+        "press_time": 2178.08,
+        "release_time": 2506.2
+      },
+      {
+        "key": "o",
+        "delay": 241.37,
+        "duration": 345.3,
+        "press_time": 2419.45,
+        "release_time": 2764.75
+      },
+      {
+        "key": "x",
+        "delay": 247.1,
+        "duration": 229.74,
+        "press_time": 2666.54,
+        "release_time": 2896.28
+      },
+      {
+        "key": "space",
+        "delay": 198.75,
+        "duration": 224.34,
+        "press_time": 2865.29,
+        "release_time": 3089.63
+      },
+      {
+        "key": "w",
+        "delay": 179.45,
+        "duration": 384.49,
+        "press_time": 3044.74,
+        "release_time": 3429.23
+      },
+      {
+        "key": "i",
+        "delay": 233.46,
+        "duration": 231.57,
+        "press_time": 3278.2,
+        "release_time": 3509.77
+      },
+      {
+        "key": "t",
+        "delay": 207.57,
+        "duration": 295.42,
+        "press_time": 3485.77,
+        "release_time": 3781.19
+      },
+      {
+        "key": "h",
+        "delay": 181.86,
+        "duration": 327.15,
+        "press_time": 3667.63,
+        "release_time": 3994.78
+      },
+      {
+        "key": "space",
+        "delay": 202.37,
+        "duration": 317.49,
+        "press_time": 3869.99,
+        "release_time": 4187.48
+      },
+      {
+        "key": "f",
+        "delay": 222.22,
+        "duration": 434.32,
+        "press_time": 4092.21,
+        "release_time": 4526.54
+      },
+      {
+        "key": "i",
+        "delay": 264.05,
+        "duration": 295.99,
+        "press_time": 4356.27,
+        "release_time": 4652.26
+      },
+      {
+        "key": "v",
+        "delay": 226.2,
+        "duration": 280.95,
+        "press_time": 4582.46,
+        "release_time": 4863.41
+      },
+      {
+        "key": "e",
+        "delay": 246.12,
+        "duration": 245.9,
+        "press_time": 4828.58,
+        "release_time": 5074.48
+      },
+      {
+        "key": "space",
+        "delay": 247.06,
+        "duration": 299.56,
+        "press_time": 5075.64,
+        "release_time": 5375.2
+      },
+      {
+        "key": "d",
+        "delay": 224.84,
+        "duration": 218.86,
+        "press_time": 5300.48,
+        "release_time": 5519.35
+      },
+      {
+        "key": "o",
+        "delay": 233.65,
+        "duration": 362.6,
+        "press_time": 5534.13,
+        "release_time": 5896.73
+      },
+      {
+        "key": "z",
+        "delay": 226.58,
+        "duration": 405.76,
+        "press_time": 5760.72,
+        "release_time": 6166.48
+      },
+      {
+        "key": "e",
+        "delay": 207.24,
+        "duration": 311.07,
+        "press_time": 5967.95,
+        "release_time": 6279.02
+      },
+      {
+        "key": "n",
+        "delay": 194.93,
+        "duration": 404.94,
+        "press_time": 6162.88,
+        "release_time": 6567.82
+      },
+      {
+        "key": "space",
+        "delay": 213.42,
+        "duration": 189.02,
+        "press_time": 6376.31,
+        "release_time": 6565.33
+      },
+      {
+        "key": "l",
+        "delay": 267.1,
+        "duration": 289.59,
+        "press_time": 6643.4,
+        "release_time": 6932.99
+      },
+      {
+        "key": "i",
+        "delay": 181.82,
+        "duration": 269.08,
+        "press_time": 6825.22,
+        "release_time": 7094.3
+      },
+      {
+        "key": "q",
+        "delay": 213.81,
+        "duration": 269.94,
+        "press_time": 7039.03,
+        "release_time": 7308.97
+      },
+      {
+        "key": "u",
+        "delay": 224.69,
+        "duration": 251.03,
+        "press_time": 7263.73,
+        "release_time": 7514.76
+      },
+      {
+        "key": "o",
+        "delay": 181.45,
+        "duration": 281.16,
+        "press_time": 7445.18,
+        "release_time": 7726.34
+      },
+      {
+        "key": "r",
+        "delay": 201.66,
+        "duration": 168.26,
+        "press_time": 7646.84,
+        "release_time": 7815.1
+      },
+      {
+        "key": "space",
+        "delay": 271.09,
+        "duration": 285.64,
+        "press_time": 7917.93,
+        "release_time": 8203.57
+      },
+      {
+        "key": "j",
+        "delay": 210.29,
+        "duration": 228.96,
+        "press_time": 8128.22,
+        "release_time": 8357.18
+      },
+      {
+        "key": "u",
+        "delay": 253.38,
+        "duration": 268.77,
+        "press_time": 8381.6,
+        "release_time": 8650.36
+      },
+      {
+        "key": "g",
+        "delay": 271.91,
+        "duration": 362.01,
+        "press_time": 8653.51,
+        "release_time": 9015.52
+      },
+      {
+        "key": "s",
+        "delay": 224.15,
+        "duration": 270.64,
+        "press_time": 8877.66,
+        "release_time": 9148.29
+      }
+    ]
+  },
+  "how vexingly quick daft zebras jump": {
+    "pd": [
+      {
+        "key": "h",
+        "delay": 531.39,
+        "duration": 430.2,
+        "press_time": 531.39,
+        "release_time": 961.59
+      },
+      {
+        "key": "o",
+        "delay": 324.1,
+        "duration": 335.71,
+        "press_time": 855.49,
+        "release_time": 1191.2
+      },
+      {
+        "key": "w",
+        "delay": 361.07,
+        "duration": 361.92,
+        "press_time": 1216.56,
+        "release_time": 1578.48
+      },
+      {
+        "key": "space",
+        "delay": 347.29,
+        "duration": 462.55,
+        "press_time": 1563.85,
+        "release_time": 2026.41
+      },
+      {
+        "key": "v",
+        "delay": 408.88,
+        "duration": 385.0,
+        "press_time": 1972.74,
+        "release_time": 2357.74
+      },
+      {
+        "key": "e",
+        "delay": 333.81,
+        "duration": 257.78,
+        "press_time": 2306.55,
+        "release_time": 2564.33
+      },
+      {
+        "key": "x",
+        "delay": 340.88,
+        "duration": 379.33,
+        "press_time": 2647.43,
+        "release_time": 3026.75
+      },
+      {
+        "key": "i",
+        "delay": 447.87,
+        "duration": 197.21,
+        "press_time": 3095.29,
+        "release_time": 3292.51
+      },
+      {
+        "key": "n",
+        "delay": 346.85,
+        "duration": 353.71,
+        "press_time": 3442.15,
+        "release_time": 3795.85
+      },
+      {
+        "key": "g",
+        "delay": 436.94,
+        "duration": 300.36,
+        "press_time": 3879.09,
+        "release_time": 4179.45
+      },
+      {
+        "key": "l",
+        "delay": 336.15,
+        "duration": 277.99,
+        "press_time": 4215.23,
+        "release_time": 4493.23
+      },
+      {
+        "key": "y",
+        "delay": 366.66,
+        "duration": 345.12,
+        "press_time": 4581.9,
+        "release_time": 4927.02
+      },
+      {
+        "key": "space",
+        "delay": 414.99,
+        "duration": 209.14,
+        "press_time": 4996.89,
+        "release_time": 5206.03
+      },
+      {
+        "key": "q",
+        "delay": 301.85,
+        "duration": 320.69,
+        "press_time": 5298.74,
+        "release_time": 5619.43
+      },
+      {
+        "key": "u",
+        "delay": 415.13,
+        "duration": 275.31,
+        "press_time": 5713.87,
+        "release_time": 5989.18
+      },
+      {
+        "key": "i",
+        "delay": 341.42,
+        "duration": 295.72,
+        "press_time": 6055.28,
+        "release_time": 6351.0
+      },
+      {
+        "key": "c",
+        "delay": 425.17,
+        "duration": 214.59,
+        "press_time": 6480.45,
+        "release_time": 6695.04
+      },
+      {
+        "key": "k",
+        "delay": 374.27,
+        "duration": 465.39,
+        "press_time": 6854.73,
+        "release_time": 7320.12
+      },
+      {
+        "key": "space",
+        "delay": 428.3,
+        "duration": 356.8,
+        "press_time": 7283.03,
+        "release_time": 7639.83
+      },
+      {
+        "key": "d",
+        "delay": 374.9,
+        "duration": 307.97,
+        "press_time": 7657.93,
+        "release_time": 7965.9
+      },
+      {
+        "key": "a",
+        "delay": 278.52,
+        "duration": 248.35,
+        "press_time": 7936.45,
+        "release_time": 8184.8
+      },
+      {
+        "key": "f",
+        "delay": 384.56,
+        "duration": 292.03,
+        "press_time": 8321.01,
+        "release_time": 8613.04
+      },
+      {
+        "key": "t",
+        "delay": 355.13,
+        "duration": 242.93,
+        "press_time": 8676.14,
+        "release_time": 8919.07
+      },
+      {
+        "key": "space",
+        "delay": 499.8,
+        "duration": 312.78,
+        "press_time": 9175.94,
+        "release_time": 9488.71
+      },
+      {
+        "key": "z",
+        "delay": 331.34,
+        "duration": 160.4,
+        "press_time": 9507.27,
+        "release_time": 9667.68
+      },
+      {
+        "key": "e",
+        "delay": 411.69,
+        "duration": 149.23,
+        "press_time": 9918.97,
+        "release_time": 10068.19
+      },
+      {
+        "key": "b",
+        "delay": 403.08,
+        "duration": 288.13,
+        "press_time": 10322.05,
+        "release_time": 10610.18
+      },
+      {
+        "key": "r",
+        "delay": 409.46,
+        "duration": 116.99,
+        "press_time": 10731.51,
+        "release_time": 10848.5
+      },
+      {
+        "key": "a",
+        "delay": 331.26,
+        "duration": 436.16,
+        "press_time": 11062.78,
+        "release_time": 11498.93
+      },
+      {
+        "key": "s",
+        "delay": 373.66,
+        "duration": 181.59,
+        "press_time": 11436.44,
+        "release_time": 11618.02
+      },
+      {
+        "key": "space",
+        "delay": 409.41,
+        "duration": 360.51,
+        "press_time": 11845.85,
+        "release_time": 12206.36
+      },
+      {
+        "key": "j",
+        "delay": 356.29,
+        "duration": 191.74,
+        "press_time": 12202.14,
+        "release_time": 12393.88
+      },
+      {
+        "key": "u",
+        "delay": 335.5,
+        "duration": 260.79,
+        "press_time": 12537.64,
+        "release_time": 12798.43
+      },
+      {
+        "key": "m",
+        "delay": 397.38,
+        "duration": 255.8,
+        "press_time": 12935.02,
+        "release_time": 13190.82
+      },
+      {
+        "key": "p",
+        "delay": 413.76,
+        "duration": 189.19,
+        "press_time": 13348.78,
+        "release_time": 13537.97
+      }
+    ],
+    "control": [
+      {
+        "key": "h",
+        "delay": 286.79,
+        "duration": 203.1,
+        "press_time": 286.79,
+        "release_time": 489.89
+      },
+      {
+        "key": "o",
+        "delay": 235.71,
+        "duration": 322.83,
+        "press_time": 522.51,
+        "release_time": 845.34
+      },
+      {
+        "key": "w",
+        "delay": 239.88,
+        "duration": 260.78,
+        "press_time": 762.39,
+        "release_time": 1023.17
+      },
+      {
+        "key": "space",
+        "delay": 224.2,
+        "duration": 260.48,
+        "press_time": 986.59,
+        "release_time": 1247.06
+      },
+      {
+        "key": "v",
+        "delay": 254.73,
+        "duration": 256.87,
+        "press_time": 1241.32,
+        "release_time": 1498.19
+      },
+      {
+        "key": "e",
+        "delay": 244.06,
+        "duration": 216.83,
+        "press_time": 1485.38,
+        "release_time": 1702.21
+      },
+      {
+        "key": "x",
+        "delay": 238.37,
+        "duration": 351.09,
+        "press_time": 1723.75,
+        "release_time": 2074.84
+      },
+      {
+        "key": "i",
+        "delay": 250.54,
+        "duration": 315.15,
+        "press_time": 1974.29,
+        "release_time": 2289.44
+      },
+      {
+        "key": "n",
+        "delay": 214.63,
+        "duration": 239.17,
+        "press_time": 2188.92,
+        "release_time": 2428.09
+      },
+      {
+        "key": "g",
+        "delay": 243.78,
+        "duration": 403.78,
+        "press_time": 2432.7,
+        "release_time": 2836.48
+      },
+      {
+        "key": "l",
+        "delay": 232.99,
+        "duration": 242.14,
+        "press_time": 2665.68,
+        "release_time": 2907.82
+      },
+      {
+        "key": "y",
+        "delay": 197.97,
+        "duration": 228.63,
+        "press_time": 2863.65,
+        "release_time": 3092.28
+      },
+      {
+        "key": "space",
+        "delay": 254.26,
+        "duration": 211.08,
+        "press_time": 3117.91,
+        "release_time": 3328.99
+      },
+      {
+        "key": "q",
+        "delay": 284.62,
+        "duration": 186.93,
+        "press_time": 3402.53,
+        "release_time": 3589.46
+      },
+      {
+        "key": "u",
+        "delay": 206.39,
+        "duration": 220.56,
+        "press_time": 3608.92,
+        "release_time": 3829.49
+      },
+      {
+        "key": "i",
+        "delay": 227.58,
+        "duration": 251.8,
+        "press_time": 3836.5,
+        "release_time": 4088.3
+      },
+      {
+        "key": "c",
+        "delay": 211.18,
+        "duration": 215.36,
+        "press_time": 4047.68,
+        "release_time": 4263.05
+      },
+      {
+        "key": "k",
+        "delay": 217.85,
+        "duration": 351.52,
+        "press_time": 4265.53,
+        "release_time": 4617.05
+      },
+      {
+        "key": "space",
+        "delay": 229.26,
+        "duration": 282.98,
+        "press_time": 4494.79,
+        "release_time": 4777.78
+      },
+      {
+        "key": "d",
+        "delay": 246.5,
+        "duration": 355.79,
+        "press_time": 4741.3,
+        "release_time": 5097.08
+      },
+      {
+        "key": "a",
+        "delay": 222.38,
+        "duration": 235.52,
+        "press_time": 4963.68,
+        "release_time": 5199.19
+      },
+      {
+        "key": "f",
+        "delay": 222.43,
+        "duration": 285.22,
+        "press_time": 5186.11,
+        "release_time": 5471.32
+      },
+      {
+        "key": "t",
+        "delay": 230.05,
+        "duration": 237.46,
+        "press_time": 5416.16,
+        "release_time": 5653.63
+      },
+      {
+        "key": "space",
+        "delay": 199.84,
+        "duration": 217.8,
+        "press_time": 5616.0,
+        "release_time": 5833.79
+      },
+      {
+        "key": "z",
+        "delay": 235.51,
+        "duration": 280.7,
+        "press_time": 5851.51,
+        "release_time": 6132.21
+      },
+      {
+        "key": "e",
+        "delay": 230.04,
+        "duration": 278.23,
+        "press_time": 6081.55,
+        "release_time": 6359.78
+      },
+      {
+        "key": "b",
+        "delay": 243.08,
+        "duration": 234.4,
+        "press_time": 6324.63,
+        "release_time": 6559.03
+      },
+      {
+        "key": "r",
+        "delay": 210.33,
+        "duration": 383.0,
+        "press_time": 6534.96,
+        "release_time": 6917.96
+      },
+      {
+        "key": "a",
+        "delay": 211.23,
+        "duration": 267.82,
+        "press_time": 6746.19,
+        "release_time": 7014.01
+      },
+      {
+        "key": "s",
+        "delay": 244.63,
+        "duration": 208.67,
+        "press_time": 6990.83,
+        "release_time": 7199.5
+      },
+      {
+        "key": "space",
+        "delay": 241.72,
+        "duration": 234.74,
+        "press_time": 7232.55,
+        "release_time": 7467.29
+      },
+      {
+        "key": "j",
+        "delay": 225.19,
+        "duration": 262.14,
+        "press_time": 7457.74,
+        "release_time": 7719.89
+      },
+      {
+        "key": "u",
+        "delay": 215.96,
+        "duration": 336.45,
+        "press_time": 7673.7,
+        "release_time": 8010.15
+      },
+      {
+        "key": "m",
+        "delay": 266.09,
+        "duration": 334.21,
+        "press_time": 7939.79,
+        "release_time": 8274.0
+      },
+      {
+        "key": "p",
+        "delay": 238.44,
+        "duration": 300.37,
+        "press_time": 8178.24,
+        "release_time": 8478.61
+      }
+    ]
+  },
+  "sphinx of black quartz judge my vow": {
+    "pd": [
+      {
+        "key": "s",
+        "delay": 440.73,
+        "duration": 538.61,
+        "press_time": 440.73,
+        "release_time": 979.34
+      },
+      {
+        "key": "p",
+        "delay": 389.95,
+        "duration": 287.81,
+        "press_time": 830.68,
+        "release_time": 1118.49
+      },
+      {
+        "key": "h",
+        "delay": 387.53,
+        "duration": 249.53,
+        "press_time": 1218.21,
+        "release_time": 1467.74
+      },
+      {
+        "key": "i",
+        "delay": 372.98,
+        "duration": 148.6,
+        "press_time": 1591.19,
+        "release_time": 1739.79
+      },
+      {
+        "key": "n",
+        "delay": 352.71,
+        "duration": 362.65,
+        "press_time": 1943.9,
+        "release_time": 2306.55
+      },
+      {
+        "key": "x",
+        "delay": 322.31,
+        "duration": 447.74,
+        "press_time": 2266.21,
+        "release_time": 2713.95
+      },
+      {
+        "key": "space",
+        "delay": 384.15,
+        "duration": 303.19,
+        "press_time": 2650.36,
+        "release_time": 2953.54
+      },
+      {
+        "key": "o",
+        "delay": 363.11,
+        "duration": 289.58,
+        "press_time": 3013.46,
+        "release_time": 3303.04
+      },
+      {
+        "key": "f",
+        "delay": 396.99,
+        "duration": 164.83,
+        "press_time": 3410.46,
+        "release_time": 3575.28
+      },
+      {
+        "key": "space",
+        "delay": 447.93,
+        "duration": 296.04,
+        "press_time": 3858.39,
+        "release_time": 4154.43
+      },
+      {
+        "key": "b",
+        "delay": 318.91,
+        "duration": 335.09,
+        "press_time": 4177.3,
+        "release_time": 4512.39
+      },
+      {
+        "key": "l",
+        "delay": 421.26,
+        "duration": 289.43,
+        "press_time": 4598.56,
+        "release_time": 4887.99
+      },
+      {
+        "key": "a",
+        "delay": 312.4,
+        "duration": 210.07,
+        "press_time": 4910.96,
+        "release_time": 5121.04
+      },
+      {
+        "key": "c",
+        "delay": 409.11,
+        "duration": 264.35,
+        "press_time": 5320.07,
+        "release_time": 5584.42
+      },
+      {
+        "key": "k",
+        "delay": 302.52,
+        "duration": 50,
+        "press_time": 5622.59,
+        "release_time": 5672.59
+      },
+      {
+        "key": "space",
+        "delay": 381.32,
+        "duration": 360.72,
+        "press_time": 6003.92,
+        "release_time": 6364.64
+      },
+      {
+        "key": "q",
+        "delay": 446.04,
+        "duration": 238.88,
+        "press_time": 6449.95,
+        "release_time": 6688.83
+      },
+      {
+        "key": "u",
+        "delay": 382.38,
+        "duration": 173.31,
+        "press_time": 6832.34,
+        "release_time": 7005.65
+      },
+      {
+        "key": "a",
+        "delay": 397.4,
+        "duration": 276.58,
+        "press_time": 7229.74,
+        "release_time": 7506.32
+      },
+      {
+        "key": "r",
+        "delay": 384.72,
+        "duration": 192.55,
+        "press_time": 7614.46,
+        "release_time": 7807.01
+      },
+      {
+        "key": "t",
+        "delay": 408.59,
+        "duration": 271.93,
+        "press_time": 8023.05,
+        "release_time": 8294.98
+      },
+      {
+        "key": "z",
+        "delay": 290.92,
+        "duration": 315.82,
+        "press_time": 8313.97,
+        "release_time": 8629.79
+      },
+      {
+        "key": "space",
+        "delay": 308.3,
+        "duration": 304.05,
+        "press_time": 8622.27,
+        "release_time": 8926.32
+      },
+      {
+        "key": "j",
+        "delay": 410.94,
+        "duration": 210.78,
+        "press_time": 9033.21,
+        "release_time": 9243.99
+      },
+      {
+        "key": "u",
+        "delay": 335.22,
+        "duration": 330.4,
+        "press_time": 9368.42,
+        "release_time": 9698.82
+      },
+      {
+        "key": "d",
+        "delay": 363.59,
+        "duration": 287.65,
+        "press_time": 9732.02,
+        "release_time": 10019.67
+      },
+      {
+        "key": "g",
+        "delay": 297.2,
+        "duration": 74.54,
+        "press_time": 10029.22,
+        "release_time": 10103.75
+      },
+      {
+        "key": "e",
+        "delay": 360.97,
+        "duration": 266.89,
+        "press_time": 10390.19,
+        "release_time": 10657.08
+      },
+      {
+        "key": "space",
+        "delay": 384.11,
+        "duration": 387.7,
+        "press_time": 10774.29,
+        "release_time": 11161.99
+      },
+      {
+        "key": "m",
+        "delay": 344.64,
+        "duration": 525.42,
+        "press_time": 11118.94,
+        "release_time": 11644.36
+      },
+      {
+        "key": "y",
+        "delay": 424.33,
+        "duration": 115.37,
+        "press_time": 11543.26,
+        "release_time": 11658.63
+      },
+      {
+        "key": "space",
+        "delay": 357.51,
+        "duration": 505.91,
+        "press_time": 11900.78,
+        "release_time": 12406.69
+      },
+      {
+        "key": "v",
+        "delay": 406.08,
+        "duration": 211.81,
+        "press_time": 12306.85,
+        "release_time": 12518.66
+      },
+      {
+        "key": "o",
+        "delay": 421.56,
+        "duration": 318.45,
+        "press_time": 12728.42,
+        "release_time": 13046.87
+      },
+      {
+        "key": "w",
+        "delay": 397.73,
+        "duration": 126.56,
+        "press_time": 13126.14,
+        "release_time": 13252.71
+      }
+    ],
+    "control": [
+      {
+        "key": "s",
+        "delay": 332.1,
+        "duration": 252.77,
+        "press_time": 332.1,
+        "release_time": 584.87
+      },
+      {
+        "key": "p",
+        "delay": 231.5,
+        "duration": 295.57,
+        "press_time": 563.6,
+        "release_time": 859.17
+      },
+      {
+        "key": "h",
+        "delay": 253.1,
+        "duration": 203.49,
+        "press_time": 816.7,
+        "release_time": 1020.19
+      },
+      {
+        "key": "i",
+        "delay": 213.16,
+        "duration": 361.81,
+        "press_time": 1029.86,
+        "release_time": 1391.67
+      },
+      {
+        "key": "n",
+        "delay": 226.69,
+        "duration": 231.12,
+        "press_time": 1256.55,
+        "release_time": 1487.67
+      },
+      {
+        "key": "x",
+        "delay": 207.11,
+        "duration": 197.89,
+        "press_time": 1463.66,
+        "release_time": 1661.55
+      },
+      {
+        "key": "space",
+        "delay": 191.87,
+        "duration": 137.74,
+        "press_time": 1655.53,
+        "release_time": 1793.27
+      },
+      {
+        "key": "o",
+        "delay": 261.49,
+        "duration": 307.15,
+        "press_time": 1917.01,
+        "release_time": 2224.17
+      },
+      {
+        "key": "f",
+        "delay": 248.1,
+        "duration": 387.99,
+        "press_time": 2165.12,
+        "release_time": 2553.1
+      },
+      {
+        "key": "space",
+        "delay": 223.02,
+        "duration": 147.24,
+        "press_time": 2388.14,
+        "release_time": 2535.38
+      },
+      {
+        "key": "b",
+        "delay": 204.65,
+        "duration": 356.99,
+        "press_time": 2592.79,
+        "release_time": 2949.78
+      },
+      {
+        "key": "l",
+        "delay": 241.47,
+        "duration": 179.7,
+        "press_time": 2834.25,
+        "release_time": 3013.95
+      },
+      {
+        "key": "a",
+        "delay": 173.53,
+        "duration": 270.07,
+        "press_time": 3007.78,
+        "release_time": 3277.86
+      },
+      {
+        "key": "c",
+        "delay": 242.79,
+        "duration": 215.22,
+        "press_time": 3250.57,
+        "release_time": 3465.8
+      },
+      {
+        "key": "k",
+        "delay": 217.11,
+        "duration": 238.53,
+        "press_time": 3467.68,
+        "release_time": 3706.21
+      },
+      {
+        "key": "space",
+        "delay": 184.55,
+        "duration": 123.8,
+        "press_time": 3652.23,
+        "release_time": 3776.03
+      },
+      {
+        "key": "q",
+        "delay": 235.42,
+        "duration": 386.72,
+        "press_time": 3887.65,
+        "release_time": 4274.37
+      },
+      {
+        "key": "u",
+        "delay": 247.1,
+        "duration": 370.73,
+        "press_time": 4134.75,
+        "release_time": 4505.48
+      },
+      {
+        "key": "a",
+        "delay": 246.06,
+        "duration": 270.63,
+        "press_time": 4380.82,
+        "release_time": 4651.45
+      },
+      {
+        "key": "r",
+        "delay": 256.39,
+        "duration": 307.16,
+        "press_time": 4637.21,
+        "release_time": 4944.36
+      },
+      {
+        "key": "t",
+        "delay": 229.88,
+        "duration": 293.6,
+        "press_time": 4867.08,
+        "release_time": 5160.69
+      },
+      {
+        "key": "z",
+        "delay": 230.46,
+        "duration": 207.1,
+        "press_time": 5097.54,
+        "release_time": 5304.64
+      },
+      {
+        "key": "space",
+        "delay": 257.59,
+        "duration": 334.7,
+        "press_time": 5355.13,
+        "release_time": 5689.83
+      },
+      {
+        "key": "j",
+        "delay": 255.98,
+        "duration": 338.92,
+        "press_time": 5611.11,
+        "release_time": 5950.03
+      },
+      {
+        "key": "u",
+        "delay": 230.03,
+        "duration": 254.31,
+        "press_time": 5841.14,
+        "release_time": 6095.44
+      },
+      {
+        "key": "d",
+        "delay": 180.12,
+        "duration": 226.26,
+        "press_time": 6021.26,
+        "release_time": 6247.52
+      },
+      {
+        "key": "g",
+        "delay": 220.63,
+        "duration": 368.38,
+        "press_time": 6241.89,
+        "release_time": 6610.27
+      },
+      {
+        "key": "e",
+        "delay": 261.94,
+        "duration": 249.95,
+        "press_time": 6503.83,
+        "release_time": 6753.78
+      },
+      {
+        "key": "space",
+        "delay": 243.7,
+        "duration": 251.03,
+        "press_time": 6747.53,
+        "release_time": 6998.56
+      },
+      {
+        "key": "m",
+        "delay": 197.95,
+        "duration": 248.55,
+        "press_time": 6945.48,
+        "release_time": 7194.03
+      },
+      {
+        "key": "y",
+        "delay": 219.28,
+        "duration": 323.39,
+        "press_time": 7164.75,
+        "release_time": 7488.15
+      },
+      {
+        "key": "space",
+        "delay": 272.75,
+        "duration": 146.88,
+        "press_time": 7437.5,
+        "release_time": 7584.38
+      },
+      {
+        "key": "v",
+        "delay": 215.72,
+        "duration": 384.09,
+        "press_time": 7653.22,
+        "release_time": 8037.32
+      },
+      {
+        "key": "o",
+        "delay": 253.14,
+        "duration": 278.88,
+        "press_time": 7906.37,
+        "release_time": 8185.24
+      },
+      {
+        "key": "w",
+        "delay": 212.9,
+        "duration": 242.56,
+        "press_time": 8119.27,
+        "release_time": 8361.83
+      }
+    ]
+  },
+  "the five boxing wizards jump quickly": {
+    "pd": [
+      {
+        "key": "t",
+        "delay": 414.31,
+        "duration": 278.53,
+        "press_time": 414.31,
+        "release_time": 692.85
+      },
+      {
+        "key": "h",
+        "delay": 344.64,
+        "duration": 253.38,
+        "press_time": 758.95,
+        "release_time": 1012.33
+      },
+      {
+        "key": "e",
+        "delay": 316.27,
+        "duration": 190.3,
+        "press_time": 1075.22,
+        "release_time": 1265.52
+      },
+      {
+        "key": "space",
+        "delay": 383.89,
+        "duration": 397.83,
+        "press_time": 1459.11,
+        "release_time": 1856.94
+      },
+      {
+        "key": "f",
+        "delay": 361.05,
+        "duration": 600.33,
+        "press_time": 1820.16,
+        "release_time": 2420.48
+      },
+      {
+        "key": "i",
+        "delay": 344.93,
+        "duration": 473.63,
+        "press_time": 2165.08,
+        "release_time": 2638.71
+      },
+      {
+        "key": "v",
+        "delay": 350.46,
+        "duration": 220.86,
+        "press_time": 2515.54,
+        "release_time": 2736.41
+      },
+      {
+        "key": "e",
+        "delay": 326.69,
+        "duration": 162.84,
+        "press_time": 2842.23,
+        "release_time": 3005.07
+      },
+      {
+        "key": "space",
+        "delay": 446.47,
+        "duration": 265.98,
+        "press_time": 3288.7,
+        "release_time": 3554.67
+      },
+      {
+        "key": "b",
+        "delay": 385.05,
+        "duration": 239.0,
+        "press_time": 3673.75,
+        "release_time": 3912.75
+      },
+      {
+        "key": "o",
+        "delay": 351.84,
+        "duration": 240.23,
+        "press_time": 4025.59,
+        "release_time": 4265.82
+      },
+      {
+        "key": "x",
+        "delay": 315.76,
+        "duration": 316.53,
+        "press_time": 4341.35,
+        "release_time": 4657.88
+      },
+      {
+        "key": "i",
+        "delay": 354.63,
+        "duration": 511.88,
+        "press_time": 4695.98,
+        "release_time": 5207.86
+      },
+      {
+        "key": "n",
+        "delay": 365.51,
+        "duration": 328.82,
+        "press_time": 5061.49,
+        "release_time": 5390.32
+      },
+      {
+        "key": "g",
+        "delay": 331.69,
+        "duration": 280.49,
+        "press_time": 5393.19,
+        "release_time": 5673.68
+      },
+      {
+        "key": "space",
+        "delay": 399.74,
+        "duration": 435.72,
+        "press_time": 5792.93,
+        "release_time": 6228.65
+      },
+      {
+        "key": "w",
+        "delay": 364.92,
+        "duration": 494.59,
+        "press_time": 6157.85,
+        "release_time": 6652.44
+      },
+      {
+        "key": "i",
+        "delay": 353.48,
+        "duration": 326.63,
+        "press_time": 6511.33,
+        "release_time": 6837.96
+      },
+      {
+        "key": "z",
+        "delay": 387.35,
+        "duration": 58.21,
+        "press_time": 6898.68,
+        "release_time": 6956.88
+      },
+      {
+        "key": "a",
+        "delay": 371.81,
+        "duration": 302.64,
+        "press_time": 7270.48,
+        "release_time": 7573.12
+      },
+      {
+        "key": "r",
+        "delay": 408.17,
+        "duration": 360.37,
+        "press_time": 7678.65,
+        "release_time": 8039.02
+      },
+      {
+        "key": "d",
+        "delay": 463.01,
+        "duration": 247.56,
+        "press_time": 8141.66,
+        "release_time": 8389.23
+      },
+      {
+        "key": "s",
+        "delay": 411.27,
+        "duration": 296.63,
+        "press_time": 8552.93,
+        "release_time": 8849.56
+      },
+      {
+        "key": "space",
+        "delay": 370.37,
+        "duration": 273.71,
+        "press_time": 8923.3,
+        "release_time": 9197.01
+      },
+      {
+        "key": "j",
+        "delay": 339.49,
+        "duration": 319.09,
+        "press_time": 9262.79,
+        "release_time": 9581.88
+      },
+      {
+        "key": "u",
+        "delay": 393.05,
+        "duration": 301.74,
+        "press_time": 9655.84,
+        "release_time": 9957.59
+      },
+      {
+        "key": "m",
+        "delay": 385.9,
+        "duration": 471.46,
+        "press_time": 10041.74,
+        "release_time": 10513.2
+      },
+      {
+        "key": "p",
+        "delay": 331.81,
+        "duration": 227.88,
+        "press_time": 10373.55,
+        "release_time": 10601.44
+      },
+      {
+        "key": "space",
+        "delay": 399.56,
+        "duration": 407.91,
+        "press_time": 10773.11,
+        "release_time": 11181.02
+      },
+      {
+        "key": "q",
+        "delay": 334.75,
+        "duration": 368.67,
+        "press_time": 11107.87,
+        "release_time": 11476.53
+      },
+      {
+        "key": "u",
+        "delay": 389.21,
+        "duration": 362.02,
+        "press_time": 11497.08,
+        "release_time": 11859.1
+      },
+      {
+        "key": "i",
+        "delay": 468.29,
+        "duration": 407.46,
+        "press_time": 11965.37,
+        "release_time": 12372.82
+      },
+      {
+        "key": "c",
+        "delay": 348.87,
+        "duration": 181.32,
+        "press_time": 12314.23,
+        "release_time": 12495.55
+      },
+      {
+        "key": "k",
+        "delay": 417.8,
+        "duration": 270.15,
+        "press_time": 12732.03,
+        "release_time": 13002.18
+      },
+      {
+        "key": "l",
+        "delay": 380.42,
+        "duration": 328.27,
+        "press_time": 13112.46,
+        "release_time": 13440.72
+      },
+      {
+        "key": "y",
+        "delay": 376.29,
+        "duration": 337.91,
+        "press_time": 13488.75,
+        "release_time": 13826.66
+      }
+    ],
+    "control": [
+      {
+        "key": "t",
+        "delay": 289.04,
+        "duration": 175.58,
+        "press_time": 289.04,
+        "release_time": 464.62
+      },
+      {
+        "key": "h",
+        "delay": 205.87,
+        "duration": 355.26,
+        "press_time": 494.92,
+        "release_time": 850.18
+      },
+      {
+        "key": "e",
+        "delay": 253.96,
+        "duration": 436.77,
+        "press_time": 748.87,
+        "release_time": 1185.64
+      },
+      {
+        "key": "space",
+        "delay": 228.64,
+        "duration": 182.33,
+        "press_time": 977.51,
+        "release_time": 1159.84
+      },
+      {
+        "key": "f",
+        "delay": 239.43,
+        "duration": 229.87,
+        "press_time": 1216.94,
+        "release_time": 1446.81
+      },
+      {
+        "key": "i",
+        "delay": 268.02,
+        "duration": 234.73,
+        "press_time": 1484.96,
+        "release_time": 1719.69
+      },
+      {
+        "key": "v",
+        "delay": 234.73,
+        "duration": 310.07,
+        "press_time": 1719.7,
+        "release_time": 2029.77
+      },
+      {
+        "key": "e",
+        "delay": 248.24,
+        "duration": 223.25,
+        "press_time": 1967.94,
+        "release_time": 2191.2
+      },
+      {
+        "key": "space",
+        "delay": 234.44,
+        "duration": 256.19,
+        "press_time": 2202.39,
+        "release_time": 2458.58
+      },
+      {
+        "key": "b",
+        "delay": 194.55,
+        "duration": 299.68,
+        "press_time": 2396.94,
+        "release_time": 2696.62
+      },
+      {
+        "key": "o",
+        "delay": 241.11,
+        "duration": 296.99,
+        "press_time": 2638.04,
+        "release_time": 2935.03
+      },
+      {
+        "key": "x",
+        "delay": 247.05,
+        "duration": 165.85,
+        "press_time": 2885.09,
+        "release_time": 3050.94
+      },
+      {
+        "key": "i",
+        "delay": 220.49,
+        "duration": 188.94,
+        "press_time": 3105.58,
+        "release_time": 3294.53
+      },
+      {
+        "key": "n",
+        "delay": 250.55,
+        "duration": 312.08,
+        "press_time": 3356.13,
+        "release_time": 3668.22
+      },
+      {
+        "key": "g",
+        "delay": 277.13,
+        "duration": 140.62,
+        "press_time": 3633.27,
+        "release_time": 3773.88
+      },
+      {
+        "key": "space",
+        "delay": 137.52,
+        "duration": 167.11,
+        "press_time": 3770.78,
+        "release_time": 3937.89
+      },
+      {
+        "key": "w",
+        "delay": 227.29,
+        "duration": 293.76,
+        "press_time": 3998.08,
+        "release_time": 4291.84
+      },
+      {
+        "key": "i",
+        "delay": 204.8,
+        "duration": 147.85,
+        "press_time": 4202.88,
+        "release_time": 4350.73
+      },
+      {
+        "key": "z",
+        "delay": 224.82,
+        "duration": 178.58,
+        "press_time": 4427.7,
+        "release_time": 4606.27
+      },
+      {
+        "key": "a",
+        "delay": 216.92,
+        "duration": 196.86,
+        "press_time": 4644.61,
+        "release_time": 4841.47
+      },
+      {
+        "key": "r",
+        "delay": 246.37,
+        "duration": 235.71,
+        "press_time": 4890.98,
+        "release_time": 5126.69
+      },
+      {
+        "key": "d",
+        "delay": 228.89,
+        "duration": 256.17,
+        "press_time": 5119.87,
+        "release_time": 5376.04
+      },
+      {
+        "key": "s",
+        "delay": 231.44,
+        "duration": 201.84,
+        "press_time": 5351.31,
+        "release_time": 5553.15
+      },
+      {
+        "key": "space",
+        "delay": 236.56,
+        "duration": 250.91,
+        "press_time": 5587.87,
+        "release_time": 5838.78
+      },
+      {
+        "key": "j",
+        "delay": 234.51,
+        "duration": 314.03,
+        "press_time": 5822.39,
+        "release_time": 6136.42
+      },
+      {
+        "key": "u",
+        "delay": 250.36,
+        "duration": 290.12,
+        "press_time": 6072.75,
+        "release_time": 6362.87
+      },
+      {
+        "key": "m",
+        "delay": 264.16,
+        "duration": 311.95,
+        "press_time": 6336.91,
+        "release_time": 6648.86
+      },
+      {
+        "key": "p",
+        "delay": 206.94,
+        "duration": 294.17,
+        "press_time": 6543.86,
+        "release_time": 6838.03
+      },
+      {
+        "key": "space",
+        "delay": 182.45,
+        "duration": 77.27,
+        "press_time": 6726.31,
+        "release_time": 6803.58
+      },
+      {
+        "key": "q",
+        "delay": 234.54,
+        "duration": 278.89,
+        "press_time": 6960.85,
+        "release_time": 7239.73
+      },
+      {
+        "key": "u",
+        "delay": 216.27,
+        "duration": 135.59,
+        "press_time": 7177.11,
+        "release_time": 7312.71
+      },
+      {
+        "key": "i",
+        "delay": 251.44,
+        "duration": 272.25,
+        "press_time": 7428.55,
+        "release_time": 7700.8
+      },
+      {
+        "key": "c",
+        "delay": 198.76,
+        "duration": 301.92,
+        "press_time": 7627.31,
+        "release_time": 7929.22
+      },
+      {
+        "key": "k",
+        "delay": 224.31,
+        "duration": 411.93,
+        "press_time": 7851.61,
+        "release_time": 8263.54
+      },
+      {
+        "key": "l",
+        "delay": 259.47,
+        "duration": 280.25,
+        "press_time": 8111.08,
+        "release_time": 8391.33
+      },
+      {
+        "key": "y",
+        "delay": 213.92,
+        "duration": 232.54,
+        "press_time": 8325.01,
+        "release_time": 8557.55
+      }
+    ]
+  },
+  "jackdaws love my big sphinx of quartz": {
+    "pd": [
+      {
+        "key": "j",
+        "delay": 499.69,
+        "duration": 376.0,
+        "press_time": 499.69,
+        "release_time": 875.69
+      },
+      {
+        "key": "a",
+        "delay": 300.77,
+        "duration": 348.8,
+        "press_time": 800.46,
+        "release_time": 1149.25
+      },
+      {
+        "key": "c",
+        "delay": 322.51,
+        "duration": 218.91,
+        "press_time": 1122.97,
+        "release_time": 1341.89
+      },
+      {
+        "key": "k",
+        "delay": 333.31,
+        "duration": 324.36,
+        "press_time": 1456.28,
+        "release_time": 1780.64
+      },
+      {
+        "key": "d",
+        "delay": 503.29,
+        "duration": 141.58,
+        "press_time": 1959.58,
+        "release_time": 2101.16
+      },
+      {
+        "key": "a",
+        "delay": 390.17,
+        "duration": 418.17,
+        "press_time": 2349.75,
+        "release_time": 2767.92
+      },
+      {
+        "key": "w",
+        "delay": 390.7,
+        "duration": 264.72,
+        "press_time": 2740.45,
+        "release_time": 3005.17
+      },
+      {
+        "key": "s",
+        "delay": 315.21,
+        "duration": 475.32,
+        "press_time": 3055.65,
+        "release_time": 3530.97
+      },
+      {
+        "key": "space",
+        "delay": 370.46,
+        "duration": 276.83,
+        "press_time": 3426.11,
+        "release_time": 3702.95
+      },
+      {
+        "key": "l",
+        "delay": 372.77,
+        "duration": 50,
+        "press_time": 3798.88,
+        "release_time": 3848.88
+      },
+      {
+        "key": "o",
+        "delay": 371.3,
+        "duration": 338.46,
+        "press_time": 4170.18,
+        "release_time": 4508.64
+      },
+      {
+        "key": "v",
+        "delay": 358.58,
+        "duration": 296.65,
+        "press_time": 4528.76,
+        "release_time": 4825.41
+      },
+      {
+        "key": "e",
+        "delay": 342.7,
+        "duration": 336.01,
+        "press_time": 4871.46,
+        "release_time": 5207.46
+      },
+      {
+        "key": "space",
+        "delay": 275.59,
+        "duration": 421.73,
+        "press_time": 5147.04,
+        "release_time": 5568.77
+      },
+      {
+        "key": "m",
+        "delay": 394.59,
+        "duration": 238.23,
+        "press_time": 5541.63,
+        "release_time": 5779.86
+      },
+      {
+        "key": "y",
+        "delay": 371.14,
+        "duration": 237.05,
+        "press_time": 5912.77,
+        "release_time": 6149.82
+      },
+      {
+        "key": "space",
+        "delay": 463.49,
+        "duration": 297.01,
+        "press_time": 6376.26,
+        "release_time": 6673.27
+      },
+      {
+        "key": "b",
+        "delay": 348.54,
+        "duration": 270.44,
+        "press_time": 6724.81,
+        "release_time": 6995.25
+      },
+      {
+        "key": "i",
+        "delay": 359.76,
+        "duration": 293.34,
+        "press_time": 7084.57,
+        "release_time": 7377.91
+      },
+      {
+        "key": "g",
+        "delay": 349.47,
+        "duration": 127.24,
+        "press_time": 7434.04,
+        "release_time": 7561.28
+      },
+      {
+        "key": "space",
+        "delay": 419.98,
+        "duration": 274.75,
+        "press_time": 7854.02,
+        "release_time": 8128.77
+      },
+      {
+        "key": "s",
+        "delay": 350.48,
+        "duration": 435.21,
+        "press_time": 8204.5,
+        "release_time": 8639.71
+      },
+      {
+        "key": "p",
+        "delay": 367.08,
+        "duration": 356.52,
+        "press_time": 8571.58,
+        "release_time": 8928.11
+      },
+      {
+        "key": "h",
+        "delay": 381.97,
+        "duration": 154.37,
+        "press_time": 8953.55,
+        "release_time": 9107.92
+      },
+      {
+        "key": "i",
+        "delay": 325.16,
+        "duration": 244.88,
+        "press_time": 9278.71,
+        "release_time": 9523.59
+      },
+      {
+        "key": "n",
+        "delay": 346.43,
+        "duration": 137.08,
+        "press_time": 9625.14,
+        "release_time": 9762.22
+      },
+      {
+        "key": "x",
+        "delay": 400.91,
+        "duration": 359.74,
+        "press_time": 10026.06,
+        "release_time": 10385.8
+      },
+      {
+        "key": "space",
+        "delay": 368.67,
+        "duration": 337.26,
+        "press_time": 10394.73,
+        "release_time": 10731.99
+      },
+      {
+        "key": "o",
+        "delay": 397.87,
+        "duration": 211.49,
+        "press_time": 10792.6,
+        "release_time": 11004.09
+      },
+      {
+        "key": "f",
+        "delay": 401.33,
+        "duration": 361.13,
+        "press_time": 11193.93,
+        "release_time": 11555.05
+      },
+      {
+        "key": "space",
+        "delay": 384.86,
+        "duration": 530.54,
+        "press_time": 11578.79,
+        "release_time": 12109.33
+      },
+      {
+        "key": "q",
+        "delay": 340.19,
+        "duration": 258.26,
+        "press_time": 11918.98,
+        "release_time": 12177.24
+      },
+      {
+        "key": "u",
+        "delay": 370.1,
+        "duration": 122.45,
+        "press_time": 12289.08,
+        "release_time": 12411.53
+      },
+      {
+        "key": "a",
+        "delay": 317.78,
+        "duration": 417.01,
+        "press_time": 12606.86,
+        "release_time": 13023.88
+      },
+      {
+        "key": "r",
+        "delay": 310.03,
+        "duration": 220.66,
+        "press_time": 12916.9,
+        "release_time": 13137.56
+      },
+      {
+        "key": "t",
+        "delay": 354.07,
+        "duration": 391.28,
+        "press_time": 13270.96,
+        "release_time": 13662.24
+      },
+      {
+        "key": "z",
+        "delay": 346.57,
+        "duration": 343.65,
+        "press_time": 13617.53,
+        "release_time": 13961.18
+      }
+    ],
+    "control": [
+      {
+        "key": "j",
+        "delay": 315.51,
+        "duration": 280.34,
+        "press_time": 315.51,
+        "release_time": 595.85
+      },
+      {
+        "key": "a",
+        "delay": 247.95,
+        "duration": 237.5,
+        "press_time": 563.46,
+        "release_time": 800.96
+      },
+      {
+        "key": "c",
+        "delay": 202.24,
+        "duration": 224.08,
+        "press_time": 765.7,
+        "release_time": 989.78
+      },
+      {
+        "key": "k",
+        "delay": 180.36,
+        "duration": 295.4,
+        "press_time": 946.07,
+        "release_time": 1241.47
+      },
+      {
+        "key": "d",
+        "delay": 185.9,
+        "duration": 426.03,
+        "press_time": 1131.96,
+        "release_time": 1557.99
+      },
+      {
+        "key": "a",
+        "delay": 211.33,
+        "duration": 314.38,
+        "press_time": 1343.3,
+        "release_time": 1657.67
+      },
+      {
+        "key": "w",
+        "delay": 227.18,
+        "duration": 314.74,
+        "press_time": 1570.48,
+        "release_time": 1885.22
+      },
+      {
+        "key": "s",
+        "delay": 243.86,
+        "duration": 346.29,
+        "press_time": 1814.34,
+        "release_time": 2160.63
+      },
+      {
+        "key": "space",
+        "delay": 223.41,
+        "duration": 354.49,
+        "press_time": 2037.75,
+        "release_time": 2392.24
+      },
+      {
+        "key": "l",
+        "delay": 244.35,
+        "duration": 193.13,
+        "press_time": 2282.1,
+        "release_time": 2475.23
+      },
+      {
+        "key": "o",
+        "delay": 278.58,
+        "duration": 267.75,
+        "press_time": 2560.68,
+        "release_time": 2828.43
+      },
+      {
+        "key": "v",
+        "delay": 233.21,
+        "duration": 359.97,
+        "press_time": 2793.89,
+        "release_time": 3153.85
+      },
+      {
+        "key": "e",
+        "delay": 270.74,
+        "duration": 223.59,
+        "press_time": 3064.63,
+        "release_time": 3288.22
+      },
+      {
+        "key": "space",
+        "delay": 262.16,
+        "duration": 264.34,
+        "press_time": 3326.79,
+        "release_time": 3591.13
+      },
+      {
+        "key": "m",
+        "delay": 220.55,
+        "duration": 213.89,
+        "press_time": 3547.34,
+        "release_time": 3761.23
+      },
+      {
+        "key": "y",
+        "delay": 189.3,
+        "duration": 221.76,
+        "press_time": 3736.64,
+        "release_time": 3958.4
+      },
+      {
+        "key": "space",
+        "delay": 211.67,
+        "duration": 254.25,
+        "press_time": 3948.31,
+        "release_time": 4202.56
+      },
+      {
+        "key": "b",
+        "delay": 235.58,
+        "duration": 289.14,
+        "press_time": 4183.89,
+        "release_time": 4473.03
+      },
+      {
+        "key": "i",
+        "delay": 245.54,
+        "duration": 293.59,
+        "press_time": 4429.43,
+        "release_time": 4723.02
+      },
+      {
+        "key": "g",
+        "delay": 227.47,
+        "duration": 223.95,
+        "press_time": 4656.9,
+        "release_time": 4880.85
+      },
+      {
+        "key": "space",
+        "delay": 156.72,
+        "duration": 171.09,
+        "press_time": 4813.61,
+        "release_time": 4984.7
+      },
+      {
+        "key": "s",
+        "delay": 217.12,
+        "duration": 287.6,
+        "press_time": 5030.73,
+        "release_time": 5318.33
+      },
+      {
+        "key": "p",
+        "delay": 212.59,
+        "duration": 353.01,
+        "press_time": 5243.32,
+        "release_time": 5596.33
+      },
+      {
+        "key": "h",
+        "delay": 244.68,
+        "duration": 263.8,
+        "press_time": 5488.01,
+        "release_time": 5751.81
+      },
+      {
+        "key": "i",
+        "delay": 232.56,
+        "duration": 309.08,
+        "press_time": 5720.56,
+        "release_time": 6029.64
+      },
+      {
+        "key": "n",
+        "delay": 248.07,
+        "duration": 280.49,
+        "press_time": 5968.63,
+        "release_time": 6249.11
+      },
+      {
+        "key": "x",
+        "delay": 262.58,
+        "duration": 257.18,
+        "press_time": 6231.21,
+        "release_time": 6488.38
+      },
+      {
+        "key": "space",
+        "delay": 229.96,
+        "duration": 236.48,
+        "press_time": 6461.17,
+        "release_time": 6697.64
+      },
+      {
+        "key": "o",
+        "delay": 200.41,
+        "duration": 279.54,
+        "press_time": 6661.58,
+        "release_time": 6941.12
+      },
+      {
+        "key": "f",
+        "delay": 200.23,
+        "duration": 282.23,
+        "press_time": 6861.82,
+        "release_time": 7144.05
+      },
+      {
+        "key": "space",
+        "delay": 245.21,
+        "duration": 95.55,
+        "press_time": 7107.02,
+        "release_time": 7202.57
+      },
+      {
+        "key": "q",
+        "delay": 237.86,
+        "duration": 348.08,
+        "press_time": 7344.89,
+        "release_time": 7692.97
+      },
+      {
+        "key": "u",
+        "delay": 222.1,
+        "duration": 168.48,
+        "press_time": 7566.98,
+        "release_time": 7735.46
+      },
+      {
+        "key": "a",
+        "delay": 197.53,
+        "duration": 252.63,
+        "press_time": 7764.51,
+        "release_time": 8017.14
+      },
+      {
+        "key": "r",
+        "delay": 186.48,
+        "duration": 225.22,
+        "press_time": 7951.0,
+        "release_time": 8176.21
+      },
+      {
+        "key": "t",
+        "delay": 228.34,
+        "duration": 125.8,
+        "press_time": 8179.33,
+        "release_time": 8305.13
+      },
+      {
+        "key": "z",
+        "delay": 178.87,
+        "duration": 319.61,
+        "press_time": 8358.2,
+        "release_time": 8677.81
+      }
+    ]
+  },
+  "two driven jocks help fax my big quiz": {
+    "pd": [
+      {
+        "key": "t",
+        "delay": 526.62,
+        "duration": 379.07,
+        "press_time": 526.62,
+        "release_time": 905.69
+      },
+      {
+        "key": "w",
+        "delay": 393.44,
+        "duration": 269.56,
+        "press_time": 920.06,
+        "release_time": 1189.61
+      },
+      {
+        "key": "o",
+        "delay": 422.52,
+        "duration": 433.28,
+        "press_time": 1342.58,
+        "release_time": 1775.86
+      },
+      {
+        "key": "space",
+        "delay": 347.77,
+        "duration": 392.51,
+        "press_time": 1690.35,
+        "release_time": 2082.86
+      },
+      {
+        "key": "d",
+        "delay": 403.53,
+        "duration": 163.86,
+        "press_time": 2093.88,
+        "release_time": 2257.74
+      },
+      {
+        "key": "r",
+        "delay": 407.32,
+        "duration": 238.35,
+        "press_time": 2501.2,
+        "release_time": 2739.55
+      },
+      {
+        "key": "i",
+        "delay": 355.96,
+        "duration": 242.44,
+        "press_time": 2857.15,
+        "release_time": 3099.59
+      },
+      {
+        "key": "v",
+        "delay": 402.14,
+        "duration": 50,
+        "press_time": 3259.3,
+        "release_time": 3309.3
+      },
+      {
+        "key": "e",
+        "delay": 398.45,
+        "duration": 472.54,
+        "press_time": 3657.75,
+        "release_time": 4130.29
+      },
+      {
+        "key": "n",
+        "delay": 338.67,
+        "duration": 178.71,
+        "press_time": 3996.42,
+        "release_time": 4175.13
+      },
+      {
+        "key": "space",
+        "delay": 317.81,
+        "duration": 326.55,
+        "press_time": 4314.23,
+        "release_time": 4640.78
+      },
+      {
+        "key": "j",
+        "delay": 393.02,
+        "duration": 376.64,
+        "press_time": 4707.25,
+        "release_time": 5083.89
+      },
+      {
+        "key": "o",
+        "delay": 446.48,
+        "duration": 227.75,
+        "press_time": 5153.74,
+        "release_time": 5381.49
+      },
+      {
+        "key": "c",
+        "delay": 373.36,
+        "duration": 85.24,
+        "press_time": 5527.09,
+        "release_time": 5612.33
+      },
+      {
+        "key": "k",
+        "delay": 338.92,
+        "duration": 320.62,
+        "press_time": 5866.02,
+        "release_time": 6186.64
+      },
+      {
+        "key": "s",
+        "delay": 469.01,
+        "duration": 472.46,
+        "press_time": 6335.03,
+        "release_time": 6807.49
+      },
+      {
+        "key": "space",
+        "delay": 435.5,
+        "duration": 409.7,
+        "press_time": 6770.53,
+        "release_time": 7180.22
+      },
+      {
+        "key": "h",
+        "delay": 425.34,
+        "duration": 259.63,
+        "press_time": 7195.87,
+        "release_time": 7455.5
+      },
+      {
+        "key": "e",
+        "delay": 286.3,
+        "duration": 386.42,
+        "press_time": 7482.17,
+        "release_time": 7868.59
+      },
+      {
+        "key": "l",
+        "delay": 374.14,
+        "duration": 253.6,
+        "press_time": 7856.31,
+        "release_time": 8109.91
+      },
+      {
+        "key": "p",
+        "delay": 343.81,
+        "duration": 415.75,
+        "press_time": 8200.12,
+        "release_time": 8615.87
+      },
+      {
+        "key": "space",
+        "delay": 353.88,
+        "duration": 366.65,
+        "press_time": 8554.0,
+        "release_time": 8920.66
+      },
+      {
+        "key": "f",
+        "delay": 388.98,
+        "duration": 327.86,
+        "press_time": 8942.98,
+        "release_time": 9270.84
+      },
+      {
+        "key": "a",
+        "delay": 373.48,
+        "duration": 210.41,
+        "press_time": 9316.46,
+        "release_time": 9526.87
+      },
+      {
+        "key": "x",
+        "delay": 399.78,
+        "duration": 307.63,
+        "press_time": 9716.24,
+        "release_time": 10023.87
+      },
+      {
+        "key": "space",
+        "delay": 351.73,
+        "duration": 450.25,
+        "press_time": 10067.97,
+        "release_time": 10518.21
+      },
+      {
+        "key": "m",
+        "delay": 350.72,
+        "duration": 298.67,
+        "press_time": 10418.68,
+        "release_time": 10717.35
+      },
+      {
+        "key": "y",
+        "delay": 439.86,
+        "duration": 264.53,
+        "press_time": 10858.54,
+        "release_time": 11123.07
+      },
+      {
+        "key": "space",
+        "delay": 395.58,
+        "duration": 348.1,
+        "press_time": 11254.12,
+        "release_time": 11602.22
+      },
+      {
+        "key": "b",
+        "delay": 332.29,
+        "duration": 301.61,
+        "press_time": 11586.41,
+        "release_time": 11888.02
+      },
+      {
+        "key": "i",
+        "delay": 351.36,
+        "duration": 232.7,
+        "press_time": 11937.77,
+        "release_time": 12170.47
+      },
+      {
+        "key": "g",
+        "delay": 360.33,
+        "duration": 193.2,
+        "press_time": 12298.09,
+        "release_time": 12491.3
+      },
+      {
+        "key": "space",
+        "delay": 447.62,
+        "duration": 210.48,
+        "press_time": 12745.72,
+        "release_time": 12956.19
+      },
+      {
+        "key": "q",
+        "delay": 438.49,
+        "duration": 297.59,
+        "press_time": 13184.21,
+        "release_time": 13481.79
+      },
+      {
+        "key": "u",
+        "delay": 361.9,
+        "duration": 255.76,
+        "press_time": 13546.1,
+        "release_time": 13801.86
+      },
+      {
+        "key": "i",
+        "delay": 404.27,
+        "duration": 216.27,
+        "press_time": 13950.37,
+        "release_time": 14166.64
+      },
+      {
+        "key": "z",
+        "delay": 366.63,
+        "duration": 308.06,
+        "press_time": 14317.0,
+        "release_time": 14625.06
+      }
+    ],
+    "control": [
+      {
+        "key": "t",
+        "delay": 263.77,
+        "duration": 312.33,
+        "press_time": 263.77,
+        "release_time": 576.1
+      },
+      {
+        "key": "w",
+        "delay": 246.9,
+        "duration": 338.04,
+        "press_time": 510.67,
+        "release_time": 848.71
+      },
+      {
+        "key": "o",
+        "delay": 177.55,
+        "duration": 335.07,
+        "press_time": 688.23,
+        "release_time": 1023.3
+      },
+      {
+        "key": "space",
+        "delay": 265.31,
+        "duration": 267.65,
+        "press_time": 953.54,
+        "release_time": 1221.19
+      },
+      {
+        "key": "d",
+        "delay": 187.25,
+        "duration": 281.01,
+        "press_time": 1140.79,
+        "release_time": 1421.8
+      },
+      {
+        "key": "r",
+        "delay": 194.89,
+        "duration": 243.98,
+        "press_time": 1335.68,
+        "release_time": 1579.66
+      },
+      {
+        "key": "i",
+        "delay": 202.07,
+        "duration": 391.38,
+        "press_time": 1537.75,
+        "release_time": 1929.12
+      },
+      {
+        "key": "v",
+        "delay": 222.12,
+        "duration": 383.38,
+        "press_time": 1759.86,
+        "release_time": 2143.25
+      },
+      {
+        "key": "e",
+        "delay": 271.83,
+        "duration": 220.67,
+        "press_time": 2031.69,
+        "release_time": 2252.36
+      },
+      {
+        "key": "n",
+        "delay": 227.4,
+        "duration": 256.52,
+        "press_time": 2259.1,
+        "release_time": 2515.61
+      },
+      {
+        "key": "space",
+        "delay": 285.78,
+        "duration": 326.06,
+        "press_time": 2544.88,
+        "release_time": 2870.94
+      },
+      {
+        "key": "j",
+        "delay": 181.73,
+        "duration": 246.4,
+        "press_time": 2726.61,
+        "release_time": 2973.01
+      },
+      {
+        "key": "o",
+        "delay": 235.97,
+        "duration": 228.57,
+        "press_time": 2962.58,
+        "release_time": 3191.15
+      },
+      {
+        "key": "c",
+        "delay": 199.77,
+        "duration": 308.67,
+        "press_time": 3162.36,
+        "release_time": 3471.02
+      },
+      {
+        "key": "k",
+        "delay": 201.94,
+        "duration": 155.29,
+        "press_time": 3364.3,
+        "release_time": 3519.59
+      },
+      {
+        "key": "s",
+        "delay": 248.86,
+        "duration": 275.29,
+        "press_time": 3613.15,
+        "release_time": 3888.44
+      },
+      {
+        "key": "space",
+        "delay": 199.96,
+        "duration": 162.98,
+        "press_time": 3813.11,
+        "release_time": 3976.09
+      },
+      {
+        "key": "h",
+        "delay": 213.61,
+        "duration": 234.81,
+        "press_time": 4026.72,
+        "release_time": 4261.53
+      },
+      {
+        "key": "e",
+        "delay": 193.6,
+        "duration": 188.6,
+        "press_time": 4220.33,
+        "release_time": 4408.93
+      },
+      {
+        "key": "l",
+        "delay": 271.1,
+        "duration": 321.57,
+        "press_time": 4491.43,
+        "release_time": 4812.99
+      },
+      {
+        "key": "p",
+        "delay": 247.33,
+        "duration": 256.74,
+        "press_time": 4738.76,
+        "release_time": 4995.5
+      },
+      {
+        "key": "space",
+        "delay": 201.34,
+        "duration": 101.79,
+        "press_time": 4940.1,
+        "release_time": 5041.89
+      },
+      {
+        "key": "f",
+        "delay": 218.76,
+        "duration": 290.42,
+        "press_time": 5158.86,
+        "release_time": 5449.28
+      },
+      {
+        "key": "a",
+        "delay": 223.17,
+        "duration": 273.04,
+        "press_time": 5382.03,
+        "release_time": 5655.06
+      },
+      {
+        "key": "x",
+        "delay": 231.61,
+        "duration": 294.24,
+        "press_time": 5613.64,
+        "release_time": 5907.88
+      },
+      {
+        "key": "space",
+        "delay": 233.09,
+        "duration": 184.25,
+        "press_time": 5846.73,
+        "release_time": 6030.98
+      },
+      {
+        "key": "m",
+        "delay": 230.05,
+        "duration": 289.9,
+        "press_time": 6076.78,
+        "release_time": 6366.68
+      },
+      {
+        "key": "y",
+        "delay": 211.17,
+        "duration": 206.78,
+        "press_time": 6287.95,
+        "release_time": 6494.72
+      },
+      {
+        "key": "space",
+        "delay": 257.46,
+        "duration": 276.67,
+        "press_time": 6545.4,
+        "release_time": 6822.07
+      },
+      {
+        "key": "b",
+        "delay": 204.43,
+        "duration": 297.74,
+        "press_time": 6749.83,
+        "release_time": 7047.57
+      },
+      {
+        "key": "i",
+        "delay": 214.72,
+        "duration": 258.05,
+        "press_time": 6964.55,
+        "release_time": 7222.59
+      },
+      {
+        "key": "g",
+        "delay": 179.14,
+        "duration": 453.23,
+        "press_time": 7143.68,
+        "release_time": 7596.91
+      },
+      {
+        "key": "space",
+        "delay": 233.91,
+        "duration": 170.81,
+        "press_time": 7377.59,
+        "release_time": 7548.4
+      },
+      {
+        "key": "q",
+        "delay": 239.1,
+        "duration": 318.1,
+        "press_time": 7616.69,
+        "release_time": 7934.79
+      },
+      {
+        "key": "u",
+        "delay": 213.58,
+        "duration": 251.1,
+        "press_time": 7830.27,
+        "release_time": 8081.38
+      },
+      {
+        "key": "i",
+        "delay": 171.66,
+        "duration": 236.19,
+        "press_time": 8001.93,
+        "release_time": 8238.12
+      },
+      {
+        "key": "z",
+        "delay": 228.97,
+        "duration": 240.92,
+        "press_time": 8230.9,
+        "release_time": 8471.82
+      }
+    ]
+  },
+  "five quacking zephyrs jolt my wax bed": {
+    "pd": [
+      {
+        "key": "f",
+        "delay": 550.17,
+        "duration": 333.72,
+        "press_time": 550.17,
+        "release_time": 883.88
+      },
+      {
+        "key": "i",
+        "delay": 356.83,
+        "duration": 362.15,
+        "press_time": 906.99,
+        "release_time": 1269.15
+      },
+      {
+        "key": "v",
+        "delay": 433.18,
+        "duration": 421.39,
+        "press_time": 1340.18,
+        "release_time": 1761.57
+      },
+      {
+        "key": "e",
+        "delay": 354.55,
+        "duration": 234.3,
+        "press_time": 1694.73,
+        "release_time": 1929.03
+      },
+      {
+        "key": "space",
+        "delay": 347.83,
+        "duration": 274.7,
+        "press_time": 2042.56,
+        "release_time": 2317.26
+      },
+      {
+        "key": "q",
+        "delay": 356.06,
+        "duration": 271.93,
+        "press_time": 2398.61,
+        "release_time": 2670.55
+      },
+      {
+        "key": "u",
+        "delay": 303.59,
+        "duration": 199.74,
+        "press_time": 2702.21,
+        "release_time": 2901.95
+      },
+      {
+        "key": "a",
+        "delay": 390.42,
+        "duration": 292.44,
+        "press_time": 3092.63,
+        "release_time": 3385.07
+      },
+      {
+        "key": "c",
+        "delay": 351.21,
+        "duration": 72.07,
+        "press_time": 3443.83,
+        "release_time": 3515.9
+      },
+      {
+        "key": "k",
+        "delay": 459.86,
+        "duration": 106.4,
+        "press_time": 3903.69,
+        "release_time": 4010.09
+      },
+      {
+        "key": "i",
+        "delay": 446.58,
+        "duration": 353.63,
+        "press_time": 4350.27,
+        "release_time": 4703.9
+      },
+      {
+        "key": "n",
+        "delay": 325.37,
+        "duration": 183.85,
+        "press_time": 4675.63,
+        "release_time": 4859.49
+      },
+      {
+        "key": "g",
+        "delay": 422.41,
+        "duration": 164.37,
+        "press_time": 5098.04,
+        "release_time": 5262.41
+      },
+      {
+        "key": "space",
+        "delay": 423.89,
+        "duration": 351.72,
+        "press_time": 5521.93,
+        "release_time": 5873.65
+      },
+      {
+        "key": "z",
+        "delay": 313.77,
+        "duration": 260.09,
+        "press_time": 5835.7,
+        "release_time": 6095.79
+      },
+      {
+        "key": "e",
+        "delay": 339.33,
+        "duration": 308.81,
+        "press_time": 6175.03,
+        "release_time": 6483.84
+      },
+      {
+        "key": "p",
+        "delay": 435.53,
+        "duration": 305.95,
+        "press_time": 6610.56,
+        "release_time": 6916.51
+      },
+      {
+        "key": "h",
+        "delay": 349.01,
+        "duration": 290.76,
+        "press_time": 6959.57,
+        "release_time": 7250.32
+      },
+      {
+        "key": "y",
+        "delay": 358.04,
+        "duration": 275.81,
+        "press_time": 7317.61,
+        "release_time": 7593.42
+      },
+      {
+        "key": "r",
+        "delay": 280.8,
+        "duration": 257.57,
+        "press_time": 7598.42,
+        "release_time": 7855.98
+      },
+      {
+        "key": "s",
+        "delay": 427.31,
+        "duration": 290.64,
+        "press_time": 8025.73,
+        "release_time": 8316.37
+      },
+      {
+        "key": "space",
+        "delay": 406.61,
+        "duration": 301.96,
+        "press_time": 8432.34,
+        "release_time": 8734.31
+      },
+      {
+        "key": "j",
+        "delay": 309.0,
+        "duration": 139.17,
+        "press_time": 8741.34,
+        "release_time": 8880.5
+      },
+      {
+        "key": "o",
+        "delay": 341.29,
+        "duration": 287.87,
+        "press_time": 9082.63,
+        "release_time": 9370.5
+      },
+      {
+        "key": "l",
+        "delay": 405.21,
+        "duration": 486.46,
+        "press_time": 9487.85,
+        "release_time": 9974.3
+      },
+      {
+        "key": "t",
+        "delay": 393.53,
+        "duration": 303.72,
+        "press_time": 9881.38,
+        "release_time": 10185.1
+      },
+      {
+        "key": "space",
+        "delay": 389.86,
+        "duration": 431.44,
+        "press_time": 10271.23,
+        "release_time": 10702.68
+      },
+      {
+        "key": "m",
+        "delay": 351.89,
+        "duration": 50,
+        "press_time": 10623.13,
+        "release_time": 10673.13
+      },
+      {
+        "key": "y",
+        "delay": 363.51,
+        "duration": 148.91,
+        "press_time": 10986.64,
+        "release_time": 11135.55
+      },
+      {
+        "key": "space",
+        "delay": 413.84,
+        "duration": 343.54,
+        "press_time": 11400.48,
+        "release_time": 11744.02
+      },
+      {
+        "key": "w",
+        "delay": 337.31,
+        "duration": 247.92,
+        "press_time": 11737.78,
+        "release_time": 11985.7
+      },
+      {
+        "key": "a",
+        "delay": 351.24,
+        "duration": 231.61,
+        "press_time": 12089.03,
+        "release_time": 12320.63
+      },
+      {
+        "key": "x",
+        "delay": 369.19,
+        "duration": 359.62,
+        "press_time": 12458.22,
+        "release_time": 12817.84
+      },
+      {
+        "key": "space",
+        "delay": 351.43,
+        "duration": 445.19,
+        "press_time": 12809.65,
+        "release_time": 13254.83
+      },
+      {
+        "key": "b",
+        "delay": 383.43,
+        "duration": 202.02,
+        "press_time": 13193.08,
+        "release_time": 13395.1
+      },
+      {
+        "key": "e",
+        "delay": 367.94,
+        "duration": 306.09,
+        "press_time": 13561.02,
+        "release_time": 13867.11
+      },
+      {
+        "key": "d",
+        "delay": 401.65,
+        "duration": 225.18,
+        "press_time": 13962.66,
+        "release_time": 14187.85
+      }
+    ],
+    "control": [
+      {
+        "key": "f",
+        "delay": 367.37,
+        "duration": 248.56,
+        "press_time": 367.37,
+        "release_time": 615.93
+      },
+      {
+        "key": "i",
+        "delay": 209.39,
+        "duration": 329.53,
+        "press_time": 576.76,
+        "release_time": 906.29
+      },
+      {
+        "key": "v",
+        "delay": 215.3,
+        "duration": 183.29,
+        "press_time": 792.06,
+        "release_time": 975.35
+      },
+      {
+        "key": "e",
+        "delay": 210.69,
+        "duration": 206.4,
+        "press_time": 1002.74,
+        "release_time": 1209.15
+      },
+      {
+        "key": "space",
+        "delay": 198.0,
+        "duration": 382.07,
+        "press_time": 1200.74,
+        "release_time": 1582.82
+      },
+      {
+        "key": "q",
+        "delay": 234.64,
+        "duration": 281.44,
+        "press_time": 1435.38,
+        "release_time": 1716.83
+      },
+      {
+        "key": "u",
+        "delay": 201.13,
+        "duration": 201.45,
+        "press_time": 1636.51,
+        "release_time": 1837.96
+      },
+      {
+        "key": "a",
+        "delay": 249.51,
+        "duration": 308.31,
+        "press_time": 1886.02,
+        "release_time": 2194.33
+      },
+      {
+        "key": "c",
+        "delay": 260.87,
+        "duration": 348.0,
+        "press_time": 2146.89,
+        "release_time": 2494.89
+      },
+      {
+        "key": "k",
+        "delay": 263.6,
+        "duration": 250.81,
+        "press_time": 2410.49,
+        "release_time": 2661.3
+      },
+      {
+        "key": "i",
+        "delay": 255.0,
+        "duration": 250.71,
+        "press_time": 2665.49,
+        "release_time": 2916.19
+      },
+      {
+        "key": "n",
+        "delay": 239.89,
+        "duration": 365.36,
+        "press_time": 2905.38,
+        "release_time": 3270.73
+      },
+      {
+        "key": "g",
+        "delay": 189.86,
+        "duration": 256.54,
+        "press_time": 3095.23,
+        "release_time": 3351.78
+      },
+      {
+        "key": "space",
+        "delay": 219.84,
+        "duration": 158.69,
+        "press_time": 3315.07,
+        "release_time": 3473.76
+      },
+      {
+        "key": "z",
+        "delay": 237.12,
+        "duration": 312.84,
+        "press_time": 3552.19,
+        "release_time": 3865.03
+      },
+      {
+        "key": "e",
+        "delay": 230.41,
+        "duration": 281.85,
+        "press_time": 3782.6,
+        "release_time": 4064.46
+      },
+      {
+        "key": "p",
+        "delay": 195.6,
+        "duration": 268.72,
+        "press_time": 3978.21,
+        "release_time": 4246.93
+      },
+      {
+        "key": "h",
+        "delay": 287.76,
+        "duration": 291.33,
+        "press_time": 4265.97,
+        "release_time": 4557.3
+      },
+      {
+        "key": "y",
+        "delay": 215.01,
+        "duration": 385.83,
+        "press_time": 4480.98,
+        "release_time": 4866.81
+      },
+      {
+        "key": "r",
+        "delay": 219.76,
+        "duration": 202.97,
+        "press_time": 4700.74,
+        "release_time": 4903.72
+      },
+      {
+        "key": "s",
+        "delay": 203.86,
+        "duration": 219.89,
+        "press_time": 4904.61,
+        "release_time": 5124.49
+      },
+      {
+        "key": "space",
+        "delay": 197.7,
+        "duration": 102.57,
+        "press_time": 5102.3,
+        "release_time": 5204.87
+      },
+      {
+        "key": "j",
+        "delay": 224.98,
+        "duration": 173.53,
+        "press_time": 5327.29,
+        "release_time": 5500.81
+      },
+      {
+        "key": "o",
+        "delay": 225.81,
+        "duration": 278.83,
+        "press_time": 5553.09,
+        "release_time": 5831.93
+      },
+      {
+        "key": "l",
+        "delay": 211.47,
+        "duration": 310.91,
+        "press_time": 5764.56,
+        "release_time": 6075.47
+      },
+      {
+        "key": "t",
+        "delay": 205.97,
+        "duration": 180.24,
+        "press_time": 5970.53,
+        "release_time": 6150.77
+      },
+      {
+        "key": "space",
+        "delay": 257.7,
+        "duration": 271.54,
+        "press_time": 6228.23,
+        "release_time": 6499.77
+      },
+      {
+        "key": "m",
+        "delay": 243.38,
+        "duration": 250.43,
+        "press_time": 6471.61,
+        "release_time": 6722.04
+      },
+      {
+        "key": "y",
+        "delay": 209.16,
+        "duration": 395.49,
+        "press_time": 6680.77,
+        "release_time": 7076.25
+      },
+      {
+        "key": "space",
+        "delay": 251.74,
+        "duration": 288.57,
+        "press_time": 6932.51,
+        "release_time": 7221.08
+      },
+      {
+        "key": "w",
+        "delay": 216.07,
+        "duration": 339.07,
+        "press_time": 7148.58,
+        "release_time": 7487.64
+      },
+      {
+        "key": "a",
+        "delay": 216.69,
+        "duration": 280.39,
+        "press_time": 7365.27,
+        "release_time": 7645.66
+      },
+      {
+        "key": "x",
+        "delay": 248.18,
+        "duration": 299.78,
+        "press_time": 7613.45,
+        "release_time": 7913.23
+      },
+      {
+        "key": "space",
+        "delay": 172.68,
+        "duration": 117.7,
+        "press_time": 7786.13,
+        "release_time": 7903.83
+      },
+      {
+        "key": "b",
+        "delay": 217.44,
+        "duration": 373.63,
+        "press_time": 8003.57,
+        "release_time": 8377.2
+      },
+      {
+        "key": "e",
+        "delay": 187.26,
+        "duration": 375.51,
+        "press_time": 8190.82,
+        "release_time": 8566.33
+      },
+      {
+        "key": "d",
+        "delay": 246.61,
+        "duration": 311.86,
+        "press_time": 8437.44,
+        "release_time": 8749.3
+      }
+    ]
+  },
+  "pack my red box with five dozen quality jugs": {
+    "pd": [
+      {
+        "key": "p",
+        "delay": 443.27,
+        "duration": 412.37,
+        "press_time": 443.27,
+        "release_time": 855.63
+      },
+      {
+        "key": "a",
+        "delay": 405.25,
+        "duration": 333.61,
+        "press_time": 848.51,
+        "release_time": 1182.12
+      },
+      {
+        "key": "c",
+        "delay": 303.47,
+        "duration": 230.62,
+        "press_time": 1151.99,
+        "release_time": 1382.61
+      },
+      {
+        "key": "k",
+        "delay": 372.6,
+        "duration": 381.94,
+        "press_time": 1524.59,
+        "release_time": 1906.52
+      },
+      {
+        "key": "space",
+        "delay": 377.97,
+        "duration": 293.89,
+        "press_time": 1902.55,
+        "release_time": 2196.44
+      },
+      {
+        "key": "m",
+        "delay": 335.01,
+        "duration": 299.91,
+        "press_time": 2237.57,
+        "release_time": 2537.47
+      },
+      {
+        "key": "y",
+        "delay": 363.43,
+        "duration": 245.0,
+        "press_time": 2601.0,
+        "release_time": 2846.0
+      },
+      {
+        "key": "space",
+        "delay": 419.39,
+        "duration": 429.76,
+        "press_time": 3020.39,
+        "release_time": 3450.15
+      },
+      {
+        "key": "r",
+        "delay": 365.81,
+        "duration": 413.61,
+        "press_time": 3386.2,
+        "release_time": 3799.81
+      },
+      {
+        "key": "e",
+        "delay": 370.11,
+        "duration": 199.87,
+        "press_time": 3756.31,
+        "release_time": 3956.18
+      },
+      {
+        "key": "d",
+        "delay": 450.38,
+        "duration": 403.8,
+        "press_time": 4206.69,
+        "release_time": 4610.49
+      },
+      {
+        "key": "space",
+        "delay": 319.06,
+        "duration": 334.35,
+        "press_time": 4525.75,
+        "release_time": 4860.09
+      },
+      {
+        "key": "b",
+        "delay": 379.63,
+        "duration": 419.81,
+        "press_time": 4905.37,
+        "release_time": 5325.19
+      },
+      {
+        "key": "o",
+        "delay": 410.41,
+        "duration": 277.44,
+        "press_time": 5315.79,
+        "release_time": 5593.23
+      },
+      {
+        "key": "x",
+        "delay": 395.63,
+        "duration": 231.51,
+        "press_time": 5711.42,
+        "release_time": 5942.93
+      },
+      {
+        "key": "space",
+        "delay": 360.56,
+        "duration": 318.3,
+        "press_time": 6071.98,
+        "release_time": 6390.28
+      },
+      {
+        "key": "w",
+        "delay": 442.74,
+        "duration": 363.41,
+        "press_time": 6514.72,
+        "release_time": 6878.13
+      },
+      {
+        "key": "i",
+        "delay": 415.16,
+        "duration": 456.57,
+        "press_time": 6929.88,
+        "release_time": 7386.45
+      },
+      {
+        "key": "t",
+        "delay": 376.82,
+        "duration": 299.0,
+        "press_time": 7306.7,
+        "release_time": 7605.7
+      },
+      {
+        "key": "h",
+        "delay": 363.38,
+        "duration": 168.51,
+        "press_time": 7670.08,
+        "release_time": 7838.59
+      },
+      {
+        "key": "space",
+        "delay": 379.7,
+        "duration": 376.24,
+        "press_time": 8049.78,
+        "release_time": 8426.02
+      },
+      {
+        "key": "f",
+        "delay": 406.33,
+        "duration": 234.23,
+        "press_time": 8456.11,
+        "release_time": 8690.34
+      },
+      {
+        "key": "i",
+        "delay": 401.19,
+        "duration": 353.39,
+        "press_time": 8857.3,
+        "release_time": 9210.69
+      },
+      {
+        "key": "v",
+        "delay": 386.87,
+        "duration": 403.86,
+        "press_time": 9244.17,
+        "release_time": 9648.03
+      },
+      {
+        "key": "e",
+        "delay": 388.61,
+        "duration": 459.3,
+        "press_time": 9632.78,
+        "release_time": 10092.08
+      },
+      {
+        "key": "space",
+        "delay": 406.63,
+        "duration": 299.1,
+        "press_time": 10039.41,
+        "release_time": 10338.52
+      },
+      {
+        "key": "d",
+        "delay": 433.8,
+        "duration": 363.86,
+        "press_time": 10473.21,
+        "release_time": 10837.07
+      },
+      {
+        "key": "o",
+        "delay": 392.06,
+        "duration": 200.37,
+        "press_time": 10865.27,
+        "release_time": 11065.63
+      },
+      {
+        "key": "z",
+        "delay": 400.98,
+        "duration": 58.75,
+        "press_time": 11266.24,
+        "release_time": 11325.0
+      },
+      {
+        "key": "e",
+        "delay": 349.99,
+        "duration": 394.03,
+        "press_time": 11616.23,
+        "release_time": 12010.26
+      },
+      {
+        "key": "n",
+        "delay": 379.34,
+        "duration": 240.89,
+        "press_time": 11995.57,
+        "release_time": 12236.46
+      },
+      {
+        "key": "space",
+        "delay": 356.41,
+        "duration": 309.42,
+        "press_time": 12351.98,
+        "release_time": 12661.4
+      },
+      {
+        "key": "q",
+        "delay": 383.04,
+        "duration": 323.14,
+        "press_time": 12735.01,
+        "release_time": 13058.16
+      },
+      {
+        "key": "u",
+        "delay": 412.98,
+        "duration": 471.21,
+        "press_time": 13147.99,
+        "release_time": 13619.21
+      },
+      {
+        "key": "a",
+        "delay": 384.12,
+        "duration": 301.55,
+        "press_time": 13532.11,
+        "release_time": 13833.67
+      },
+      {
+        "key": "l",
+        "delay": 318.6,
+        "duration": 230.07,
+        "press_time": 13850.72,
+        "release_time": 14080.79
+      },
+      {
+        "key": "i",
+        "delay": 395.37,
+        "duration": 271.3,
+        "press_time": 14246.09,
+        "release_time": 14517.39
+      },
+      {
+        "key": "t",
+        "delay": 452.21,
+        "duration": 313.81,
+        "press_time": 14698.3,
+        "release_time": 15012.11
+      },
+      {
+        "key": "y",
+        "delay": 384.69,
+        "duration": 382.11,
+        "press_time": 15082.99,
+        "release_time": 15465.1
+      },
+      {
+        "key": "space",
+        "delay": 301.77,
+        "duration": 322.42,
+        "press_time": 15384.76,
+        "release_time": 15707.18
+      },
+      {
+        "key": "j",
+        "delay": 351.68,
+        "duration": 357.1,
+        "press_time": 15736.45,
+        "release_time": 16093.55
+      },
+      {
+        "key": "u",
+        "delay": 394.81,
+        "duration": 415.29,
+        "press_time": 16131.25,
+        "release_time": 16546.55
+      },
+      {
+        "key": "g",
+        "delay": 435.09,
+        "duration": 243.75,
+        "press_time": 16566.34,
+        "release_time": 16810.09
+      },
+      {
+        "key": "s",
+        "delay": 324.92,
+        "duration": 113.67,
+        "press_time": 16891.26,
+        "release_time": 17004.93
+      }
+    ],
+    "control": [
+      {
+        "key": "p",
+        "delay": 266.61,
+        "duration": 379.5,
+        "press_time": 266.61,
+        "release_time": 646.11
+      },
+      {
+        "key": "a",
+        "delay": 218.54,
+        "duration": 350.97,
+        "press_time": 485.15,
+        "release_time": 836.11
+      },
+      {
+        "key": "c",
+        "delay": 225.29,
+        "duration": 341.71,
+        "press_time": 710.43,
+        "release_time": 1052.14
+      },
+      {
+        "key": "k",
+        "delay": 231.42,
+        "duration": 328.13,
+        "press_time": 941.85,
+        "release_time": 1269.98
+      },
+      {
+        "key": "space",
+        "delay": 227.0,
+        "duration": 162.81,
+        "press_time": 1168.85,
+        "release_time": 1331.66
+      },
+      {
+        "key": "m",
+        "delay": 228.8,
+        "duration": 370.69,
+        "press_time": 1397.64,
+        "release_time": 1768.33
+      },
+      {
+        "key": "y",
+        "delay": 219.07,
+        "duration": 350.94,
+        "press_time": 1616.71,
+        "release_time": 1967.66
+      },
+      {
+        "key": "space",
+        "delay": 232.43,
+        "duration": 264.05,
+        "press_time": 1849.15,
+        "release_time": 2113.2
+      },
+      {
+        "key": "r",
+        "delay": 183.48,
+        "duration": 209.27,
+        "press_time": 2032.63,
+        "release_time": 2241.9
+      },
+      {
+        "key": "e",
+        "delay": 237.45,
+        "duration": 384.22,
+        "press_time": 2270.08,
+        "release_time": 2654.3
+      },
+      {
+        "key": "d",
+        "delay": 207.82,
+        "duration": 188.02,
+        "press_time": 2477.9,
+        "release_time": 2665.92
+      },
+      {
+        "key": "space",
+        "delay": 216.24,
+        "duration": 257.9,
+        "press_time": 2694.14,
+        "release_time": 2952.05
+      },
+      {
+        "key": "b",
+        "delay": 270.01,
+        "duration": 307.12,
+        "press_time": 2964.15,
+        "release_time": 3271.27
+      },
+      {
+        "key": "o",
+        "delay": 226.08,
+        "duration": 247.42,
+        "press_time": 3190.23,
+        "release_time": 3437.65
+      },
+      {
+        "key": "x",
+        "delay": 255.51,
+        "duration": 270.05,
+        "press_time": 3445.74,
+        "release_time": 3715.78
+      },
+      {
+        "key": "space",
+        "delay": 196.95,
+        "duration": 284.02,
+        "press_time": 3642.69,
+        "release_time": 3926.71
+      },
+      {
+        "key": "w",
+        "delay": 195.54,
+        "duration": 209.43,
+        "press_time": 3838.23,
+        "release_time": 4047.65
+      },
+      {
+        "key": "i",
+        "delay": 218.07,
+        "duration": 339.92,
+        "press_time": 4056.29,
+        "release_time": 4396.21
+      },
+      {
+        "key": "t",
+        "delay": 266.93,
+        "duration": 396.43,
+        "press_time": 4323.22,
+        "release_time": 4719.66
+      },
+      {
+        "key": "h",
+        "delay": 222.13,
+        "duration": 314.58,
+        "press_time": 4545.35,
+        "release_time": 4859.94
+      },
+      {
+        "key": "space",
+        "delay": 202.39,
+        "duration": 177.89,
+        "press_time": 4747.74,
+        "release_time": 4925.62
+      },
+      {
+        "key": "f",
+        "delay": 244.01,
+        "duration": 265.79,
+        "press_time": 4991.75,
+        "release_time": 5257.54
+      },
+      {
+        "key": "i",
+        "delay": 250.02,
+        "duration": 383.79,
+        "press_time": 5241.77,
+        "release_time": 5625.56
+      },
+      {
+        "key": "v",
+        "delay": 212.19,
+        "duration": 279.71,
+        "press_time": 5453.96,
+        "release_time": 5733.67
+      },
+      {
+        "key": "e",
+        "delay": 197.71,
+        "duration": 313.44,
+        "press_time": 5651.67,
+        "release_time": 5965.11
+      },
+      {
+        "key": "space",
+        "delay": 177.73,
+        "duration": 180.49,
+        "press_time": 5829.4,
+        "release_time": 6009.89
+      },
+      {
+        "key": "d",
+        "delay": 249.96,
+        "duration": 248.15,
+        "press_time": 6079.36,
+        "release_time": 6327.5
+      },
+      {
+        "key": "o",
+        "delay": 201.53,
+        "duration": 380.53,
+        "press_time": 6280.88,
+        "release_time": 6661.42
+      },
+      {
+        "key": "z",
+        "delay": 215.36,
+        "duration": 407.65,
+        "press_time": 6496.25,
+        "release_time": 6903.9
+      },
+      {
+        "key": "e",
+        "delay": 219.76,
+        "duration": 93.89,
+        "press_time": 6716.0,
+        "release_time": 6809.89
+      },
+      {
+        "key": "n",
+        "delay": 222.24,
+        "duration": 292.43,
+        "press_time": 6938.24,
+        "release_time": 7230.67
+      },
+      {
+        "key": "space",
+        "delay": 257.06,
+        "duration": 320.13,
+        "press_time": 7195.3,
+        "release_time": 7515.42
+      },
+      {
+        "key": "q",
+        "delay": 187.62,
+        "duration": 186.4,
+        "press_time": 7382.92,
+        "release_time": 7569.32
+      },
+      {
+        "key": "u",
+        "delay": 227.46,
+        "duration": 475.79,
+        "press_time": 7610.38,
+        "release_time": 8086.18
+      },
+      {
+        "key": "a",
+        "delay": 212.25,
+        "duration": 161.36,
+        "press_time": 7822.63,
+        "release_time": 7983.99
+      },
+      {
+        "key": "l",
+        "delay": 208.94,
+        "duration": 302.95,
+        "press_time": 8031.57,
+        "release_time": 8334.52
+      },
+      {
+        "key": "i",
+        "delay": 199.32,
+        "duration": 162.1,
+        "press_time": 8230.89,
+        "release_time": 8392.99
+      },
+      {
+        "key": "t",
+        "delay": 230.71,
+        "duration": 312.06,
+        "press_time": 8461.6,
+        "release_time": 8773.66
+      },
+      {
+        "key": "y",
+        "delay": 210.31,
+        "duration": 347.56,
+        "press_time": 8671.9,
+        "release_time": 9019.46
+      },
+      {
+        "key": "space",
+        "delay": 193.06,
+        "duration": 213.67,
+        "press_time": 8864.96,
+        "release_time": 9078.64
+      },
+      {
+        "key": "j",
+        "delay": 224.42,
+        "duration": 340.08,
+        "press_time": 9089.38,
+        "release_time": 9429.47
+      },
+      {
+        "key": "u",
+        "delay": 216.53,
+        "duration": 214.89,
+        "press_time": 9305.92,
+        "release_time": 9520.81
+      },
+      {
+        "key": "g",
+        "delay": 196.18,
+        "duration": 210.31,
+        "press_time": 9502.1,
+        "release_time": 9712.42
+      },
+      {
+        "key": "s",
+        "delay": 186.63,
+        "duration": 257.87,
+        "press_time": 9688.73,
+        "release_time": 9946.6
+      }
+    ]
+  },
+  "the job requires extra pluck and zeal from every young wage earner": {
+    "pd": [
+      {
+        "key": "t",
+        "delay": 541.3,
+        "duration": 50,
+        "press_time": 541.3,
+        "release_time": 591.3
+      },
+      {
+        "key": "h",
+        "delay": 310.72,
+        "duration": 399.28,
+        "press_time": 852.02,
+        "release_time": 1251.31
+      },
+      {
+        "key": "e",
+        "delay": 362.48,
+        "duration": 309.9,
+        "press_time": 1214.51,
+        "release_time": 1524.41
+      },
+      {
+        "key": "space",
+        "delay": 385.26,
+        "duration": 394.23,
+        "press_time": 1599.77,
+        "release_time": 1993.99
+      },
+      {
+        "key": "j",
+        "delay": 324.86,
+        "duration": 298.36,
+        "press_time": 1924.63,
+        "release_time": 2223.0
+      },
+      {
+        "key": "o",
+        "delay": 434.36,
+        "duration": 297.42,
+        "press_time": 2358.99,
+        "release_time": 2656.41
+      },
+      {
+        "key": "b",
+        "delay": 366.91,
+        "duration": 329.98,
+        "press_time": 2725.91,
+        "release_time": 3055.89
+      },
+      {
+        "key": "space",
+        "delay": 384.86,
+        "duration": 384.71,
+        "press_time": 3110.77,
+        "release_time": 3495.47
+      },
+      {
+        "key": "r",
+        "delay": 452.35,
+        "duration": 348.26,
+        "press_time": 3563.12,
+        "release_time": 3911.38
+      },
+      {
+        "key": "e",
+        "delay": 433.38,
+        "duration": 123.65,
+        "press_time": 3996.5,
+        "release_time": 4120.16
+      },
+      {
+        "key": "q",
+        "delay": 440.95,
+        "duration": 172.22,
+        "press_time": 4437.46,
+        "release_time": 4609.68
+      },
+      {
+        "key": "u",
+        "delay": 409.28,
+        "duration": 318.37,
+        "press_time": 4846.74,
+        "release_time": 5165.1
+      },
+      {
+        "key": "i",
+        "delay": 369.72,
+        "duration": 329.43,
+        "press_time": 5216.46,
+        "release_time": 5545.89
+      },
+      {
+        "key": "r",
+        "delay": 412.8,
+        "duration": 241.5,
+        "press_time": 5629.26,
+        "release_time": 5870.76
+      },
+      {
+        "key": "e",
+        "delay": 409.94,
+        "duration": 421.36,
+        "press_time": 6039.2,
+        "release_time": 6460.55
+      },
+      {
+        "key": "s",
+        "delay": 447.03,
+        "duration": 330.24,
+        "press_time": 6486.23,
+        "release_time": 6816.47
+      },
+      {
+        "key": "space",
+        "delay": 386.96,
+        "duration": 286.31,
+        "press_time": 6873.19,
+        "release_time": 7159.5
+      },
+      {
+        "key": "e",
+        "delay": 326.61,
+        "duration": 339.13,
+        "press_time": 7199.8,
+        "release_time": 7538.93
+      },
+      {
+        "key": "x",
+        "delay": 416.58,
+        "duration": 211.57,
+        "press_time": 7616.38,
+        "release_time": 7827.95
+      },
+      {
+        "key": "t",
+        "delay": 436.38,
+        "duration": 343.43,
+        "press_time": 8052.76,
+        "release_time": 8396.19
+      },
+      {
+        "key": "r",
+        "delay": 362.76,
+        "duration": 222.66,
+        "press_time": 8415.52,
+        "release_time": 8638.19
+      },
+      {
+        "key": "a",
+        "delay": 327.17,
+        "duration": 50,
+        "press_time": 8742.7,
+        "release_time": 8792.7
+      },
+      {
+        "key": "space",
+        "delay": 373.98,
+        "duration": 291.32,
+        "press_time": 9116.68,
+        "release_time": 9408.01
+      },
+      {
+        "key": "p",
+        "delay": 326.41,
+        "duration": 495.45,
+        "press_time": 9443.09,
+        "release_time": 9938.54
+      },
+      {
+        "key": "l",
+        "delay": 404.21,
+        "duration": 222.38,
+        "press_time": 9847.3,
+        "release_time": 10069.68
+      },
+      {
+        "key": "u",
+        "delay": 336.93,
+        "duration": 316.92,
+        "press_time": 10184.23,
+        "release_time": 10501.15
+      },
+      {
+        "key": "c",
+        "delay": 282.87,
+        "duration": 448.76,
+        "press_time": 10467.1,
+        "release_time": 10915.86
+      },
+      {
+        "key": "k",
+        "delay": 339.92,
+        "duration": 303.03,
+        "press_time": 10807.02,
+        "release_time": 11110.05
+      },
+      {
+        "key": "space",
+        "delay": 304.56,
+        "duration": 358.77,
+        "press_time": 11111.58,
+        "release_time": 11470.36
+      },
+      {
+        "key": "a",
+        "delay": 388.46,
+        "duration": 308.06,
+        "press_time": 11500.05,
+        "release_time": 11808.11
+      },
+      {
+        "key": "n",
+        "delay": 416.08,
+        "duration": 276.05,
+        "press_time": 11916.13,
+        "release_time": 12192.18
+      },
+      {
+        "key": "d",
+        "delay": 294.36,
+        "duration": 341.07,
+        "press_time": 12210.49,
+        "release_time": 12551.57
+      },
+      {
+        "key": "space",
+        "delay": 371.8,
+        "duration": 437.99,
+        "press_time": 12582.3,
+        "release_time": 13020.29
+      },
+      {
+        "key": "z",
+        "delay": 368.44,
+        "duration": 152.97,
+        "press_time": 12950.73,
+        "release_time": 13103.7
+      },
+      {
+        "key": "e",
+        "delay": 367.06,
+        "duration": 323.78,
+        "press_time": 13317.79,
+        "release_time": 13641.57
+      },
+      {
+        "key": "a",
+        "delay": 332.13,
+        "duration": 222.4,
+        "press_time": 13649.92,
+        "release_time": 13872.33
+      },
+      {
+        "key": "l",
+        "delay": 347.59,
+        "duration": 332.6,
+        "press_time": 13997.52,
+        "release_time": 14330.12
+      },
+      {
+        "key": "space",
+        "delay": 349.43,
+        "duration": 386.23,
+        "press_time": 14346.95,
+        "release_time": 14733.18
+      },
+      {
+        "key": "f",
+        "delay": 335.59,
+        "duration": 336.52,
+        "press_time": 14682.54,
+        "release_time": 15019.06
+      },
+      {
+        "key": "r",
+        "delay": 289.99,
+        "duration": 279.71,
+        "press_time": 14972.53,
+        "release_time": 15252.24
+      },
+      {
+        "key": "o",
+        "delay": 416.87,
+        "duration": 364.84,
+        "press_time": 15389.4,
+        "release_time": 15754.24
+      },
+      {
+        "key": "m",
+        "delay": 368.63,
+        "duration": 266.9,
+        "press_time": 15758.03,
+        "release_time": 16024.93
+      },
+      {
+        "key": "space",
+        "delay": 383.65,
+        "duration": 323.11,
+        "press_time": 16141.68,
+        "release_time": 16464.79
+      },
+      {
+        "key": "e",
+        "delay": 405.26,
+        "duration": 50,
+        "press_time": 16546.94,
+        "release_time": 16596.94
+      },
+      {
+        "key": "v",
+        "delay": 383.71,
+        "duration": 317.67,
+        "press_time": 16930.65,
+        "release_time": 17248.32
+      },
+      {
+        "key": "e",
+        "delay": 412.09,
+        "duration": 438.3,
+        "press_time": 17342.75,
+        "release_time": 17781.04
+      },
+      {
+        "key": "r",
+        "delay": 382.88,
+        "duration": 487.82,
+        "press_time": 17725.63,
+        "release_time": 18213.45
+      },
+      {
+        "key": "y",
+        "delay": 352.59,
+        "duration": 141.15,
+        "press_time": 18078.22,
+        "release_time": 18219.38
+      },
+      {
+        "key": "space",
+        "delay": 377.78,
+        "duration": 264.14,
+        "press_time": 18456.0,
+        "release_time": 18720.14
+      },
+      {
+        "key": "y",
+        "delay": 411.82,
+        "duration": 273.16,
+        "press_time": 18867.82,
+        "release_time": 19140.98
+      },
+      {
+        "key": "o",
+        "delay": 348.82,
+        "duration": 392.47,
+        "press_time": 19216.64,
+        "release_time": 19609.11
+      },
+      {
+        "key": "u",
+        "delay": 443.18,
+        "duration": 117.99,
+        "press_time": 19659.83,
+        "release_time": 19777.82
+      },
+      {
+        "key": "n",
+        "delay": 403.66,
+        "duration": 182.44,
+        "press_time": 20063.49,
+        "release_time": 20245.93
+      },
+      {
+        "key": "g",
+        "delay": 334.95,
+        "duration": 252.88,
+        "press_time": 20398.44,
+        "release_time": 20651.31
+      },
+      {
+        "key": "space",
+        "delay": 361.03,
+        "duration": 398.12,
+        "press_time": 20759.47,
+        "release_time": 21157.59
+      },
+      {
+        "key": "w",
+        "delay": 325.9,
+        "duration": 344.99,
+        "press_time": 21085.37,
+        "release_time": 21430.36
+      },
+      {
+        "key": "a",
+        "delay": 354.45,
+        "duration": 308.23,
+        "press_time": 21439.83,
+        "release_time": 21748.06
+      },
+      {
+        "key": "g",
+        "delay": 253.72,
+        "duration": 139.84,
+        "press_time": 21693.55,
+        "release_time": 21833.4
+      },
+      {
+        "key": "e",
+        "delay": 322.98,
+        "duration": 202.11,
+        "press_time": 22016.53,
+        "release_time": 22218.64
+      },
+      {
+        "key": "space",
+        "delay": 354.81,
+        "duration": 424.53,
+        "press_time": 22371.34,
+        "release_time": 22795.87
+      },
+      {
+        "key": "e",
+        "delay": 400.73,
+        "duration": 531.11,
+        "press_time": 22772.07,
+        "release_time": 23303.18
+      },
+      {
+        "key": "a",
+        "delay": 415.26,
+        "duration": 412.47,
+        "press_time": 23187.34,
+        "release_time": 23599.81
+      },
+      {
+        "key": "r",
+        "delay": 374.1,
+        "duration": 130.74,
+        "press_time": 23561.44,
+        "release_time": 23692.18
+      },
+      {
+        "key": "n",
+        "delay": 348.17,
+        "duration": 239.02,
+        "press_time": 23909.61,
+        "release_time": 24148.63
+      },
+      {
+        "key": "e",
+        "delay": 315.74,
+        "duration": 151.72,
+        "press_time": 24225.35,
+        "release_time": 24377.07
+      },
+      {
+        "key": "r",
+        "delay": 316.67,
+        "duration": 348.68,
+        "press_time": 24542.02,
+        "release_time": 24890.71
+      }
+    ],
+    "control": [
+      {
+        "key": "t",
+        "delay": 316.5,
+        "duration": 208.01,
+        "press_time": 316.5,
+        "release_time": 524.52
+      },
+      {
+        "key": "h",
+        "delay": 217.06,
+        "duration": 213.26,
+        "press_time": 533.56,
+        "release_time": 746.82
+      },
+      {
+        "key": "e",
+        "delay": 251.05,
+        "duration": 464.77,
+        "press_time": 784.61,
+        "release_time": 1249.38
+      },
+      {
+        "key": "space",
+        "delay": 242.61,
+        "duration": 83.68,
+        "press_time": 1027.22,
+        "release_time": 1110.9
+      },
+      {
+        "key": "j",
+        "delay": 262.98,
+        "duration": 285.6,
+        "press_time": 1290.19,
+        "release_time": 1575.79
+      },
+      {
+        "key": "o",
+        "delay": 259.82,
+        "duration": 248.1,
+        "press_time": 1550.01,
+        "release_time": 1798.11
+      },
+      {
+        "key": "b",
+        "delay": 197.27,
+        "duration": 336.31,
+        "press_time": 1747.28,
+        "release_time": 2083.59
+      },
+      {
+        "key": "space",
+        "delay": 165.7,
+        "duration": 175.65,
+        "press_time": 1912.98,
+        "release_time": 2088.63
+      },
+      {
+        "key": "r",
+        "delay": 206.62,
+        "duration": 367.32,
+        "press_time": 2119.6,
+        "release_time": 2486.92
+      },
+      {
+        "key": "e",
+        "delay": 206.2,
+        "duration": 354.81,
+        "press_time": 2325.8,
+        "release_time": 2680.61
+      },
+      {
+        "key": "q",
+        "delay": 230.91,
+        "duration": 264.07,
+        "press_time": 2556.71,
+        "release_time": 2820.78
+      },
+      {
+        "key": "u",
+        "delay": 246.16,
+        "duration": 283.91,
+        "press_time": 2802.87,
+        "release_time": 3086.78
+      },
+      {
+        "key": "i",
+        "delay": 238.45,
+        "duration": 165.07,
+        "press_time": 3041.33,
+        "release_time": 3206.4
+      },
+      {
+        "key": "r",
+        "delay": 234.95,
+        "duration": 257.77,
+        "press_time": 3276.27,
+        "release_time": 3534.05
+      },
+      {
+        "key": "e",
+        "delay": 250.35,
+        "duration": 263.96,
+        "press_time": 3526.63,
+        "release_time": 3790.59
+      },
+      {
+        "key": "s",
+        "delay": 220.3,
+        "duration": 410.32,
+        "press_time": 3746.92,
+        "release_time": 4157.24
+      },
+      {
+        "key": "space",
+        "delay": 224.5,
+        "duration": 268.11,
+        "press_time": 3971.42,
+        "release_time": 4239.53
+      },
+      {
+        "key": "e",
+        "delay": 208.65,
+        "duration": 289.88,
+        "press_time": 4180.07,
+        "release_time": 4469.95
+      },
+      {
+        "key": "x",
+        "delay": 233.39,
+        "duration": 257.61,
+        "press_time": 4413.46,
+        "release_time": 4671.07
+      },
+      {
+        "key": "t",
+        "delay": 240.27,
+        "duration": 274.25,
+        "press_time": 4653.73,
+        "release_time": 4927.98
+      },
+      {
+        "key": "r",
+        "delay": 237.93,
+        "duration": 348.94,
+        "press_time": 4891.65,
+        "release_time": 5240.59
+      },
+      {
+        "key": "a",
+        "delay": 196.93,
+        "duration": 201.13,
+        "press_time": 5088.58,
+        "release_time": 5289.71
+      },
+      {
+        "key": "space",
+        "delay": 199.99,
+        "duration": 50,
+        "press_time": 5288.57,
+        "release_time": 5338.57
+      },
+      {
+        "key": "p",
+        "delay": 232.38,
+        "duration": 275.47,
+        "press_time": 5520.94,
+        "release_time": 5796.42
+      },
+      {
+        "key": "l",
+        "delay": 220.93,
+        "duration": 351.99,
+        "press_time": 5741.88,
+        "release_time": 6093.87
+      },
+      {
+        "key": "u",
+        "delay": 211.46,
+        "duration": 343.77,
+        "press_time": 5953.33,
+        "release_time": 6297.1
+      },
+      {
+        "key": "c",
+        "delay": 219.09,
+        "duration": 300.76,
+        "press_time": 6172.43,
+        "release_time": 6473.19
+      },
+      {
+        "key": "k",
+        "delay": 215.93,
+        "duration": 159.36,
+        "press_time": 6388.36,
+        "release_time": 6547.72
+      },
+      {
+        "key": "space",
+        "delay": 207.68,
+        "duration": 187.45,
+        "press_time": 6596.04,
+        "release_time": 6783.49
+      },
+      {
+        "key": "a",
+        "delay": 243.2,
+        "duration": 205.07,
+        "press_time": 6839.24,
+        "release_time": 7044.31
+      },
+      {
+        "key": "n",
+        "delay": 253.3,
+        "duration": 296.41,
+        "press_time": 7092.54,
+        "release_time": 7388.95
+      },
+      {
+        "key": "d",
+        "delay": 235.48,
+        "duration": 240.53,
+        "press_time": 7328.03,
+        "release_time": 7568.55
+      },
+      {
+        "key": "space",
+        "delay": 211.77,
+        "duration": 187.3,
+        "press_time": 7539.79,
+        "release_time": 7727.1
+      },
+      {
+        "key": "z",
+        "delay": 242.74,
+        "duration": 239.85,
+        "press_time": 7782.53,
+        "release_time": 8022.38
+      },
+      {
+        "key": "e",
+        "delay": 247.44,
+        "duration": 343.11,
+        "press_time": 8029.97,
+        "release_time": 8373.08
+      },
+      {
+        "key": "a",
+        "delay": 285.98,
+        "duration": 325.69,
+        "press_time": 8315.95,
+        "release_time": 8641.64
+      },
+      {
+        "key": "l",
+        "delay": 238.41,
+        "duration": 212.49,
+        "press_time": 8554.35,
+        "release_time": 8766.84
+      },
+      {
+        "key": "space",
+        "delay": 199.91,
+        "duration": 258.55,
+        "press_time": 8754.26,
+        "release_time": 9012.81
+      },
+      {
+        "key": "f",
+        "delay": 203.34,
+        "duration": 325.72,
+        "press_time": 8957.61,
+        "release_time": 9283.33
+      },
+      {
+        "key": "r",
+        "delay": 169.2,
+        "duration": 364.43,
+        "press_time": 9126.8,
+        "release_time": 9491.23
+      },
+      {
+        "key": "o",
+        "delay": 233.46,
+        "duration": 269.78,
+        "press_time": 9360.27,
+        "release_time": 9630.05
+      },
+      {
+        "key": "m",
+        "delay": 207.94,
+        "duration": 298.87,
+        "press_time": 9568.2,
+        "release_time": 9867.07
+      },
+      {
+        "key": "space",
+        "delay": 233.42,
+        "duration": 151.66,
+        "press_time": 9801.63,
+        "release_time": 9953.28
+      },
+      {
+        "key": "e",
+        "delay": 202.8,
+        "duration": 328.28,
+        "press_time": 10004.43,
+        "release_time": 10332.71
+      },
+      {
+        "key": "v",
+        "delay": 207.75,
+        "duration": 306.88,
+        "press_time": 10212.18,
+        "release_time": 10519.06
+      },
+      {
+        "key": "e",
+        "delay": 238.82,
+        "duration": 347.63,
+        "press_time": 10451.0,
+        "release_time": 10798.62
+      },
+      {
+        "key": "r",
+        "delay": 201.23,
+        "duration": 282.24,
+        "press_time": 10652.22,
+        "release_time": 10934.46
+      },
+      {
+        "key": "y",
+        "delay": 184.8,
+        "duration": 370.82,
+        "press_time": 10837.02,
+        "release_time": 11207.84
+      },
+      {
+        "key": "space",
+        "delay": 224.78,
+        "duration": 248.41,
+        "press_time": 11061.81,
+        "release_time": 11310.22
+      },
+      {
+        "key": "y",
+        "delay": 230.25,
+        "duration": 192.25,
+        "press_time": 11292.06,
+        "release_time": 11484.31
+      },
+      {
+        "key": "o",
+        "delay": 253.2,
+        "duration": 364.63,
+        "press_time": 11545.26,
+        "release_time": 11909.89
+      },
+      {
+        "key": "u",
+        "delay": 218.52,
+        "duration": 261.04,
+        "press_time": 11763.78,
+        "release_time": 12024.82
+      },
+      {
+        "key": "n",
+        "delay": 234.63,
+        "duration": 238.46,
+        "press_time": 11998.41,
+        "release_time": 12236.87
+      },
+      {
+        "key": "g",
+        "delay": 239.58,
+        "duration": 297.96,
+        "press_time": 12237.99,
+        "release_time": 12535.95
+      },
+      {
+        "key": "space",
+        "delay": 235.37,
+        "duration": 264.67,
+        "press_time": 12473.35,
+        "release_time": 12738.02
+      },
+      {
+        "key": "w",
+        "delay": 221.95,
+        "duration": 424.76,
+        "press_time": 12695.3,
+        "release_time": 13120.06
+      },
+      {
+        "key": "a",
+        "delay": 205.16,
+        "duration": 254.24,
+        "press_time": 12900.46,
+        "release_time": 13154.7
+      },
+      {
+        "key": "g",
+        "delay": 184.11,
+        "duration": 297.85,
+        "press_time": 13084.57,
+        "release_time": 13382.42
+      },
+      {
+        "key": "e",
+        "delay": 195.04,
+        "duration": 319.77,
+        "press_time": 13279.61,
+        "release_time": 13599.38
+      },
+      {
+        "key": "space",
+        "delay": 246.09,
+        "duration": 276.46,
+        "press_time": 13525.69,
+        "release_time": 13802.15
+      },
+      {
+        "key": "e",
+        "delay": 236.47,
+        "duration": 298.15,
+        "press_time": 13762.17,
+        "release_time": 14060.32
+      },
+      {
+        "key": "a",
+        "delay": 233.54,
+        "duration": 318.47,
+        "press_time": 13995.7,
+        "release_time": 14314.17
+      },
+      {
+        "key": "r",
+        "delay": 218.89,
+        "duration": 239.98,
+        "press_time": 14214.6,
+        "release_time": 14454.58
+      },
+      {
+        "key": "n",
+        "delay": 212.71,
+        "duration": 340.97,
+        "press_time": 14427.31,
+        "release_time": 14768.27
+      },
+      {
+        "key": "e",
+        "delay": 247.5,
+        "duration": 301.65,
+        "press_time": 14674.81,
+        "release_time": 14976.46
+      },
+      {
+        "key": "r",
+        "delay": 233.57,
+        "duration": 327.95,
+        "press_time": 14908.38,
+        "release_time": 15236.32
+      }
+    ]
+  }
+}

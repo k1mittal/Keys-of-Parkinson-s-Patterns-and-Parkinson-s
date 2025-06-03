@@ -1,52 +1,526 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project Prototype</title>
+    <title>Keys of Parkinson's: Patterns and Typing Analysis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="interactive-typing.css" />
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="global.js" type="module"></script>
   </head>
   <body>
-    <div class="container">
-      <h1>Keyboard Usage Pattern: Control vs PD Groups</h1>
-      <div class="controls">
-        <button class="toggle-btn active" data-group="control">
-          Control Group
-        </button>
-        <button class="toggle-btn" data-group="pd">PD Group</button>
-        <button id="theme-toggle" class="toggle-btn">Toggle Dark Mode</button>
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="container">
+        <div class="nav-left">
+          <h1 class="nav-title">Keys of Parkinson's</h1>
+          <div class="nav-links">
+            <a href="#introduction" class="nav-link">Introduction</a>
+            <a href="#patterns" class="nav-link">Patterns</a>
+            <a href="#analysis" class="nav-link">Analysis</a>
+            <a href="#interactive" class="nav-link">Try It</a>
+            <a href="#implications" class="nav-link">Implications</a>
+          </div>
+        </div>
+        <div class="nav-right">
+          <a
+            href="https://physionet.org/content/nqmitcsxpd/1.0.0/"
+            target="_blank"
+            class="nav-link"
+            >Data</a
+          >
+          <a
+            href="https://github.com/k1mittal/Keys-of-Parkinson-s-Patterns-and-Parkinson-s.git"
+            target="_blank"
+            class="github-link"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.374 0 0 5.373 0 12 0 17.302 3.438 21.8 8.207 23.387c.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"
+              />
+            </svg>
+          </a>
+          <div class="authors-dropdown">
+            <span class="nav-link dropdown-trigger">Authors ▼</span>
+            <div class="dropdown-content">
+              <a
+                href="https://www.linkedin.com/in/anirudha9/"
+                target="_blank"
+                class="dropdown-item"
+                >Anirudh Annabathula</a
+              >
+              <a href="#" target="_blank" class="dropdown-item">Kaii Bijlani</a>
+              <a href="#" target="_blank" class="dropdown-item">Ketan Mittal</a>
+              <a href="#" target="_blank" class="dropdown-item"
+                >Ganesh Kumaresan</a
+              >
+            </div>
+          </div>
+          <button id="theme-toggle" class="toggle-btn">🌙</button>
+        </div>
       </div>
-      <div id="keyboard"></div>
-    </div>
+    </nav>
 
-    <h1>1. What have you done so far?</h1>
-    <p>
-      So far, we have built the initial prototype of our interactive web
-      visualization using D3.js and published it through GitHub Pages. We’ve
-      implemented a heatmap in the shape of a keyboard that compares frequencies
-      of which keys are pressed between individuals with Parkinson’s Disease and
-      the control group. For each key on the keyboard, the heatmap shows how
-      frequently that key is pressed across both groups. This allows viewers to
-      spot patterns and differences. In addition, we have a toggle feature that
-      lets users switch between viewing the Parkinson's heatmap and the control
-      group heatmap.
-    </p>
+    <!-- Hero Section with Hook -->
+    <section class="hero-section">
+      <div class="container">
+        <h1>
+          What Your <span class="highlight-purple">Keyboard</span> Reveals About
+          Your <span class="highlight-orange">Brain</span
+          ><span class="blinking-cursor">|</span>
+        </h1>
+        <p class="subtitle">
+          Every keystroke tells a story. For millions with Parkinson's disease,
+          that story is written in the subtle timing between each letter they
+          type. Discover how digital biomarkers hidden in typing patterns could
+          revolutionize early detection and monitoring of neurological
+          conditions.
+        </p>
+      </div>
+    </section>
 
-    <h1>
-      2. What will be the most challenging part of your project to design and
-      why?
-    </h1>
-    <p>
-      The most challenging part of our project will be developing the live
-      typing interface that compares a user’s real-time typing patterns to the
-      patterns in the dataset. This means we have to capture keystroke events in
-      the browser and sync them with visual updates in real time. We’ll also
-      need to handle edge cases like backspaces and special keys while making
-      sure the performance stays smooth across different devices. Furthermore,
-      we’ll also need to design the interface so that the comparisons are clear
-      without overwhelming the user.
-    </p>
+    <!-- The Problem: Rising Parkinson's Crisis -->
+    <section class="content-section" id="introduction">
+      <div class="container">
+        <h2>The Silent <span class="highlight-red">Epidemic</span></h2>
+        <p>
+          Imagine waking up one day and noticing that simple tasks like typing
+          an email have become slightly more difficult. Your fingers don't quite
+          move the way they used to. This is the reality for over
+          <span class="stat-highlight">10 million people globally</span>
+          living with Parkinson's disease.
+        </p>
+        <div class="finding-box">
+          <p>
+            <strong>Alarming Trend:</strong> Parkinson's cases have increased by
+            <span class="stat-highlight">50% in the US alone</span> from 2012 to
+            2022, jumping from 60,000 to 90,000 new cases per year. Yet early
+            detection remains a significant challenge.
+          </p>
+        </div>
+        <p>
+          But what if the solution was literally at our fingertips? What if
+          every time someone typed, they were unknowingly providing valuable
+          data about their neurological health?
+        </p>
+      </div>
+    </section>
+
+    <!-- Keyboard Usage Patterns Visualization -->
+    <section class="content-section" id="patterns">
+      <div class="container">
+        <h2>Keyboard Usage <span class="highlight-purple">Patterns</span></h2>
+        <p>
+          The following visualization shows the frequency distribution of key
+          presses between control groups and individuals with Parkinson's
+          disease. Toggle between groups to explore the differences in typing
+          patterns.
+        </p>
+
+        <div class="viz-container">
+          <div class="controls">
+            <button class="toggle-btn active" data-group="control">
+              Control Group
+            </button>
+            <button class="toggle-btn" data-group="pd">PD Group</button>
+          </div>
+          <div id="keyboard"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Member Section: Typing Speed Analysis -->
+    <section class="content-section">
+      <div class="container">
+        <h2>The <span class="highlight-orange">Speed</span> Paradox</h2>
+        <p>
+          Here's where the story gets interesting. You might expect people with
+          Parkinson's to type significantly slower than healthy individuals. The
+          reality is far more nuanced.
+        </p>
+
+        <!-- Placeholder for Team Member Content: Omid's Typing Speed Visualization -->
+        <div class="team-content-placeholder">
+          <strong>Team Member Visualization Area:</strong> Typing Speed
+          Distribution Analysis <br /><em
+            >This section will contain interactive histograms and speed
+            comparisons by Omid, showing that 60% of Parkinson's patients type
+            between 60-140 WPM, compared to 52% of control subjects in the same
+            range.</em
+          >
+        </div>
+
+        <p>
+          The surprise? Typing speed alone isn't the smoking gun we expected.
+          <strong>60% of Parkinson's patients</strong> typed between 60-140 WPM,
+          compared to 52% of control subjects within the same range. The real
+          differences lie deeper...
+        </p>
+      </div>
+    </section>
+
+    <!-- Team Member Section: UPDRS Analysis -->
+    <section class="content-section">
+      <div class="container">
+        <h2>
+          Disease <span class="highlight-purple">Severity</span> & Performance
+        </h2>
+        <p>
+          The
+          <span class="highlight-purple"
+            ><strong
+              >Unified Parkinson's Disease Rating Scale (UPDRS-III)</strong
+            ></span
+          >
+          measures motor impairment severity. Higher scores indicate greater
+          movement difficulties, including tremors, rigidity, and bradykinesia.
+          Does severity correlate with typing ability?
+        </p>
+
+        <!-- Placeholder for Team Member Content: Jerric's Scatter Plot -->
+        <div class="team-content-placeholder">
+          <strong>Team Member Visualization Area:</strong> UPDRS vs Typing Speed
+          Scatter Plot <br /><em
+            >This section will contain Jerric's interactive scatter plot
+            analysis showing the relationship between UPDRS-III scores and
+            typing speed, revealing a -1.24 WPM decrease per UPDRS point
+            increase.</em
+          >
+        </div>
+
+        <div class="finding-box">
+          <p>
+            <strong>Key Finding:</strong> While there is a slight downward trend
+            of <span class="stat-highlight">-1.24 WPM</span> for every increase
+            in UPDRS score, the high variability suggests that disease severity
+            alone doesn't tell the full story.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Breakthrough: Keystroke Timing -->
+    <section class="content-section" id="analysis">
+      <div class="container">
+        <h2>The Hidden <span class="highlight-green">Biomarker</span></h2>
+        <p>
+          The breakthrough came when researchers looked beyond typing speed to
+          examine the micro-level timing of keystrokes. This is where the real
+          differences emerge.
+        </p>
+        <ul>
+          <li>
+            <strong>Delay Times:</strong> The flight time between releasing one
+            key and pressing the next
+          </li>
+          <li>
+            <strong>Duration Times:</strong> How long each key is held down
+          </li>
+          <li>
+            <strong>Timing Variability:</strong> The consistency (or lack
+            thereof) in these patterns
+          </li>
+        </ul>
+        <div class="finding-box">
+          <p>
+            <strong>Statistical Significance:</strong> While delay time
+            differences are not statistically significant (p=0.43), duration
+            time differences are highly significant (p=0.02), making
+            <span class="stat-highlight">key press duration</span> a reliable
+            indicator of motor impairment.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Experience -->
+    <section class="content-section" id="interactive">
+      <div class="container">
+        <h2>Experience It <span class="highlight-purple">Yourself</span></h2>
+        <p>
+          Now it's your turn to explore these differences firsthand. The
+          interactive typing test below compares your typing patterns with those
+          from actual Parkinson's patients in real-time.
+        </p>
+        <p>
+          <strong>What you'll discover:</strong> Individuals with Parkinson's
+          show <span class="stat-highlight">2.5x longer delays</span> between
+          keystrokes and
+          <span class="stat-highlight">1.3x longer key press durations</span>
+          compared to control groups.
+        </p>
+
+        <!-- Interactive Typing Section -->
+        <div class="typing-test-section">
+          <div class="instructions">
+            <div class="instruction-header">
+              <h3>Interactive Typing Analysis</h3>
+              <div id="inline-notification" class="inline-notification">
+                <!-- Inline notification will appear here -->
+              </div>
+            </div>
+            <p>
+              Type the following text to compare your typing patterns with a
+              Parkinson's patient:
+            </p>
+            <div class="test-text" id="test-text">
+              <span class="prompt-text" id="prompt-text"></span>
+            </div>
+          </div>
+
+          <div class="input-container">
+            <textarea
+              id="typing-input"
+              placeholder="Click here and start typing..."
+              rows="3"
+            ></textarea>
+          </div>
+
+          <div class="reset-container">
+            <button id="reset-btn" class="reset-btn">Reset Test</button>
+          </div>
+
+          <div class="progress-bars-container">
+            <div class="progress-wrapper">
+              <span class="progress-label">Your Progress:</span>
+              <div class="progress-bar">
+                <div
+                  class="progress-fill user-progress"
+                  id="user-progress-fill"
+                ></div>
+              </div>
+            </div>
+            <div class="progress-wrapper">
+              <span class="progress-label">PD Patient Progress:</span>
+              <div class="progress-bar">
+                <div
+                  class="progress-fill pd-progress"
+                  id="pd-progress-fill"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="visualization-section">
+          <div class="keyboards-container">
+            <div class="keyboard-wrapper">
+              <h3>Your Typing</h3>
+              <div id="user-keyboard"></div>
+              <div class="stats">
+                <span>WPM: <span id="user-wpm">--</span></span>
+                <span>Keys: <span id="user-keys">--</span></span>
+              </div>
+            </div>
+
+            <div class="metrics-container" id="metrics-charts">
+              <!-- Metrics charts will be inserted here -->
+            </div>
+
+            <div class="keyboard-wrapper">
+              <h3>
+                Parkinson's Patient (pID: <span id="pd-patient-id">1001</span>)
+              </h3>
+              <div id="pd-keyboard"></div>
+              <div class="stats">
+                <span>WPM: <span id="pd-wpm">--</span></span>
+                <span>Keys: <span id="pd-keys">--</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="analysis-section">
+          <h3>Your Results</h3>
+
+          <!-- Loading animation -->
+          <div id="loading-container" class="loading-container">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">Analyzing your typing patterns...</p>
+          </div>
+
+          <div class="analysis-grid">
+            <div class="analysis-card">
+              <h4>Average Delay</h4>
+              <div class="comparison">
+                <div class="stat-item">
+                  <span class="label">You:</span>
+                  <span class="value" id="user-avg-delay">-- ms</span>
+                </div>
+                <div class="stat-item">
+                  <span class="label">PD Patient:</span>
+                  <span class="value" id="pd-avg-delay">-- ms</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="analysis-card">
+              <h4>Average Duration</h4>
+              <div class="comparison">
+                <div class="stat-item">
+                  <span class="label">You:</span>
+                  <span class="value" id="user-avg-duration">-- ms</span>
+                </div>
+                <div class="stat-item">
+                  <span class="label">PD Patient:</span>
+                  <span class="value" id="pd-avg-duration">-- ms</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="analysis-card">
+              <h4>Pattern Similarity</h4>
+              <div class="similarity-score">
+                <div
+                  class="score-circle"
+                  id="similarity-score"
+                  title="Hover for details"
+                >
+                  <span>--%</span>
+                </div>
+                <p id="similarity-interpretation"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Member Section: Deep Dive Analysis -->
+    <section class="content-section">
+      <div class="container">
+        <h2>Deep Dive <span class="highlight-orange">Analysis</span></h2>
+
+        <!-- Placeholder for Team Member Content: Matthew's Aggregate Analysis -->
+        <div class="team-content-placeholder">
+          <strong>Team Member Visualization Area:</strong> Comprehensive
+          Keystroke Analysis <br /><em
+            >This section will contain Matthew's detailed analysis including:
+            <br />• Key-wise heatmaps showing delay and duration differences
+            <br />• Aggregated delay and duration bar charts <br />• Statistical
+            significance testing and outlier analysis <br />• 2D density plots
+            comparing typing patterns</em
+          >
+        </div>
+
+        <p>
+          The deeper analysis reveals fascinating patterns across individual
+          keys, statistical distributions, and the relationship between delay
+          and duration measurements that paint a complete picture of motor
+          impairment signatures.
+        </p>
+      </div>
+    </section>
+
+    <!-- Clinical Implications -->
+    <section class="content-section" id="implications">
+      <div class="container">
+        <h2>Clinical <span class="highlight-green">Implications</span></h2>
+        <p>
+          These findings have profound implications for healthcare. Imagine a
+          world where:
+        </p>
+        <ul>
+          <li>
+            <strong>Early Detection:</strong> Subtle motor changes could be
+            detected years before clinical symptoms appear
+          </li>
+          <li>
+            <strong>Remote Monitoring:</strong> Patients could be monitored from
+            home through their daily computer use
+          </li>
+          <li>
+            <strong>Treatment Tracking:</strong> Medication effectiveness could
+            be measured through typing pattern changes
+          </li>
+          <li>
+            <strong>Accessible Screening:</strong> No expensive equipment needed
+            - just a computer and typing task
+          </li>
+        </ul>
+        <div class="finding-box">
+          <p>
+            <strong>The Vision:</strong> Digital biomarkers derived from typing
+            patterns could supplement traditional clinical assessments, making
+            neurological health monitoring as simple as typing an email.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conclusion and Takeaway -->
+    <section class="content-section">
+      <div class="container">
+        <h2>The <span class="highlight-purple">Takeaway</span></h2>
+        <p>
+          This research demonstrates that the most valuable insights often hide
+          in the details we typically ignore. While typing speed told us little,
+          the millisecond-level timing between keystrokes revealed a powerful
+          biomarker for neurological health.
+        </p>
+
+        <div class="finding-box">
+          <p>
+            <strong>Key Discovery:</strong> Duration of key presses, not typing
+            speed, serves as a statistically significant indicator (p=0.02) of
+            Parkinson's disease, opening new possibilities for early detection
+            and monitoring.
+          </p>
+        </div>
+
+        <h3>Project Impact</h3>
+        <p>
+          This explorable explanation used the NeuroQWERTY dataset from MIT to
+          analyze keystroke timing patterns from individuals with and without
+          Parkinson's disease. Through interactive visualization, you've
+          experienced firsthand how subtle timing differences can reveal
+          profound insights about neurological health.
+        </p>
+
+        <ul>
+          <li>
+            <strong>Methodology Validation:</strong> Our findings confirm that
+            keystroke dynamics can serve as digital biomarkers for motor
+            impairment
+          </li>
+          <li>
+            <strong>Clinical Potential:</strong> The technology could enable
+            early, non-invasive screening for Parkinson's disease
+          </li>
+          <li>
+            <strong>Future Applications:</strong> Similar approaches could be
+            applied to other neurological conditions affecting motor control
+          </li>
+          <li>
+            <strong>Accessibility:</strong> The simplicity of the typing test
+            makes it deployable in any setting with basic computer access
+          </li>
+        </ul>
+
+        <p>
+          <em
+            >The next time you type, remember: your keyboard might know more
+            about your brain health than you think.</em
+          >
+        </p>
+      </div>
+    </section>
+
+    <script src="global.js" type="module"></script>
+    <script src="interactive-typing.js"></script>
   </body>
 </html>

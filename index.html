@@ -18,9 +18,18 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="interactive-typing.css" />
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="interactive-keyboard-viz/src/css/styles.css" />
+    <script type="module">
+      import { init } from './interactive-keyboard-viz/src/js/keyboard.js';
+      import { updateDistributionChart } from './interactive-keyboard-viz/src/js/chart.js';
+      document.addEventListener('DOMContentLoaded', () => {
+        init();
+        updateDistributionChart();
+      });
+    </script>
   </head>
   <body>
     <!-- Navigation -->
@@ -126,19 +135,19 @@
         <h2>Keyboard Usage <span class="highlight-purple">Patterns</span></h2>
         <p>
           The following visualization shows the frequency distribution of key
-          presses between control groups and individuals with Parkinson's
-          disease. Toggle between groups to explore the differences in typing
-          patterns.
+          press times between control groups and individuals with Parkinson's
+          disease. Select multiple keys to explore how hold times differ between groups.
         </p>
 
         <div class="viz-container">
           <div class="controls">
-            <button class="toggle-btn active" data-group="control">
-              Control Group
-            </button>
-            <button class="toggle-btn" data-group="pd">PD Group</button>
+            <button id="viz-clear-selection" class="toggle-btn">Clear Selection</button>
+            <button id="viz-toggle-visualization" class="toggle-btn">Toggle Histogram</button>
           </div>
-          <div id="keyboard"></div>
+          <div class="visualization-layout">
+            <div id="keyboard-viz"></div>
+            <div id="distribution-viz"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -522,5 +531,6 @@
 
     <script src="global.js" type="module"></script>
     <script src="interactive-typing.js"></script>
+    <script src="interactive-keyboard-viz/src/js/chart.js" type="module"></script>
   </body>
 </html>

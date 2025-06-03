@@ -256,7 +256,7 @@ body::before {
 
 /* Content Sections */
 .content-section {
-  padding: 3rem 0;
+  padding: 1rem 0;
   border-bottom: 1px solid rgba(37, 99, 235, 0.1);
   position: relative;
 }

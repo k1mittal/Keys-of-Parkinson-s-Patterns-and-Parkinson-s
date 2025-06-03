@@ -24,9 +24,9 @@
     <link rel="stylesheet" href="interactive-typing.css" />
     <link rel="stylesheet" href="interactive-keyboard-viz/src/css/styles.css" />
     <script type="module">
-      import { init } from './interactive-keyboard-viz/src/js/keyboard.js';
-      import { updateDistributionChart } from './interactive-keyboard-viz/src/js/chart.js';
-      document.addEventListener('DOMContentLoaded', () => {
+      import { init } from "./interactive-keyboard-viz/src/js/keyboard.js";
+      import { updateDistributionChart } from "./interactive-keyboard-viz/src/js/chart.js";
+      document.addEventListener("DOMContentLoaded", () => {
         init();
         updateDistributionChart();
       });
@@ -142,13 +142,18 @@
         <p>
           The following visualization shows the frequency distribution of key
           press times between control groups and individuals with Parkinson's
-          disease. Select multiple keys to explore how hold times differ between groups.
+          disease. Select multiple keys to explore how hold times differ between
+          groups.
         </p>
 
         <div class="viz-container">
           <div class="controls">
-            <button id="viz-clear-selection" class="toggle-btn">Clear Selection</button>
-            <button id="viz-toggle-visualization" class="toggle-btn">Toggle Histogram</button>
+            <button id="viz-clear-selection" class="toggle-btn">
+              Clear Selection
+            </button>
+            <button id="viz-toggle-visualization" class="toggle-btn">
+              Toggle Histogram
+            </button>
           </div>
           <div class="visualization-layout">
             <div id="keyboard-viz"></div>
@@ -584,6 +589,9 @@
 
     <script src="global.js" type="module"></script>
     <script src="interactive-typing.js"></script>
-    <script src="interactive-keyboard-viz/src/js/chart.js" type="module"></script>
+    <script
+      src="interactive-keyboard-viz/src/js/chart.js"
+      type="module"
+    ></script>
   </body>
 </html>

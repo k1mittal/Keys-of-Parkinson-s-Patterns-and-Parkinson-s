@@ -7,8 +7,6 @@
 *** Thanks again! Now go create something AMAZING! :D
 -->
 
-
-
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -17,8 +15,6 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
-
-
 
 <!-- PROJECT LOGO -->
 <br />
@@ -39,8 +35,6 @@
     <a href="https://github.com/k1mittal/Keys-of-Parkinson-s-Patterns-and-Parkinson-s">Request Feature</a>
   </p>
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -66,38 +60,31 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 ### Built With
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
 ### Prerequisites
 
-
 ### Installation
-
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-
 <!-- USAGE EXAMPLES -->
+
 ## Usage
 
-You can git clone them if needed. 
+You can git clone them if needed.
 
 ```
 git clone https://github.com/k1mittal/Keys-of-Parkinson-s-Patterns-and-Parkinson-s.git

@@ -22,9 +22,9 @@ function init() {
     const width = 800 - margin.left - margin.right;
     const height = 300 - margin.top - margin.bottom;
 
-    const keyWidth = width / 16; // Adjusted for number keys
+    const keyWidth = width / 14; // Adjusted for number keys
     const keyHeight = height / 5; // Adjusted for space bar
-    const keyPadding = 4;
+    const keyPadding = 7;
 
     // Clear existing keyboard to prevent duplicates
     d3.select('#keyboard-viz').html('');
@@ -51,7 +51,7 @@ function init() {
                 .attr('class', 'key')
                 .attr('width', key === ' ' ? keyWidth * 5 + 4 * keyPadding: keyWidth) // Make spacebar 5x wider
                 .attr('height', keyHeight)
-                .attr('rx', 5)
+                .attr('rx', 10)
                 .on('click', () => toggleKey(key));
 
             keyGroup.append('text')

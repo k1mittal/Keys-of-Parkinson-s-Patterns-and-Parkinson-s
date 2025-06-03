@@ -104,7 +104,7 @@ export function updateDistributionChart(selectedKeys, holdData) {
             .attr('width', d => x(d.x1) - x(d.x0) - 1)
             .attr('height', d => height - y(d.length))
             .attr('fill', '#ff7f7f')
-            .attr('opacity', 0.7);
+            .attr('opacity', 0.5);
 
         svg.selectAll('.bar-control')
             .data(controlBins)
@@ -116,7 +116,7 @@ export function updateDistributionChart(selectedKeys, holdData) {
             .attr('width', d => x(d.x1) - x(d.x0) - 1)
             .attr('height', d => height - y(d.length))
             .attr('fill', '#7f7fff')
-            .attr('opacity', 0.7);
+            .attr('opacity', 0.5);
 
         // Update axes with transitions
         xAxis.transition().duration(500).call(

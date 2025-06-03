@@ -100,10 +100,8 @@ function toggleKey(key) {
     selectedKeys.add(key);
     d3.selectAll(".key")
       .filter(function () {
-        return (
-          d3.select(this.parentNode).select(".key-text").text() ===
-          key.toUpperCase()
-        );
+        const label = d3.select(this.parentNode).select(".key-text").text();
+        return key === " " ? label === "Space" : label === key.toUpperCase();
       })
       .classed("selected", true);
   }

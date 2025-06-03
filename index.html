@@ -278,14 +278,42 @@
           <div class="instructions">
             <div class="instruction-header">
               <h3>Interactive Typing Analysis</h3>
-              <div id="inline-notification" class="inline-notification">
-                <!-- Inline notification will appear here -->
-              </div>
             </div>
             <p>
               Type the following text to compare your typing patterns with a
               Parkinson's patient:
             </p>
+
+            <div class="reset-and-notification-container">
+              <div class="reset-container">
+                <button id="reset-btn" class="reset-btn">Reset Test</button>
+              </div>
+              <div id="inline-notification" class="inline-notification">
+                <!-- Inline notification will appear here -->
+              </div>
+            </div>
+
+            <div class="progress-bars-container">
+              <div class="progress-wrapper">
+                <span class="progress-label">Your Progress:</span>
+                <div class="progress-bar">
+                  <div
+                    class="progress-fill user-progress"
+                    id="user-progress-fill"
+                  ></div>
+                </div>
+              </div>
+              <div class="progress-wrapper">
+                <span class="progress-label">PD Patient Progress:</span>
+                <div class="progress-bar">
+                  <div
+                    class="progress-fill pd-progress"
+                    id="pd-progress-fill"
+                  ></div>
+                </div>
+              </div>
+            </div>
+
             <div class="test-text" id="test-text">
               <span class="prompt-text" id="prompt-text"></span>
             </div>
@@ -298,41 +326,36 @@
               rows="3"
             ></textarea>
           </div>
-
-          <div class="reset-container">
-            <button id="reset-btn" class="reset-btn">Reset Test</button>
-          </div>
-
-          <div class="progress-bars-container">
-            <div class="progress-wrapper">
-              <span class="progress-label">Your Progress:</span>
-              <div class="progress-bar">
-                <div
-                  class="progress-fill user-progress"
-                  id="user-progress-fill"
-                ></div>
-              </div>
-            </div>
-            <div class="progress-wrapper">
-              <span class="progress-label">PD Patient Progress:</span>
-              <div class="progress-bar">
-                <div
-                  class="progress-fill pd-progress"
-                  id="pd-progress-fill"
-                ></div>
-              </div>
-            </div>
-          </div>
         </div>
 
         <div class="visualization-section">
           <div class="keyboards-container">
             <div class="keyboard-wrapper">
-              <h3>Your Typing</h3>
+              <h3>Your Typing (Control Group)</h3>
               <div id="user-keyboard"></div>
               <div class="stats">
-                <span>WPM: <span id="user-wpm">--</span></span>
-                <span>Keys: <span id="user-keys">--</span></span>
+                <span
+                  >WPM: <span id="user-wpm">--</span>
+                  <div class="stat-tooltip">
+                    Words Per Minute - Your typing speed
+                  </div>
+                </span>
+                <span
+                  >Keys: <span id="user-keys">--</span>
+                  <div class="stat-tooltip">Total keystrokes typed</div>
+                </span>
+                <span class="completion-stat"
+                  >Time: <span id="user-time">--s</span>
+                  <div class="stat-tooltip">
+                    Elapsed time since you started typing
+                  </div>
+                </span>
+                <span class="completion-stat"
+                  >Accuracy: <span id="user-accuracy">--%</span>
+                  <div class="stat-tooltip">
+                    Percentage of characters typed correctly
+                  </div>
+                </span>
               </div>
             </div>
 
@@ -342,12 +365,36 @@
 
             <div class="keyboard-wrapper">
               <h3>
-                Parkinson's Patient (pID: <span id="pd-patient-id">1001</span>)
+                Parkinson's Patient (<span id="pd-patient-id"
+                  >Composite Simulation</span
+                >)
               </h3>
               <div id="pd-keyboard"></div>
               <div class="stats">
-                <span>WPM: <span id="pd-wpm">--</span></span>
-                <span>Keys: <span id="pd-keys">--</span></span>
+                <span
+                  >WPM: <span id="pd-wpm">--</span>
+                  <div class="stat-tooltip">
+                    Words Per Minute - Simulated typing speed
+                  </div>
+                </span>
+                <span
+                  >Keys: <span id="pd-keys">--</span>
+                  <div class="stat-tooltip">
+                    Total keystrokes typed by simulation
+                  </div>
+                </span>
+                <span class="completion-stat"
+                  >Time: <span id="pd-time">--s</span>
+                  <div class="stat-tooltip">
+                    Elapsed time for PD patient simulation
+                  </div>
+                </span>
+                <span class="completion-stat"
+                  >UPDRS: <span id="pd-updrs">--</span>
+                  <div class="stat-tooltip stat-tooltip-narrow">
+                    UPDRS-III Motor Score<br />Higher = more severe
+                  </div>
+                </span>
               </div>
             </div>
           </div>

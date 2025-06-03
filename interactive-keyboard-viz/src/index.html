@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Hold Times Analysis</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Keyboard Hold Times Analysis</h1>
+        <div class="controls">
+            <button id="theme-toggle" class="toggle-btn">Toggle Dark Mode</button>
+            <button id="clear-selection" class="toggle-btn">Clear Selection</button>
+        </div>
+        <div class="viz-container">
+            <div id="keyboard"></div>
+            <div id="distribution"></div>
+        </div>
+    </div>
+    <script src="js/keyboard.js" type="module"></script>
+    <script src="js/chart.js" type="module"></script>
+</body>
+</html>

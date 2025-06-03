@@ -97,17 +97,42 @@ function createPromptCharacters() {
   const promptElement = document.getElementById("prompt-text");
   promptElement.innerHTML = "";
 
-  currentPrompt.split("").forEach((char, index) => {
-    const span = document.createElement("span");
-    span.className = "prompt-char";
-    span.textContent = char;
-    span.dataset.index = index;
-    promptElement.appendChild(span);
+  // Split the prompt into words and handle each word separately
+  const words = currentPrompt.split(" ");
+  let charIndex = 0;
+
+  words.forEach((word, wordIndex) => {
+    // Create a word container to keep the word together
+    const wordSpan = document.createElement("span");
+    wordSpan.className = "prompt-word";
+
+    // Add characters for this word
+    for (let i = 0; i < word.length; i++) {
+      const char = word[i];
+      const span = document.createElement("span");
+      span.className = "prompt-char";
+      span.textContent = char;
+      span.dataset.index = charIndex;
+      wordSpan.appendChild(span);
+      charIndex++;
+    }
+
+    promptElement.appendChild(wordSpan);
+
+    // Add space after word (except for the last word)
+    if (wordIndex < words.length - 1) {
+      const spaceSpan = document.createElement("span");
+      spaceSpan.className = "prompt-char prompt-space";
+      spaceSpan.textContent = " ";
+      spaceSpan.dataset.index = charIndex;
+      promptElement.appendChild(spaceSpan);
+      charIndex++;
+    }
   });
 
   // Mark the first character as current
-  if (promptElement.firstChild) {
-    promptElement.firstChild.classList.add("current");
+  if (promptElement.querySelector(".prompt-char")) {
+    promptElement.querySelector(".prompt-char").classList.add("current");
   }
 }
 
@@ -123,7 +148,7 @@ function updatePromptHighlighting(typedText) {
   // Ensure we don't go beyond the prompt length
   const maxLength = Math.min(typedText.length, currentPrompt.length);
 
-  // Highlight typed characters
+  // Highlight typed characters one by one
   for (let i = 0; i < maxLength; i++) {
     if (i < promptChars.length) {
       if (typedText[i] === currentPrompt[i]) {
@@ -134,7 +159,7 @@ function updatePromptHighlighting(typedText) {
     }
   }
 
-  // Mark current position
+  // Mark current position (next character to type)
   if (
     typedText.length < promptChars.length &&
     typedText.length < currentPrompt.length
@@ -433,7 +458,7 @@ function updateChartLine(chart, chartId, userData, pdData, isDelay) {
     // Remove any existing dots and tooltips
     chart.svg.selectAll(".chart-dot").remove();
 
-    // Hide all tooltips for this chart
+    // Hide all tooltips for this chart immediately
     d3.selectAll(`.chart-tooltip-${chartId}`)
       .style("visibility", "hidden")
       .style("opacity", 0);
@@ -451,13 +476,31 @@ function updateChartLine(chart, chartId, userData, pdData, isDelay) {
     return;
   }
 
-  // Update scales if needed
+  // Implement smarter scaling to prevent extreme outliers from dominating
   const allData = [...userWindow, ...pdWindow].filter(
     (d) => !isNaN(d) && d > 0
   );
+
   if (allData.length > 0) {
-    const maxY = Math.max(...allData) * 1.1;
-    chart.yScale.domain([0, maxY]);
+    // Use 95th percentile instead of max to ignore extreme outliers
+    allData.sort((a, b) => a - b);
+    const p95Index = Math.floor(allData.length * 0.95);
+    const p95Value = allData[Math.min(p95Index, allData.length - 1)];
+
+    // Set reasonable maximum values based on medical data
+    const medicalMaxDelay = 800; // 800ms is very slow for typing
+    const medicalMaxDuration = 400; // 400ms is very long key hold
+
+    // Use the smaller of 95th percentile * 1.2 or medical maximum
+    const maxFromData = p95Value * 1.2;
+    const medicalMax = isDelay ? medicalMaxDelay : medicalMaxDuration;
+    const maxY = Math.min(maxFromData, medicalMax);
+
+    // Ensure minimum scale for visibility
+    const minScale = isDelay ? 200 : 150;
+    const finalMaxY = Math.max(maxY, minScale);
+
+    chart.yScale.domain([0, finalMaxY]);
 
     // Update Y axis
     chart.svg
@@ -550,7 +593,7 @@ function updateChartLine(chart, chartId, userData, pdData, isDelay) {
             .duration(150)
             .style("opacity", "0")
             .on("end", function () {
-              d3.select(this).style("visibility", "hidden");
+              tooltip.style("visibility", "hidden");
             });
         });
     }
@@ -559,6 +602,14 @@ function updateChartLine(chart, chartId, userData, pdData, isDelay) {
   // Create dots for both datasets
   createDots(userWindow, "user-dot", "#059669", "Your Data");
   createDots(pdWindow, "pd-dot", "#dc2626", "PD Patient");
+
+  // Add chart container mouseleave handler to hide tooltips
+  chart.svg.on("mouseleave", function () {
+    // Hide all tooltips for this chart
+    d3.selectAll(`.chart-tooltip-${chartId}`)
+      .style("visibility", "hidden")
+      .style("opacity", "0");
+  });
 
   // Update lines
   if (userWindow.length > 1) {
@@ -781,7 +832,11 @@ function startPdSimulation() {
   document.getElementById("pd-wpm").textContent = expectedWpm;
   document.getElementById("pd-keys").textContent = "0";
 
+  // Add PD patient stats (using representative values from the data)
+  document.getElementById("pd-updrs").textContent = "14.3"; // Average UPDRS from dataset
+
   let pdKeysTyped = 0;
+  let pdStartTime = Date.now();
 
   // Simulate each keystroke
   simulation.forEach((keystroke, index) => {
@@ -791,12 +846,17 @@ function startPdSimulation() {
 
       highlightKey("pd", keystroke.key, true);
 
+      // Record the raw delay value from simulation (already adjusted in generateTypingSimulation)
       if (keystroke.delay > 0) {
         pdDelayData.push(keystroke.delay);
       }
 
       pdKeysTyped++;
       document.getElementById("pd-keys").textContent = pdKeysTyped;
+
+      // Update PD time
+      const pdElapsedSeconds = Math.round((Date.now() - pdStartTime) / 1000);
+      document.getElementById("pd-time").textContent = `${pdElapsedSeconds}s`;
 
       // Update progress based on character count, not keystroke count
       const currentCharIndex = Math.min(
@@ -814,7 +874,10 @@ function startPdSimulation() {
         if (testComplete) return;
 
         highlightKey("pd", keystroke.key, false);
+
+        // Record the raw duration value from simulation (already adjusted in generateTypingSimulation)
         pdDurationData.push(keystroke.duration);
+
         updateCharts();
 
         // Check if PD simulation is complete (based on character progress)
@@ -947,9 +1010,30 @@ function updateStats() {
     const words = userKeystrokes.filter((k) => k.key === "space").length + 1;
     const wpm = Math.round(words / elapsedMinutes);
     document.getElementById("user-wpm").textContent = wpm;
+
+    // Update time
+    const elapsedSeconds = Math.round((Date.now() - userStartTime) / 1000);
+    document.getElementById("user-time").textContent = `${elapsedSeconds}s`;
   }
 
   document.getElementById("user-keys").textContent = userKeystrokes.length;
+
+  // Calculate accuracy for user
+  if (isTyping) {
+    const typedText = document.getElementById("typing-input").value;
+    const comparisonLength = Math.min(typedText.length, currentPrompt.length);
+    let correctChars = 0;
+    for (let i = 0; i < comparisonLength; i++) {
+      if (typedText[i] === currentPrompt[i]) {
+        correctChars++;
+      }
+    }
+    const accuracy =
+      comparisonLength > 0
+        ? Math.round((correctChars / comparisonLength) * 100)
+        : 0;
+    document.getElementById("user-accuracy").textContent = `${accuracy}%`;
+  }
 
   // Update analysis
   updateAnalysis();
@@ -1067,6 +1151,11 @@ function finishTest() {
   const typingInput = document.getElementById("typing-input");
   typingInput.disabled = true;
   typingInput.style.opacity = "0.6";
+
+  // Show completion stats by adding test-complete class to keyboard wrappers
+  document.querySelectorAll(".keyboard-wrapper").forEach((wrapper) => {
+    wrapper.classList.add("test-complete");
+  });
 
   // Stop PD simulation
   simulationTimeouts.forEach((timeout) => clearTimeout(timeout));
@@ -1256,8 +1345,17 @@ function resetTest() {
     document.getElementById("pd-progress-fill").style.width = "0%";
     document.getElementById("user-wpm").textContent = "--";
     document.getElementById("user-keys").textContent = "--";
+    document.getElementById("user-time").textContent = "--s";
+    document.getElementById("user-accuracy").textContent = "--%";
     document.getElementById("pd-wpm").textContent = "--";
     document.getElementById("pd-keys").textContent = "--";
+    document.getElementById("pd-time").textContent = "--s";
+    document.getElementById("pd-updrs").textContent = "--";
+
+    // Hide completion stats by removing test-complete class
+    document.querySelectorAll(".keyboard-wrapper").forEach((wrapper) => {
+      wrapper.classList.remove("test-complete");
+    });
 
     // Clear highlights
     d3.selectAll(".key-group").classed(

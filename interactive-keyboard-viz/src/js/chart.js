@@ -6,7 +6,7 @@ export function toggleVisualizationMode() {
 }
 
 export function updateDistributionChart(selectedKeys, holdData) {
-  const margin = { top: 20, right: 20, bottom: 40, left: 50 };
+  const margin = { top: 20, right: 20, bottom: 40, left: 70 };
   const width = 500 - margin.left - margin.right;
   const height = 300 - margin.top - margin.bottom;
 
@@ -81,7 +81,7 @@ export function updateDistributionChart(selectedKeys, holdData) {
     .attr("class", "y-label")
     .attr("transform", "rotate(-90)")
     .attr("x", -height / 2)
-    .attr("y", -margin.left + 15)
+    .attr("y", -margin.left + 20)
     .attr("text-anchor", "middle")
     .style("font-size", "14px")
     .text(showHistogram ? "Frequency" : "Density");

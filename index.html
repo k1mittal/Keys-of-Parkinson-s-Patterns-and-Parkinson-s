@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Keys of Parkinson's: Patterns and Typing Analysis</title>
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="interactive-typing.css" />
     <link rel="stylesheet" href="interactive-keyboard-viz/src/css/styles.css" />
+    <script src="visualization.js"></script>
     <script type="module">
       import { init } from "./interactive-keyboard-viz/src/js/keyboard.js";
       import { updateDistributionChart } from "./interactive-keyboard-viz/src/js/chart.js";
@@ -112,18 +113,13 @@
           an email have become slightly more difficult. Your fingers don't quite
           move the way they used to. This is the reality for over
           <span class="stat-highlight">10 million people globally</span>
-          living with Parkinson's disease. Estimates suggest that, in 2019, PD
-          resulted in <span class="stat-highlight">5.8 million</span> disability
-          adjusted life years.
+          living with Parkinson's disease. Estimates suggest that, in 2019, PD resulted in <span class="stat-highlight">5.8 million</span> disability adjusted life years. 
         </p>
         <div class="finding-box">
           <p>
             <strong>Alarming Trend:</strong> Parkinson's cases have increased by
             <span class="stat-highlight">50% in the US alone</span> from 2012 to
-            2022, jumping from 60,000 to 90,000 new cases per year - and
-            estimates suggest that by 2050, the number of people with
-            Parkinson's disease will reach
-            <span class="stat-highlight">25 million worldwide.</span> Yet early
+            2022, jumping from 60,000 to 90,000 new cases per year - and estimates suggest that by 2050, the number of people with Parkinson's disease will reach <span class="stat-highlight">25 million worldwide.</span> Yet early
             detection remains a significant challenge.
           </p>
         </div>
@@ -140,9 +136,18 @@
       <div class="container">
         <h2>Keyboard Usage <span class="highlight-purple">Patterns</span></h2>
         <p>
+          One may expect that those with Parkinson's disease would type significantly 
+          slower than those without the condition. However, the reality is more complex.
+          The <span class="highlight-purple">NeuroQWERTY</span> dataset from MIT provides a unique opportunity to explore
+          how typing patterns differ between healthy individuals and those with
+          Parkinson's disease.
+        </p>
+        <p>
           The following visualization shows the frequency distribution of key
-          press times between control groups and individuals with Parkinson's
-          disease. Select multiple keys to explore how hold times differ between
+          hold times between control groups and individuals with Parkinson's
+          disease. In this context, the <span class="highlight-purple">hold time</span> 
+          is measured as the difference between key release time and key press time. 
+          Select multiple keys to explore how hold times differ between
           groups.
         </p>
 
@@ -159,6 +164,25 @@
             <div id="keyboard-viz"></div>
             <div id="distribution-viz"></div>
           </div>
+          </div>
+          <div id="typing-stats"></div>
+        <p style="margin-top: 20px;">
+          This visualization allows you to explore how different keys are
+          affected by Parkinson's disease, revealing patterns that could lead to
+          early detection and monitoring of the condition. One may notice a higher 
+          frequency of longer hold times for keys like 'J' and 'O', often harder to 
+          reach and press for individuals with Parkinson's. On the other hand, keys 
+          like 'A', 'S', and 'D' show a more uniform disribution between both groups,
+          indicating that these keystroke patterns are less affected by the disease.
+        </p>
+        <p>
+          At the same time, most of the PD group keys seem to be centered around the 
+          control group keys, with a slight bimodality for keys on the right side of the keyboard. 
+          However, if one were to select every key on the keyboard, we would see that PD patients
+          on average have <span class="stat-highlight">29.9% longer hold times</span>. Though 
+          this indicates a degree of correlation, it is important to delve deeper into the data 
+          to understand the nuances of these patterns.
+          </p>
         </div>
       </div>
     </section>
@@ -251,11 +275,9 @@
         </ul>
         <div class="finding-box">
           <p>
-            <strong>Statistical Significance:</strong> While delay time
-            differences are not statistically significant (p=0.43), duration
-            time differences are highly significant (p=0.02), making
-            <span class="stat-highlight">key press duration</span> a reliable
-            indicator of motor impairment.
+            <strong>Recent Paper:</strong> 
+            <span class="stat-highlight"><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0188226">https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0188226</a>
+            </span> 
           </p>
         </div>
       </div>
@@ -286,11 +308,12 @@
             </div>
             <p>
               Type the following text to compare your typing patterns with a
-              Parkinson's patient:
-              <br />
-              <br />
+              Parkinson's patient: 
+              <br>
+              <br>
               <em>*Scroll Down to View Metrics*</em>
             </p>
+           
 
             <div class="reset-and-notification-container">
               <div class="reset-container">
@@ -470,22 +493,41 @@
         <h2>Deep Dive <span class="highlight-orange">Analysis</span></h2>
 
         <!-- Placeholder for Team Member Content: Matthew's Aggregate Analysis -->
-        <div class="team-content-placeholder">
-          <strong>Team Member Visualization Area:</strong> Comprehensive
-          Keystroke Analysis <br /><em
-            >This section will contain Matthew's detailed analysis including:
-            <br />• Key-wise heatmaps showing delay and duration differences
-            <br />• Aggregated delay and duration bar charts <br />• Statistical
-            significance testing and outlier analysis <br />• 2D density plots
-            comparing typing patterns</em
-          >
+        <div class="controls">
+          <div class="control-group">
+            <label for="measure-select">Measure:</label>
+            <select id="measure-select"></select>
+          </div>
+        </div>
+        <div class="visualization-container">
+          <div id="chart-container">
+            <div class="loading">Loading data...</div>
+            <svg id="chart"></svg>
+          </div>
         </div>
 
         <p>
-          The deeper analysis reveals fascinating patterns across individual
-          keys, statistical distributions, and the relationship between delay
-          and duration measurements that paint a complete picture of motor
-          impairment signatures.
+          At first glance, not all features appear to provide clear insight into
+          Parkinson's diagnosis - but a <strong>deeper dive</strong> tells a more
+          compelling story. By plotting
+          <strong>diagnosis probability</strong> on the Y-axis against different
+          clinical and behavioral features on the X-axis, we begin to
+          distinguish signal from noise. Notably, features such as
+          <strong>UPDRS-III Score</strong>,
+          <strong>Alternate Finger Tapping</strong>, and the
+          <strong>NeuroQWERTY Score</strong> emerge as strong indicators,
+          showing consistent and interpretable trends that correlate with a
+          higher likelihood of diagnosis. In contrast, many other features
+          exhibit <em>little to no correlation</em>, making them less useful in
+          isolation for classification tasks. <br /><br />
+          This analysis underscores the importance of exploring our data beyond
+          surface-level assumptions. By identifying which features meaningfully
+          contribute to predictive power, we can
+          <strong>refine our models</strong> and focus on the most informative
+          inputs. Ultimately, this allows us to build more accurate and
+          interpretable classifiers for Parkinson’s disease - ones that can
+          distinguish early signs with greater confidence and clinical
+          relevance.
         </p>
       </div>
     </section>
@@ -540,7 +582,7 @@
         <div class="finding-box">
           <p>
             <strong>Key Discovery:</strong> Duration of key presses, not typing
-            speed, serves as a statistically significant indicator (p=0.02) of
+            speed, serves as a indicator of
             Parkinson's disease, opening new possibilities for early detection
             and monitoring.
           </p>
@@ -548,7 +590,7 @@
 
         <h3>Project Impact</h3>
         <p>
-          This explorable explanation used the NeuroQWERTY dataset from MIT to
+          This exorable explanation used the NeuroQWERTY dataset from MIT to
           analyze keystroke timing patterns from individuals with and without
           Parkinson's disease. Through interactive visualization, you've
           experienced firsthand how subtle timing differences can reveal

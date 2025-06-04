@@ -213,16 +213,8 @@
           Does severity correlate with typing ability?
         </p>
 
-        <!-- Placeholder for Team Member Content: Jerric's Scatter Plot -->
-        <div class="team-content-placeholder">
-          <strong>Team Member Visualization Area:</strong> UPDRS vs Typing Speed
-          Scatter Plot <br /><em
-            >This section will contain Jerric's interactive scatter plot
-            analysis showing the relationship between UPDRS-III scores and
-            typing speed, revealing a -1.24 WPM decrease per UPDRS point
-            increase.</em
-          >
-        </div>
+        <!-- Insert this div for your D3 scatter plot -->
+        <div id="updrs-typing-scatter"></div>
 
         <div class="finding-box">
           <p>
@@ -598,5 +590,15 @@
       src="interactive-keyboard-viz/src/js/chart.js"
       type="module"
     ></script>
+    <script src="updrs-typing-scatter.js"></script>
   </body>
 </html>
+
+<style>
+/* Add to styles.css */
+.d3-tooltip {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  z-index: 10;
+}
+</style>

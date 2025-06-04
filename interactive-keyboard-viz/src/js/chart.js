@@ -196,8 +196,8 @@ export function updateDistributionChart(selectedKeys, holdData) {
     .attr("transform", `translate(${width - 120}, 20)`);
 
   const legendData = [
-    { label: "PD Group", color: "#ff7f7f" },
-    { label: "Control", color: "#7f7fff" },
+    { label: "PD Group", color: "#6c757d" },
+    { label: "Control", color: "#6c757d" },
   ];
 
   legend

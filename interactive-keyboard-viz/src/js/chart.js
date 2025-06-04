@@ -196,8 +196,8 @@ export function updateDistributionChart(selectedKeys, holdData) {
     .attr("transform", `translate(${width - 120}, 20)`);
 
   const legendData = [
-    { label: "PD Group", color: "#6c757d" },
-    { label: "Control", color: "#6c757d" },
+    { label: "PD Group", color: "#ff7f7f" },
+    { label: "Control", color: "#7f7fff" },
   ];
 
   legend
@@ -221,7 +221,7 @@ export function updateDistributionChart(selectedKeys, holdData) {
     .attr("y", (d, i) => i * 20 + 12)
     .text((d) => d.label)
     .style("font-size", "12px")
-    .attr("fill", "currentColor");
+    .attr("fill", "#6c757d");
 }
 
 function updateStatsSummary(pdHoldTimes, controlHoldTimes) {

@@ -18,6 +18,7 @@ export function updateDistributionChart(selectedKeys, holdData) {
       .append("div")
       .attr("class", "distribution-message")
       .text("Select keys to view distribution");
+    d3.select("#typing-stats").style("display", "none");
     return;
   }
 
@@ -47,6 +48,9 @@ export function updateDistributionChart(selectedKeys, holdData) {
     pdHoldTimes = pdHoldTimes.concat(holdData.pd[key] || []);
     controlHoldTimes = controlHoldTimes.concat(holdData.control[key] || []);
   });
+
+  // Update stats summary
+  updateStatsSummary(pdHoldTimes, controlHoldTimes);
 
   // Create scales with transitions
   const x = d3
@@ -231,21 +235,24 @@ function updateStatsSummary(pdHoldTimes, controlHoldTimes) {
   const controlMedian = d3.median(controlHoldTimes) || 0;
 
   summaryDiv.innerHTML = `
-        <h4>Selected Keys Statistics</h4>
-        <p>PD Group: ${pdHoldTimes.length} samples
-           (Mean: ${pdMean.toFixed(2)}ms, Median: ${pdMedian.toFixed(2)}ms)</p>
-        <p>Control Group: ${controlHoldTimes.length} samples
-           (Mean: ${controlMean.toFixed(2)}ms, Median: ${controlMedian.toFixed(
-    2
-  )}ms)</p>
-        <p>Difference: ${(((pdMean - controlMean) / controlMean) * 100).toFixed(
-          1
-        )}% longer hold times in PD group</p>
+        <div class='stat-container'><h3><span class="stat-highlight">PD Group:</span class="stat-highlight"> ${pdHoldTimes.length} samples </h3>
+           <p>Mean: ${pdMean.toFixed(2)}ms, Median: ${pdMedian.toFixed(2)}ms</p></div>
+        <div class='stat-container'><h3><span class="stat-highlight">Control:</span class="stat-highlight"> ${controlHoldTimes.length} samples </h3>
+           <p>Mean: ${controlMean.toFixed(2)}ms, Median: ${controlMedian.toFixed(2)}ms</p></div>
+        <div class='stat-container'><h3><span class="stat-highlight">Difference: </span>${(((pdMean - controlMean) / controlMean) * 100).toFixed(1)}% </h3> <p>longer hold times in PD group</p></div>
     `;
 
   // Insert the summary before the distribution chart
-  const chartDiv = document.getElementById("distribution-viz");
-  chartDiv.insertBefore(summaryDiv, chartDiv.firstChild);
+  const chartDiv = document.getElementById("typing-stats");
+  chartDiv.innerHTML = ""; // Clear previous content
+  const titleDiv = document.createElement("div");
+  titleDiv.className = "chart-title";
+  titleDiv.innerHTML = "<h3>Key Hold Time Summary</h3>";
+  chartDiv.appendChild(titleDiv);
+  // Append the summary div to the chart container
+  chartDiv.appendChild(summaryDiv);
+  // Ensure the chart container is visible
+  chartDiv.style.display = "block";
 }
 
 // Kernel Density Estimation Helper Functions

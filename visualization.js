@@ -3,91 +3,20 @@ const margin = { top: 40, right: 40, bottom: 60, left: 70 };
 const width = 960 - margin.left - margin.right;
 const height = 500 - margin.top - margin.bottom;
 
-// Colors for different ground truth labels
-const gtColors = {
-  false: "#2ca02c", // green for no PD
-  true: "#d62728", // red for PD
+// Colors for Parkinson's status
+const statusColors = {
+  true: "#d62728",   // red for Parkinson's patients
+  false: "#2ca02c"   // green for control group
 };
 
-// Shapes for different categories (we'll use circles for all since we don't have exam types)
-const patientShapes = {
-  default: d3.symbolCircle,
+// Available measures from the JSON data
+const availableMeasures = {
+  "updrs108": "UPDRS-III Score",
+  "sTap": "Single Tap (ms)", 
+  "afTap": "Alternate Finger Tap (ms)",
+  "nqScore": "NeuroQWERTY Score",
+  "typingSpeed": "Typing Speed (WPM)"
 };
-
-// Units for each measure
-const measureUnits = {
-  updrs108: "",
-  afTap: "ms",
-  sTap: "ms", 
-  nqScore: "",
-  typingSpeed: "WPM",
-};
-
-// Labels for each measure
-const measureLabels = {
-  updrs108: "UPDRS-III Score",
-  afTap: "Alternating Finger Tapping",
-  sTap: "Single Key Tapping",
-  nqScore: "neuroQWERTY Index",
-  typingSpeed: "Typing Speed",
-};
-
-// Sample data - replace this with your actual data loading
-const sampleData = `{
-    "pID": 11,
-    "gt": true,
-    "updrs108": 14.25,
-    "afTap": null,
-    "sTap": 162.25,
-    "nqScore": 0.117542767,
-    "typingSpeed": 189.37254902,
-    "file_1": "1402930351.011_001_014.csv",
-    "file_2": "1403706430.011_003_014.csv"
-}
-{
-    "pID": 60,
-    "gt": false,
-    "updrs108": 2.0,
-    "afTap": null,
-    "sTap": 162.25,
-    "nqScore": 0.0703498557,
-    "typingSpeed": 60.5333333333,
-    "file_1": "1402932300.060_001_014.csv",
-    "file_2": "1403708258.060_003_014.csv"
-}
-{
-    "pID": 67,
-    "gt": true,
-    "updrs108": 25.25,
-    "afTap": null,
-    "sTap": 133.75,
-    "nqScore": 0.2234105984,
-    "typingSpeed": 54.3333333333,
-    "file_1": "1401117235.067_001_014.csv",
-    "file_2": "1401978395.067_003_014.csv"
-}
-{
-    "pID": 68,
-    "gt": false,
-    "updrs108": 6.0,
-    "afTap": null,
-    "sTap": 159.0,
-    "nqScore": 0.0749731789,
-    "typingSpeed": 71.8,
-    "file_1": "1401114972.068_001_014.csv",
-    "file_2": "1401980765.068_003_014.csv"
-}
-{
-    "pID": 70,
-    "gt": true,
-    "updrs108": 26.25,
-    "afTap": null,
-    "sTap": 113.5,
-    "nqScore": 0.1757506173,
-    "typingSpeed": 39.6140350877,
-    "file_1": "1404311419.070_001_014.csv",
-    "file_2": "1404743687.070_003_014.csv"
-}`;
 
 // Set up the SVG when document is ready
 document.addEventListener("DOMContentLoaded", function () {
@@ -99,17 +28,16 @@ document.addEventListener("DOMContentLoaded", function () {
     .append("g")
     .attr("transform", `translate(${margin.left},${margin.top})`);
 
-  // Add grid lines container (added before other elements so it's in the background)
+  // Add grid lines container
   const grid = svg.append("g").attr("class", "grid");
 
   // Add X axis label
-  svg
+  const xAxisLabel = svg
     .append("text")
     .attr("class", "axis-label x-label")
     .attr("text-anchor", "middle")
     .attr("x", width / 2)
-    .attr("y", height + margin.bottom - 10)
-    .text("UPDRS-III Score");
+    .attr("y", height + margin.bottom - 10);
 
   // Add Y axis label
   svg
@@ -119,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .attr("transform", "rotate(-90)")
     .attr("x", -height / 2)
     .attr("y", -margin.left + 20)
-    .text("Ground Truth (PD Status)");
+    .text("Parkinson's Diagnosis");
 
   // Create tooltip
   const tooltip = d3
@@ -130,11 +58,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Define scales
   const xScale = d3.scaleLinear().range([0, width]);
-  const yScale = d3.scaleLinear().domain([0, 1]).range([height, 0]);
+  // Y scale for binary classification
+  const yScale = d3.scaleLinear().domain([-.2, 1.2]).range([height, 0]);
 
   // Define axes
   const xAxis = d3.axisBottom(xScale);
-  const yAxis = d3.axisLeft(yScale).tickValues([0, 1]).tickFormat(d => d === 0 ? "No PD" : "PD");
+  const yAxis = d3.axisLeft(yScale)
+    .tickValues([0, 1])
+    .tickFormat(d => d === 1 ? "Parkinson's" : "Control");
 
   // Add axes to SVG
   const gxAxis = svg
@@ -171,9 +102,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let data;
   let currentMeasure = "updrs108";
 
-  // Create symbol generator
-  const symbolGenerator = d3.symbol().size(150);
-
   // Helper function to check if a value is valid for plotting
   function isValidValue(value) {
     return (
@@ -185,76 +113,38 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   }
 
-  // Helper function to format measurement values with appropriate precision
+  // Helper function to format measurement values
   function formatMeasureValue(value, measure) {
     if (!isValidValue(value)) return "N/A";
-
-    // Use appropriate decimal places based on the measure
-    if (measure === "typingSpeed") {
+    
+    if (measure === "nqScore") {
+      return value.toFixed(4);
+    } else if (measure === "typingSpeed" || measure === "updrs108") {
       return value.toFixed(1);
-    } else if (Math.abs(value) < 1) {
-      return value.toFixed(3);
     } else {
       return value.toFixed(2);
     }
   }
 
-  // Fixed JSONL parsing function
-  function parseJSONL(textData) {
-    try {
-      // Split by lines and filter out empty lines
-      const lines = textData.trim().split('\n').filter(line => line.trim());
-      const jsonData = [];
-      
-      for (let i = 0; i < lines.length; i++) {
-        try {
-          const line = lines[i].trim();
-          if (line) {
-            const parsed = JSON.parse(line);
-            jsonData.push(parsed);
-          }
-        } catch (lineError) {
-          console.warn(`Error parsing line ${i + 1}: ${lineError.message}`);
-          console.warn(`Problematic line: ${lines[i]}`);
-        }
-      }
-      
-      return jsonData;
-    } catch (error) {
-      console.error("Error in parseJSONL:", error);
-      return [];
-    }
-  }
-
   // Load and process the data
-  function loadData() {
-    try {
-      // For now, use the sample data. Replace this section with your file loading logic
-      console.log("Loading sample data...");
-      const jsonData = parseJSONL(sampleData);
-      
+  d3.json("interactive-keyboard-viz/src/data/logisitic_regression.json")
+    .then((jsonData) => {
       console.log("Raw data loaded:", jsonData);
-      data = jsonData;
+      
+      // Convert object to array format
+      data = Object.entries(jsonData).map(([patientId, patientData]) => ({
+        patientId: patientId,
+        ...patientData
+      }));
 
-      // Clean data - ensure proper data types
-      data.forEach((d) => {
-        // Convert boolean gt to numeric for y-axis positioning
-        d.gtNumeric = d.gt ? 1 : 0;
-        
-        // Ensure numeric fields are properly converted, handle null values
-        ['updrs108', 'afTap', 'sTap', 'nqScore', 'typingSpeed'].forEach(field => {
-          if (d[field] === null || d[field] === undefined || d[field] === "NaN" || d[field] === "") {
-            d[field] = NaN;
-          } else {
-            d[field] = +d[field];
-          }
-        });
-      });
+      console.log("Processed data:", data);
 
       // Create the legend
       createLegend();
 
-      // Remove loading indicator if it exists
+      // Update measure select options
+      updateMeasureSelect();
+
       d3.select(".loading").remove();
       updateVisualization();
 
@@ -264,64 +154,67 @@ document.addEventListener("DOMContentLoaded", function () {
         updateVisualization();
       });
 
-    } catch (error) {
+      // Add event listener for stat selection (if it exists, otherwise ignore)
+      const statSelect = d3.select("#stat-select");
+      if (!statSelect.empty()) {
+        statSelect.on("change", function () {
+          updateVisualization();
+        });
+      }
+    })
+    .catch((error) => {
       console.error("Error loading data:", error);
       d3.select(".loading").text(
         "Error loading data. Please check console for details."
       );
+    });
+
+  // Function to update measure select dropdown
+  function updateMeasureSelect() {
+    const measureSelect = d3.select("#measure-select");
+    if (!measureSelect.empty()) {
+      measureSelect.selectAll("option").remove();
+      
+      Object.entries(availableMeasures).forEach(([key, label]) => {
+        measureSelect.append("option")
+          .attr("value", key)
+          .text(label)
+          .property("selected", key === currentMeasure);
+      });
     }
   }
-
-  // Alternative: Load from file (uncomment and modify path as needed)
-  /*
-  d3.text("your-data-file.json")
-    .then((textData) => {
-      const jsonData = parseJSONL(textData);
-      // ... rest of the data processing logic
-    })
-    .catch((error) => {
-      console.error("Error loading data:", error);
-    });
-  */
 
   // Function to create the legend
   function createLegend() {
     const legendContainer = d3.select("#student-legend");
-    
-    // Clear existing legend
-    legendContainer.selectAll("*").remove();
+    if (!legendContainer.empty()) {
+      legendContainer.selectAll("*").remove();
 
-    // Create legend for PD status
-    const legendData = [
-      { label: "No PD", color: gtColors[false], value: false },
-      { label: "PD", color: gtColors[true], value: true }
-    ];
+      const legendData = [
+        { status: false, label: "Control Group", color: statusColors[false] },
+        { status: true, label: "Parkinson's Patients", color: statusColors[true] }
+      ];
 
-    legendData.forEach((item) => {
-      const legendItem = legendContainer
-        .append("div")
-        .attr("class", "legend-item student-legend-item");
+      legendData.forEach((item) => {
+        const legendItem = legendContainer
+          .append("div")
+          .attr("class", "legend-item student-legend-item");
 
-      legendItem
-        .append("div")
-        .attr("class", "legend-color")
-        .style("background-color", item.color);
+        legendItem
+          .append("div")
+          .attr("class", "legend-color")
+          .style("background-color", item.color);
 
-      legendItem.append("div").text(item.label);
-    });
+        legendItem.append("div").text(item.label);
+      });
+    }
   }
 
   function updateVisualization() {
-    // Filter out data points without valid values for the current measure
-    const validData = data.filter((d) => 
-      isValidValue(d[currentMeasure]) && (d.gt === true || d.gt === false)
-    );
+    // Filter out data points without valid values for current measure
+    const validData = data.filter(d => isValidValue(d[currentMeasure]));
 
-    console.log(
-      `Filtered data for ${currentMeasure}:`,
-      validData.length,
-      "valid points"
-    );
+    console.log(`Filtered data for ${currentMeasure}:`, validData.length, "valid points");
 
     if (validData.length === 0) {
       console.warn("No valid data points found for the current selection");
@@ -329,22 +222,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Update x axis label
-    const unit = measureUnits[currentMeasure] || "";
-    const measureLabel = measureLabels[currentMeasure] || currentMeasure;
-    d3.select(".x-label").text(`${measureLabel}${unit ? ` (${unit})` : ""}`);
+    const measureLabel = availableMeasures[currentMeasure] || currentMeasure;
+    xAxisLabel.text(measureLabel);
 
     // Update x scale domain based on data
-    const xMin = d3.min(validData, (d) => d[currentMeasure]);
-    const xMax = d3.max(validData, (d) => d[currentMeasure]);
+    const xMin = d3.min(validData, d => d[currentMeasure]);
+    const xMax = d3.max(validData, d => d[currentMeasure]);
 
-    // Add padding to domain and handle case where min/max are the same
-    if (xMin === xMax) {
-      xScale.domain([xMin * 0.9, xMin * 1.1].filter(isValidValue));
-    } else {
-      const range = xMax - xMin;
-      const xPadding = range * 0.05;
-      xScale.domain([xMin - xPadding, xMax + xPadding]);
-    }
+    // Add padding to domain
+    const range = xMax - xMin;
+    const padding = range > 0 ? range * 0.05 : Math.abs(xMin) * 0.1;
+    xScale.domain([xMin - padding, xMax + padding]);
 
     // Update axes with transition
     svg.select(".x-axis").transition().duration(750).call(xAxis);
@@ -353,13 +241,10 @@ document.addEventListener("DOMContentLoaded", function () {
     svg.select(".x-grid").transition().duration(750).call(xGridLines());
     svg.select(".y-grid").transition().duration(750).call(yGridLines());
 
-    // Add some jitter to y-axis to separate overlapping points
-    const jitterAmount = 0.1;
-    
     // Select all data points
     const points = svg
       .selectAll(".data-point")
-      .data(validData, (d) => d.pID);
+      .data(validData, d => d.patientId);
 
     // Exit points that no longer exist
     points.exit().transition().duration(750).style("opacity", 0).remove();
@@ -368,38 +253,38 @@ document.addEventListener("DOMContentLoaded", function () {
     points
       .transition()
       .duration(750)
-      .attr("transform", (d) => {
-        const jitter = (Math.random() - 0.5) * jitterAmount;
-        return `translate(${xScale(d[currentMeasure])}, ${yScale(d.gtNumeric + jitter)})`;
+      .attr("transform", d => {
+        const yPos = d.gt ? 1 : 0;
+        return `translate(${xScale(d[currentMeasure])}, ${yScale(yPos)})`;
       })
-      .attr("fill", (d) => gtColors[d.gt]);
+      .attr("fill", d => statusColors[d.gt]);
 
     // Enter new points
     points
       .enter()
-      .append("path")
+      .append("circle")
       .attr("class", "data-point")
-      .attr("d", symbolGenerator.type(d3.symbolCircle)())
-      .attr("transform", (d) => {
-        const jitter = (Math.random() - 0.5) * jitterAmount;
-        return `translate(${xScale(d[currentMeasure])}, ${yScale(d.gtNumeric + jitter)})`;
+      .attr("r", 5)
+      .attr("transform", d => {
+        const yPos = d.gt ? 1 : 0;
+        return `translate(${xScale(d[currentMeasure])}, ${yScale(yPos)})`;
       })
-      .attr("fill", (d) => gtColors[d.gt])
+      .attr("fill", d => statusColors[d.gt])
       .style("opacity", 0)
+      .style("stroke", "#fff")
+      .style("stroke-width", 1)
       .on("mouseover", function (event, d) {
         tooltip.transition().duration(200).style("opacity", 0.9);
         tooltip
-          .html(
-            `
-            <strong>Patient ID:</strong> ${d.pID}<br/>
-            <strong>PD Status:</strong> ${d.gt ? "PD" : "No PD"}<br/>
-            <strong>${measureLabel}:</strong> ${formatMeasureValue(d[currentMeasure], currentMeasure)}${unit ? ` ${unit}` : ""}<br/>
-            <strong>UPDRS-III:</strong> ${formatMeasureValue(d.updrs108, "updrs108")}<br/>
-            <strong>Files:</strong> ${d.file_1 || "N/A"}, ${d.file_2 || "N/A"}
-            `
-          )
-          .style("left", event.pageX + 10 + "px")
-          .style("top", event.pageY - 28 + "px");
+          .html(`
+            <strong>Patient ID:</strong> ${d.patientId}<br/>
+            <strong>Diagnosis:</strong> ${d.gt ? "Parkinson's" : "Control"}<br/>
+            <strong>${measureLabel}:</strong> ${formatMeasureValue(d[currentMeasure], currentMeasure)}<br/>
+            <strong>UPDRS Score:</strong> ${formatMeasureValue(d.updrs108, "updrs108")}<br/>
+            <strong>Typing Speed:</strong> ${formatMeasureValue(d.typingSpeed, "typingSpeed")} WPM
+          `)
+          .style("left", (event.pageX + 10) + "px")
+          .style("top", (event.pageY - 28) + "px");
       })
       .on("mouseout", function () {
         tooltip.transition().duration(500).style("opacity", 0);
@@ -408,7 +293,4 @@ document.addEventListener("DOMContentLoaded", function () {
       .duration(750)
       .style("opacity", 0.7);
   }
-
-  // Initialize the visualization
-  loadData();
 });

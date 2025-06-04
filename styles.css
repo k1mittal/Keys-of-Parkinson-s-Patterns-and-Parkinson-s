@@ -820,3 +820,32 @@ li::before {
   font-family: inherit;
   fill: var(--text-secondary);
 }
+
+
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+.control-group {
+  display: flex;
+  align-items: center;
+}
+.controls label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+.controls select {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.visualization-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+#chart-container {
+  position: relative;
+}

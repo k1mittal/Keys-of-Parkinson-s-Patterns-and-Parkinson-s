@@ -11,6 +11,7 @@ if (themeToggle) {
   themeToggle.textContent = savedTheme === "light" ? "🌙" : "☀️";
 }
 
+
 themeToggle.addEventListener("click", () => {
   const currentTheme = root.getAttribute("data-theme");
   const newTheme = currentTheme === "light" ? "dark" : "light";
@@ -19,6 +20,7 @@ themeToggle.addEventListener("click", () => {
 
   // Update button text
   themeToggle.textContent = newTheme === "light" ? "🌙" : "☀️";
+
 });
 
 // Keyboard layout configuration
@@ -171,3 +173,41 @@ d3.json("keyboard_data.json").then(function (data) {
     updateKeyboard(group);
   });
 });
+
+// 4) Helper: change Plotly's background+axis colors based on "light" or "dark"
+export function updatePlotlyBackground(theme) {
+  // Find the Plotly container
+  const plotDiv = document.querySelector(".typing-density-viz");
+  if (!plotDiv || !window.Plotly) {
+    console.log("Plotly container not found or Plotly not loaded");
+    return;
+  }
+
+  const update = theme === "light" ? {
+    paper_bgcolor: "#ffffff",
+    plot_bgcolor: "#ffffff",
+    "scene.bgcolor": "#ffffff",
+    "scene.xaxis.color": "#000000",
+    "scene.yaxis.color": "#000000",
+    "scene.zaxis.color": "#000000",
+    "scene.xaxis.gridcolor": "#dddddd",
+    "scene.yaxis.gridcolor": "#dddddd",
+    "scene.zaxis.gridcolor": "#dddddd"
+  } : {
+    paper_bgcolor: "rgba(0,0,0,0)",
+    plot_bgcolor: "rgba(0,0,0,0)",
+    "scene.bgcolor": "rgba(0,0,0,0)",
+    "scene.xaxis.color": "#ffffff",
+    "scene.yaxis.color": "#ffffff",
+    "scene.zaxis.color": "#ffffff",
+    "scene.xaxis.gridcolor": "rgba(255,255,255,0.2)",
+    "scene.yaxis.gridcolor": "rgba(255,255,255,0.2)",
+    "scene.zaxis.gridcolor": "rgba(255,255,255,0.2)"
+  };
+
+  try {
+    window.Plotly.relayout(plotDiv, update);
+  } catch (e) {
+    console.log("Error updating Plotly theme:", e);
+  }
+}

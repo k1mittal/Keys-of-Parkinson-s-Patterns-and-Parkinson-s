@@ -1,14 +1,14 @@
-const margin = { top: 20, right: 30, bottom:30, left: 80 }; // reduced bottom margin
-const width = 800 - margin.left - margin.right;
-const height = 400 - margin.top - margin.bottom;
+const scatterMargin = { top: 20, right: 30, bottom:30, left: 80 };
+const scatterWidth = 800 - scatterMargin.left - scatterMargin.right;
+const scatterHeight = 400 - scatterMargin.top - scatterMargin.bottom;
 
 // Append SVG to the correct container
 const svg = d3.select("#updrs-typing-scatter")
   .append("svg")
-  .attr("width", width + margin.left + margin.right)
-  .attr("height", height + margin.top + margin.bottom)
+  .attr("width", scatterWidth + scatterMargin.left + scatterMargin.right)
+  .attr("height", scatterHeight + scatterMargin.top + scatterMargin.bottom)
   .append("g")
-  .attr("transform", `translate(${margin.left},${margin.top})`);
+  .attr("transform", `translate(${scatterMargin.left},${scatterMargin.top})`);
 
 // Create a tooltip div that is hidden by default
 const tooltip = d3.select("body")
@@ -37,23 +37,23 @@ d3.json("agg_data.json").then(rawData => {
   // Set the scales
   const x = d3.scaleLinear()
     .domain([0, d3.max(data, d => d.UPDRS) * 1.05])
-    .range([0, width]);
+    .range([0, scatterWidth]);
 
   const y = d3.scaleLinear()
     .domain([0, d3.max(data, d => d.TypingSpeed) * 1.05])
-    .range([height, 0]);
+    .range([scatterHeight, 0]);
 
   // X axis
   svg.append("g")
-    .attr("transform", `translate(0,${height})`)
+    .attr("transform", `translate(0,${scatterHeight})`)
     .call(d3.axisBottom(x));
 
   // X axis label
   svg.append("text")
-    .attr("class", "d3-axis-label")
+    .attr("class", "x-label")
     .attr("text-anchor", "middle")
-    .attr("x", width / 2)
-    .attr("y", height + 28) // adjust for new margin
+    .attr("x", scatterWidth / 2)
+    .attr("y", scatterHeight + 28)
     .attr("font-size", "16px")
     .text("UPDRS-III Motor Score");
 
@@ -63,10 +63,10 @@ d3.json("agg_data.json").then(rawData => {
 
   // Y axis label
   svg.append("text")
-    .attr("class", "d3-axis-label")
+    .attr("class", "x-label")
     .attr("text-anchor", "middle")
     .attr("transform", `rotate(-90)`)
-    .attr("x", -height / 2)
+    .attr("x", -scatterHeight / 2)
     .attr("y", -55)
     .attr("font-size", "16px")
     .text("Typing Speed (WPM)");
@@ -113,7 +113,7 @@ d3.json("agg_data.json").then(rawData => {
 
   // Legend
   const legend = svg.append("g")
-    .attr("transform", `translate(${width - 120}, 10)`);
+    .attr("transform", `translate(${scatterWidth - 120}, 10)`);
 
   // PD
   legend.append("circle")
@@ -122,7 +122,7 @@ d3.json("agg_data.json").then(rawData => {
     .attr("r", 7)
     .attr("fill", "red");
   legend.append("text")
-    .attr("class", "d3-legend-label")
+    .attr("class", "y-label")
     .attr("x", 18)
     .attr("y", 5)
     .attr("font-size", "15px")
@@ -135,7 +135,7 @@ d3.json("agg_data.json").then(rawData => {
     .attr("r", 7)
     .attr("fill", "green");
   legend.append("text")
-    .attr("class", "d3-legend-label")
+    .attr("class", "y-label")
     .attr("x", 18)
     .attr("y", 35)
     .attr("font-size", "15px")

@@ -108,6 +108,7 @@ function toggleKey(key) {
 
   // Update the chart with the selected keys
   updateDistributionChart(selectedKeys, holdData);
+  
 }
 
 document

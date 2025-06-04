@@ -849,3 +849,11 @@ li::before {
 #chart-container {
   position: relative;
 }
+.grid line {
+  stroke: #949494b1;
+  stroke-width: 1px;
+  shape-rendering: crispEdges;
+}
+.grid path {
+  stroke-width: 0;
+}

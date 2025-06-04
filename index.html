@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Keys of Parkinson's: Patterns and Typing Analysis</title>
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -118,18 +118,13 @@
           an email have become slightly more difficult. Your fingers don't quite
           move the way they used to. This is the reality for over
           <span class="stat-highlight">10 million people globally</span>
-          living with Parkinson's disease. Estimates suggest that, in 2019, PD
-          resulted in <span class="stat-highlight">5.8 million</span> disability
-          adjusted life years.
+          living with Parkinson's disease. Estimates suggest that, in 2019, PD resulted in <span class="stat-highlight">5.8 million</span> disability adjusted life years. 
         </p>
         <div class="finding-box">
           <p>
             <strong>Alarming Trend:</strong> Parkinson's cases have increased by
             <span class="stat-highlight">50% in the US alone</span> from 2012 to
-            2022, jumping from 60,000 to 90,000 new cases per year - and
-            estimates suggest that by 2050, the number of people with
-            Parkinson's disease will reach
-            <span class="stat-highlight">25 million worldwide.</span> Yet early
+            2022, jumping from 60,000 to 90,000 new cases per year - and estimates suggest that by 2050, the number of people with Parkinson's disease will reach <span class="stat-highlight">25 million worldwide.</span> Yet early
             detection remains a significant challenge.
           </p>
         </div>
@@ -146,9 +141,18 @@
       <div class="container">
         <h2>Keyboard Usage <span class="highlight-purple">Patterns</span></h2>
         <p>
+          One may expect that those with Parkinson's disease would type significantly 
+          slower than those without the condition. However, the reality is more complex.
+          The <span class="highlight-purple">NeuroQWERTY</span> dataset from MIT provides a unique opportunity to explore
+          how typing patterns differ between healthy individuals and those with
+          Parkinson's disease.
+        </p>
+        <p>
           The following visualization shows the frequency distribution of key
-          press times between control groups and individuals with Parkinson's
-          disease. Select multiple keys to explore how hold times differ between
+          hold times between control groups and individuals with Parkinson's
+          disease. In this context, the <span class="highlight-purple">hold time</span> 
+          is measured as the difference between key release time and key press time. 
+          Select multiple keys to explore how hold times differ between
           groups.
         </p>
 
@@ -165,6 +169,25 @@
             <div id="keyboard-viz"></div>
             <div id="distribution-viz"></div>
           </div>
+          </div>
+          <div id="typing-stats"></div>
+        <p>
+          This visualization allows you to explore how different keys are
+          affected by Parkinson's disease, revealing patterns that could lead to
+          early detection and monitoring of the condition. One may notice a higher 
+          frequency of longer hold times for keys like 'J' and 'O', often harder to 
+          reach and press for individuals with Parkinson's. On the other hand, keys 
+          like 'A', 'S', and 'D' show a more uniform disribution between both groups,
+          indicating that these keystroke patterns are less affected by the disease.
+        </p>
+        <p>
+          At the same time, most of the PD group keys seem to be centered around the 
+          control group keys, with a slight bimodality for keys on the right side of the keyboard. 
+          However, if one were to select every key on the keyboard, we would see that PD patients
+          on average have <span class="stat-highlight">29.9% longer hold times</span>. Though 
+          this indicates a degree of correlation, it is important to delve deeper into the data 
+          to understand the nuances of these patterns.
+          </p>
         </div>
       </div>
     </section>
@@ -298,11 +321,12 @@
             </div>
             <p>
               Type the following text to compare your typing patterns with a
-              Parkinson's patient:
-              <br />
-              <br />
+              Parkinson's patient: 
+              <br>
+              <br>
               <em>*Scroll Down to View Metrics*</em>
             </p>
+           
 
             <div class="reset-and-notification-container">
               <div class="reset-container">

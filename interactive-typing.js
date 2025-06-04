@@ -194,7 +194,9 @@ function createKeyboard(containerId, type) {
       .append("g")
       .attr(
         "transform",
-        `translate(${rowOffsets[rowIndex]}, ${rowIndex * (keySize + keySpacing)})`
+        `translate(${rowOffsets[rowIndex]}, ${
+          rowIndex * (keySize + keySpacing)
+        })`
       );
 
     row.forEach((key, keyIndex) => {
@@ -1119,7 +1121,9 @@ function updateAnalysis() {
 
     // Update circle gradient
     const circle = document.getElementById("similarity-score");
-    circle.style.background = `conic-gradient(var(--accent-color) 0deg ${similarity * 3.6}deg, var(--border-color) ${similarity * 3.6}deg)`;
+    circle.style.background = `conic-gradient(var(--accent-color) 0deg ${
+      similarity * 3.6
+    }deg, var(--border-color) ${similarity * 3.6}deg)`;
 
     // Update interpretation with better messages
     const interpretation = document.getElementById("similarity-interpretation");
@@ -1397,8 +1401,9 @@ function resetTest() {
     document.getElementById("pd-avg-delay").textContent = "-- ms";
     document.getElementById("pd-avg-duration").textContent = "-- ms";
     document.querySelector("#similarity-score span").textContent = "--%";
-    document.getElementById("similarity-score").style.background =
-      `conic-gradient(var(--accent-color) 0deg, var(--border-color) 0deg)`;
+    document.getElementById(
+      "similarity-score"
+    ).style.background = `conic-gradient(var(--accent-color) 0deg, var(--border-color) 0deg)`;
     document.getElementById("similarity-interpretation").textContent = "";
 
     // Hide analysis section

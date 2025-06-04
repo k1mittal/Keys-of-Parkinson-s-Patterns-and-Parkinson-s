@@ -57,6 +57,14 @@
   --container-bg: var(--bg-secondary);
 }
 
+[data-theme="dark"] .d3-axis-label,
+[data-theme="dark"] .d3-legend-label {
+  fill: #fff !important;
+}
+[data-theme="dark"] .d3-legend {
+  color: #fff !important;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -841,7 +849,6 @@ li::before {
   font-family: inherit;
   fill: var(--text-secondary);
 }
-
 
 .controls {
   display: flex;

@@ -256,7 +256,7 @@ body::before {
 .subtitle {
   font-size: 1.2rem;
   margin-bottom: 2rem;
-  max-width: 600px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
   color: var(--text-secondary);

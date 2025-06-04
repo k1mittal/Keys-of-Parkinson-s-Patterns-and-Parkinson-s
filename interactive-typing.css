@@ -41,9 +41,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -94,8 +92,7 @@ header p {
   border-radius: 20px;
   padding: 2rem 2.5rem 1.5rem 2.5rem;
   margin-bottom: 1rem;
-  box-shadow:
-    0 20px 40px -10px rgba(0, 0, 0, 0.2),
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
@@ -319,8 +316,7 @@ header p {
   background: linear-gradient(145deg, var(--card-bg), var(--bg-color));
   border-radius: 16px;
   padding: 0.5rem 1rem 1rem 1rem;
-  box-shadow:
-    0 8px 25px -8px rgba(0, 0, 0, 0.15),
+  box-shadow: 0 8px 25px -8px rgba(0, 0, 0, 0.15),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
   transition: transform 0.3s ease;
   min-height: 350px;
@@ -496,8 +492,7 @@ header p {
   background: linear-gradient(145deg, var(--card-bg), var(--bg-color));
   border-radius: 16px;
   padding: 1.5rem;
-  box-shadow:
-    0 8px 25px -8px rgba(0, 0, 0, 0.15),
+  box-shadow: 0 8px 25px -8px rgba(0, 0, 0, 0.15),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
   width: 300px;
   min-height: 350px;
@@ -532,6 +527,7 @@ header p {
 
 /* Analysis Section */
 .analysis-section {
+  height: 0;
   margin-top: 3rem;
   opacity: 0;
   transform: translateY(20px);
@@ -540,6 +536,7 @@ header p {
 }
 
 .analysis-section.show {
+  height: auto;
   opacity: 1;
   transform: translateY(0);
 }
@@ -570,21 +567,17 @@ header p {
   background: linear-gradient(145deg, var(--card-bg), var(--bg-color));
   border-radius: 20px;
   padding: 2rem;
-  box-shadow:
-    0 10px 30px -10px rgba(0, 0, 0, 0.2),
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
   text-align: center;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 100%;
   max-width: 300px;
 }
 
 .analysis-card:hover {
   transform: translateY(-5px);
-  box-shadow:
-    0 20px 40px -15px rgba(0, 0, 0, 0.3),
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 

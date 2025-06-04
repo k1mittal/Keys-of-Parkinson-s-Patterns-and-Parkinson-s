@@ -20,6 +20,9 @@
       rel="stylesheet"
     />
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="interactive-typing.css" />
     <link rel="stylesheet" href="interactive-keyboard-viz/src/css/styles.css" />
@@ -30,6 +33,9 @@
         init();
         updateDistributionChart();
       });
+    </script>
+    <link rel="stylesheet" href="js/typing_density/typing_density.css" />
+    <script type="module" src="js/typing_density/visualize.js"></script>
     </script>
   </head>
   <body>
@@ -200,23 +206,47 @@
           Parkinson's to type significantly slower than healthy individuals. The
           reality is far more nuanced.
         </p>
+        <div class="finding-box">
+          <strong>Important Note:</strong>
+          <p>
+            The NeuroQWERTY score is a composite measure derived from the
+              NeuroQWERTY dataset, which attempts to quantify the predicted
+              neural consistency based on an individual's typing patterns. 
+              Higher scores indicate a higher prediction of Parkinson's disease, 
+              and vice-versa.
+          </p>
+        </div>
+        <div class="density-viz-container">
+          <h3 class="viz-title">3D Density Distribution of Typing Patterns</h3>
+          <p class="viz-description">
+            
+            This visualization reveals the complex relationship between typing speed,
+            Parkinson's disease and NeuroQWERTY scores. You can rotate the plot to explore 
+            different patterns along different axes. The x-axis represents the
+            <span class="highlight-purple">typing speed</span> in words per minute (WPM), the y-axis is the
+            <span class="highlight-orange">NeuroQWERTY score</span>, and the z-axis is the
+            <span class="highlight-green">ground truth group</span> (PD or Control).
 
-        <!-- Placeholder for Team Member Content: Omid's Typing Speed Visualization -->
-        <div class="team-content-placeholder">
-          <strong>Team Member Visualization Area:</strong> Typing Speed
-          Distribution Analysis <br /><em
-            >This section will contain interactive histograms and speed
-            comparisons by Omid, showing that 60% of Parkinson's patients type
-            between 60-140 WPM, compared to 52% of control subjects in the same
-            range.</em
-          >
+          </p>
+          <div id="typing-density-viz"></div>
         </div>
 
         <p>
           The surprise? Typing speed alone isn't the smoking gun we expected.
-          <strong>60% of Parkinson's patients</strong> typed between 60-140 WPM,
-          compared to 52% of control subjects within the same range. The real
-          differences lie deeper...
+          <strong>64% of Parkinson's patients</strong> typed 70+ WPM, and a lot
+          of the PD vs Control points overlap significantly in terms of typing speed.
+        </p>
+        <p>
+          As for the PD patients with lower typing speeds, the graph above shows that
+          there is a negative correlation between typing speed and the NeuroQWERTY score,
+          for the PD group. The majority of the PD patients with sub-50 WPM typing speeds
+          have a NeuroQWERTY score of 0.2 or higher, indicating that they are likely to be
+          predicted to have Parkinson's disease regardless. 
+        </p>
+        <p>
+          In other words, typing speed doesnt tell us much about Parkinson's disease alone, but 
+          along with other metrics like the NeruoQWERTY index, it can definitely help us understand and predict 
+          individuals prone to having Parkinson's.
         </p>
       </div>
     </section>

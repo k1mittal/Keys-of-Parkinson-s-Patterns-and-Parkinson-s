@@ -183,15 +183,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // Load and process the data
   d3.json("interactive-keyboard-viz/src/data/logisitic_regression.json")
     .then((jsonData) => {
-      console.log("Raw data loaded:", jsonData);
-      
+  
       // Convert object to array format
       data = Object.entries(jsonData).map(([patientId, patientData]) => ({
         patientId: patientId,
         ...patientData
       }));
-
-      console.log("Processed data:", data);
 
       // Create the legend
       createLegend();
@@ -278,8 +275,6 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateVisualization() {
     // Filter out data points without valid values for current measure
     const validData = data.filter(d => isValidValue(d[currentMeasure]));
-
-    console.log(`Filtered data for ${currentMeasure}:`, validData.length, "valid points");
 
     if (validData.length === 0) {
       console.warn("No valid data points found for the current selection");

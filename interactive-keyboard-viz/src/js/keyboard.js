@@ -14,7 +14,6 @@ let holdData = null;
 d3.json("./interactive-keyboard-viz/src/data/hold_data.json")
   .then((data) => {
     holdData = data;
-    console.log("Loaded hold data:", holdData);
     init();
   })
   .catch((error) => console.error("Error loading data:", error));

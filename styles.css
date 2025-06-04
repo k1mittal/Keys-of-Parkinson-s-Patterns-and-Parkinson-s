@@ -57,6 +57,14 @@
   --container-bg: var(--bg-secondary);
 }
 
+[data-theme="dark"] .d3-axis-label,
+[data-theme="dark"] .d3-legend-label {
+  fill: #fff !important;
+}
+[data-theme="dark"] .d3-legend {
+  color: #fff !important;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -903,3 +911,99 @@ li::before {
 }
 
 
+
+.density-viz-container {
+  max-width: 1200px;              /* limit how wide the card can grow */
+  margin: 40px auto;              /* center horizontally, with vertical spacing */
+  padding: 20px;                  /* space inside the card */
+  background-color: #1E1E1E;      /* slightly lighter dark gray than the body */
+  border-radius: 8px;             /* rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.density-viz-container svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.density-point {
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.density-point:hover {
+  opacity: 0.9 !important;
+}
+
+.viz-title {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.viz-description {
+  width: 100%;
+  padding: 20px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.legend-title {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.9rem;
+  fill: var(--text-color);
+}
+
+.typing-density-viz {
+  width: 100%;
+  height: 800px;                 /* you can adjust this height if needed */
+  border-radius: 4px;
+  /* We keep this background transparent so Plotly’s transparent‐background settings can show through.
+     But if you’d like a slightly tinted “inner” area behind the points, you could uncomment the next line. */
+  /* background-color: rgba(30,30,30,0.6); */
+  overflow: hidden;
+  position: relative;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+.control-group {
+  display: flex;
+  align-items: center;
+}
+.controls label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+.controls select {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.visualization-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+#chart-container {
+  position: relative;
+}
+.grid line {
+  stroke: #949494b1;
+  stroke-width: 1px;
+  shape-rendering: crispEdges;
+}
+.grid path {
+  stroke-width: 0;
+}

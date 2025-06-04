@@ -64,46 +64,46 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       };
 
-      // 2.5) Layout: transparent background + brighter axes + custom tick labels
+      // 2.5) Layout: transparent background + neutral gray axes
       const layout = {
-        paper_bgcolor: 'rgba(0, 0, 0, 0)',  // entire canvas transparent
-        plot_bgcolor: 'rgba(0, 0, 0, 0)',   // subplot area transparent
+        paper_bgcolor: 'rgba(128, 128, 128, 0)',  // transparent background
+        plot_bgcolor: 'rgba(128, 128, 128, 0)',   // transparent background
         scene: {
-          bgcolor: 'rgba(0, 0, 0, 0)',      // 3D “cube” transparent
+          bgcolor: 'rgba(128, 128, 128, 0)',      // transparent background
 
           xaxis: {
             title: {
               text: 'nQscore',
-              font: { color: '#FFFFFF' }    // axis title in white
+              font: { color: '#666666' }    // medium gray for axis title
             },
-            color: '#FFFFFF',               // tick labels in white
-            gridcolor: 'rgba(255, 255, 255, 0.2)',   // faint white grid
-            zerolinecolor: 'rgba(255, 255, 255, 0.2)',
+            color: '#666666',               // medium gray for tick labels
+            gridcolor: '6c757d', // faint gray grid
+            zerolinecolor: '6c757d', // slightly darker gray for zero line
             showbackground: false
           },
 
           yaxis: {
             title: {
               text: 'Typing Speed (wpm)',
-              font: { color: '#FFFFFF' }
+              font: { color: '#666666' }
             },
-            color: '#FFFFFF',
-            gridcolor: 'rgba(255, 255, 255, 0.2)',
-            zerolinecolor: 'rgba(255, 255, 255, 0.2)',
+            color: '#666666',
+            gridcolor: '6c757d',
+            zerolinecolor: '6c757d',
             showbackground: false
           },
 
           zaxis: {
             title: {
               text: 'Group',
-              font: { color: '#FFFFFF' }
+              font: { color: '#666666' }
             },
-            color: '#FFFFFF',
-            gridcolor: 'rgba(255, 255, 255, 0.2)',
-            zerolinecolor: 'rgba(255, 255, 255, 0.2)',
+            color: '#666666',
+            gridcolor: '6c757d',
+            zerolinecolor: '6c757d',
             showbackground: false,
             tickvals: [0, 1],
-            ticktext: ['Control', 'PD']  // replace “0” & “1”
+            ticktext: ['Control', 'PD']
           }
         },
         margin: { l: 0, r: 0, b: 0, t: 0 }

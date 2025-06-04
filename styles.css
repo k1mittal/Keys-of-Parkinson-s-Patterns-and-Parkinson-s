@@ -916,7 +916,7 @@ li::before {
   max-width: 1200px;              /* limit how wide the card can grow */
   margin: 40px auto;              /* center horizontally, with vertical spacing */
   padding: 20px;                  /* space inside the card */
-  background-color: #1E1E1E;      /* slightly lighter dark gray than the body */
+  background-color: var(--bg-primary);      /* slightly lighter dark gray than the body */
   border-radius: 8px;             /* rounded corners */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.05);

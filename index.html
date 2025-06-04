@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="interactive-typing.css" />
     <link rel="stylesheet" href="interactive-keyboard-viz/src/css/styles.css" />
+    <script src="visualization.js"></script>
     <script type="module">
       import { init } from "./interactive-keyboard-viz/src/js/keyboard.js";
       import { updateDistributionChart } from "./interactive-keyboard-viz/src/js/chart.js";
@@ -481,15 +482,62 @@
         <h2>Deep Dive <span class="highlight-orange">Analysis</span></h2>
 
         <!-- Placeholder for Team Member Content: Matthew's Aggregate Analysis -->
-        <div class="team-content-placeholder">
-          <strong>Team Member Visualization Area:</strong> Comprehensive
-          Keystroke Analysis <br /><em
-            >This section will contain Matthew's detailed analysis including:
-            <br />• Key-wise heatmaps showing delay and duration differences
-            <br />• Aggregated delay and duration bar charts <br />• Statistical
-            significance testing and outlier analysis <br />• 2D density plots
-            comparing typing patterns</em
-          >
+        <div class="controls">
+          <div class="control-group">
+            <label for="measure-select">Measure:</label>
+            <select id="measure-select">
+              <option value="HR">Heart Rate</option>
+              <option value="EDA">Electrodermal Activity</option>
+              <option value="TEMP">Temperature</option>
+              <option value="BVP">Blood Volume Pulse</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label for="stat-select">Statistic:</label>
+            <select id="stat-select">
+              <option value="avg">Average</option>
+              <option value="median">Median</option>
+              <option value="max">Maximum</option>
+              <option value="min">Minimum</option>
+              <option value="q1">1st Quartile</option>
+              <option value="q3">3rd Quartile</option>
+              <option value="range">Range</option>
+              <option value="iqr">IQR</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="legends-container">
+          <div class="legend">
+            <h3>Exams</h3>
+            <div class="legend-content">
+              <div class="legend-item">
+                <div class="legend-shape circle"></div>
+                <div>Midterm 1</div>
+              </div>
+              <div class="legend-item">
+                <div class="legend-shape square"></div>
+                <div>Midterm 2</div>
+              </div>
+              <div class="legend-item">
+                <div class="legend-shape triangle"></div>
+                <div>Final</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="visualization-container">
+          <div id="chart-container">
+            <div class="loading">Loading data...</div>
+            <svg id="chart"></svg>
+          </div>
+
+          <div id="student-legend-container">
+            <h3>Students</h3>
+            <div id="student-legend"></div>
+          </div>
         </div>
 
         <p>

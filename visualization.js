@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .attr("transform", "rotate(-90)")
     .attr("x", -height / 2)
     .attr("y", -margin.left + 20)
-    .text("Parkinson's Diagnosis");
+    .text("Parkinson's Diagnosis Probability");
 
   // Create tooltip
   const tooltip = d3
@@ -58,14 +58,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Define scales
   const xScale = d3.scaleLinear().range([0, width]);
-  // Y scale for binary classification
-  const yScale = d3.scaleLinear().domain([-.2, 1.2]).range([height, 0]);
+  // Y scale for probability (-0.2 to 1.2)
+  const yScale = d3.scaleLinear().domain([0, 1]).range([height, 0]);
 
   // Define axes
   const xAxis = d3.axisBottom(xScale);
   const yAxis = d3.axisLeft(yScale)
-    .tickValues([0, 1])
-    .tickFormat(d => d === 1 ? "Parkinson's" : "Control");
+    .tickFormat(d3.format(".0%"));
 
   // Add axes to SVG
   const gxAxis = svg
@@ -124,6 +123,61 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       return value.toFixed(2);
     }
+  }
+
+  // Logistic regression function
+  function fitLogisticRegression(data, xVariable) {
+    // Simple logistic regression using maximum likelihood estimation
+    // This is a simplified implementation - for production use, consider more robust libraries
+    
+    const X = data.map(d => d[xVariable]);
+    const y = data.map(d => d.gt ? 1 : 0);
+    
+    // Normalize X values for better convergence
+    const xMean = d3.mean(X);
+    const xStd = d3.deviation(X);
+    const XNorm = X.map(x => (x - xMean) / xStd);
+    
+    // Initialize parameters
+    let beta0 = 0; // intercept
+    let beta1 = 0; // slope
+    
+    const learningRate = 0.1;
+    const maxIterations = 1000;
+    const tolerance = 1e-6;
+    
+    // Gradient descent
+    for (let iter = 0; iter < maxIterations; iter++) {
+      let gradient0 = 0;
+      let gradient1 = 0;
+      
+      for (let i = 0; i < XNorm.length; i++) {
+        const z = beta0 + beta1 * XNorm[i];
+        const p = 1 / (1 + Math.exp(-z));
+        const error = y[i] - p;
+        
+        gradient0 += error;
+        gradient1 += error * XNorm[i];
+      }
+      
+      const newBeta0 = beta0 + learningRate * gradient0 / XNorm.length;
+      const newBeta1 = beta1 + learningRate * gradient1 / XNorm.length;
+      
+      // Check for convergence
+      if (Math.abs(newBeta0 - beta0) < tolerance && Math.abs(newBeta1 - beta1) < tolerance) {
+        break;
+      }
+      
+      beta0 = newBeta0;
+      beta1 = newBeta1;
+    }
+    
+    // Return function that predicts probability for original scale values
+    return function(x) {
+      const xNormalized = (x - xMean) / xStd;
+      const z = beta0 + beta1 * xNormalized;
+      return 1 / (1 + Math.exp(-z));
+    };
   }
 
   // Load and process the data
@@ -192,7 +246,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const legendData = [
         { status: false, label: "Control Group", color: statusColors[false] },
-        { status: true, label: "Parkinson's Patients", color: statusColors[true] }
+        { status: true, label: "Parkinson's Patients", color: statusColors[true] },
+        { status: "regression", label: "Logistic Regression", color: "#1f77b4" }
       ];
 
       legendData.forEach((item) => {
@@ -200,10 +255,20 @@ document.addEventListener("DOMContentLoaded", function () {
           .append("div")
           .attr("class", "legend-item student-legend-item");
 
-        legendItem
-          .append("div")
-          .attr("class", "legend-color")
-          .style("background-color", item.color);
+        if (item.status === "regression") {
+          legendItem
+            .append("div")
+            .attr("class", "legend-line")
+            .style("background-color", item.color)
+            .style("height", "3px")
+            .style("width", "20px")
+            .style("margin", "8px 5px");
+        } else {
+          legendItem
+            .append("div")
+            .attr("class", "legend-color")
+            .style("background-color", item.color);
+        }
 
         legendItem.append("div").text(item.label);
       });
@@ -236,11 +301,49 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Update axes with transition
     svg.select(".x-axis").transition().duration(750).call(xAxis);
+    svg.select(".y-axis").transition().duration(750).call(yAxis);
 
     // Update grid lines
     svg.select(".x-grid").transition().duration(750).call(xGridLines());
     svg.select(".y-grid").transition().duration(750).call(yGridLines());
 
+    // Fit logistic regression
+    const logisticFunc = fitLogisticRegression(validData, currentMeasure);
+    
+    // Generate points for the regression line
+    const lineData = [];
+    const numPoints = 100;
+    for (let i = 0; i <= numPoints; i++) {
+      const x = xMin + (xMax - xMin) * (i / numPoints);
+      const probability = logisticFunc(x);
+      lineData.push({ x: x, probability: probability });
+    }
+
+    // Create line generator
+    const line = d3.line()
+      .x(d => xScale(d.x))
+      .y(d => yScale(d.probability))
+      .curve(d3.curveMonotoneX);
+
+    // Draw or update regression line
+    let regressionLine = svg.select(".regression-line");
+    if (regressionLine.empty()) {
+      regressionLine = svg.append("path")
+        .attr("class", "regression-line")
+        .style("fill", "none")
+        .style("stroke", "#1f77b4")
+        .style("stroke-width", 3)
+        .style("opacity", 0.8);
+    }
+
+    regressionLine
+      .datum(lineData)
+      .transition()
+      .duration(750)
+      .attr("d", line);
+
+    // Add jitter to y-position for better visibility - REMOVED
+    
     // Select all data points
     const points = svg
       .selectAll(".data-point")
@@ -274,11 +377,15 @@ document.addEventListener("DOMContentLoaded", function () {
       .style("stroke", "#fff")
       .style("stroke-width", 1)
       .on("mouseover", function (event, d) {
+        // Calculate predicted probability for this point
+        const predictedProb = logisticFunc(d[currentMeasure]);
+        
         tooltip.transition().duration(200).style("opacity", 0.9);
         tooltip
           .html(`
             <strong>Patient ID:</strong> ${d.patientId}<br/>
-            <strong>Diagnosis:</strong> ${d.gt ? "Parkinson's" : "Control"}<br/>
+            <strong>Actual:</strong> ${d.gt ? "Parkinson's" : "Control"}<br/>
+            <strong>Predicted Probability:</strong> ${(predictedProb * 100).toFixed(1)}%<br/>
             <strong>${measureLabel}:</strong> ${formatMeasureValue(d[currentMeasure], currentMeasure)}<br/>
             <strong>UPDRS Score:</strong> ${formatMeasureValue(d.updrs108, "updrs108")}<br/>
             <strong>Typing Speed:</strong> ${formatMeasureValue(d.typingSpeed, "typingSpeed")} WPM

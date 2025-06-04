@@ -2,7 +2,6 @@ let showHistogram = false; // State to track visualization mode
 
 export function toggleVisualizationMode() {
   showHistogram = !showHistogram;
-  console.log(`Visualization mode: ${showHistogram ? "Histogram" : "KDE"}`);
 }
 
 export function updateDistributionChart(selectedKeys, holdData) {

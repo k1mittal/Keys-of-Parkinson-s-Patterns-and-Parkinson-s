@@ -77,7 +77,6 @@ async function loadTypingData() {
     const patternResponse = await fetch("data/typing_patterns.json");
     typingPatterns = await patternResponse.json();
 
-    console.log("Typing data loaded successfully");
   } catch (error) {
     console.error("Error loading typing data:", error);
   }

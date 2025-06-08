@@ -24,16 +24,12 @@ class StatisticalSimulation {
       const response = await fetch("data/enhanced_simulation_data.csv");
       const csvText = await response.text();
       const rawData = this.parseCSV(csvText);
-      console.log(`Loaded enhanced simulation data: ${rawData.length} samples`);
 
       this.data = rawData;
 
       // Log data distribution for verification
       const controlCount = this.data.filter((d) => !d.has_parkinsons).length;
       const pdCount = this.data.filter((d) => d.has_parkinsons).length;
-      console.log(
-        `Enhanced data: ${controlCount} control, ${pdCount} PD samples`
-      );
 
       // Prepare data pools using the enhanced dataset
       this.prepareEnhancedDataPools();
@@ -98,20 +94,12 @@ class StatisticalSimulation {
     };
 
     // Log final statistics to verify the patterns
-    console.log("Enhanced data pools created:");
     for (const metric of ["typingSpeed", "duration", "delay"]) {
       const controlStats = this.getStats(this.realDataPools[metric].control);
       const pdStats = this.getStats(this.realDataPools[metric].pd);
       const percentDiff =
         ((pdStats.mean - controlStats.mean) / controlStats.mean) * 100;
-      console.log(
-        `${metric} - Control: ${controlStats.mean.toFixed(3)}±${controlStats.std.toFixed(3)}, PD: ${pdStats.mean.toFixed(3)}±${pdStats.std.toFixed(3)} (${percentDiff.toFixed(1)}%)`
-      );
     }
-
-    console.log(
-      "Data patterns: Typing Speed (non-significant), Duration (significant, PD higher), Delay (non-significant)"
-    );
   }
 
   getStats(array) {
@@ -229,10 +217,6 @@ class StatisticalSimulation {
     const controlData = this.realDataPools[metric].control;
     const pdData = this.realDataPools[metric].pd;
 
-    console.log(
-      `Real ${metric} data - Control: ${controlData.length}, PD: ${pdData.length} samples`
-    );
-
     // Set up chart scales to accommodate all possible values
     const allValues = [...controlData, ...pdData];
     const minValue = d3.min(allValues);
@@ -244,10 +228,6 @@ class StatisticalSimulation {
     // Use min/max with padding to ensure all points fit
     this.yScale.domain([Math.max(0, minValue - yPadding), maxValue + yPadding]);
     this.xScale.domain([0, this.maxSamples]);
-
-    console.log(
-      `Chart scaling - ${metric}: ${minValue.toFixed(4)} to ${maxValue.toFixed(4)} (min-max with padding)`
-    );
 
     // Update axes
     const g = this.svg.select("g");
@@ -286,8 +266,9 @@ class StatisticalSimulation {
     // Update progress
     const progress = ((sampleIndex + 1) / this.maxSamples) * 100;
     document.getElementById("simulation-progress").style.width = `${progress}%`;
-    document.getElementById("simulation-status").textContent =
-      `Sampling... (${sampleIndex + 1}/${this.maxSamples})`;
+    document.getElementById("simulation-status").textContent = `Sampling... (${
+      sampleIndex + 1
+    }/${this.maxSamples})`;
 
     // Sample random values from real datasets
     const controlSample =

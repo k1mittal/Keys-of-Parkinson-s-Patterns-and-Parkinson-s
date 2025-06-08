@@ -159,9 +159,7 @@ async function loadTypingData() {
     // Create patterns from enhanced dataset
     typingPatterns = createPatternsFromEnhancedData(enhancedData);
 
-    console.log("Loaded enhanced dataset patterns for interactive typing");
-    console.log("Control patterns:", typingPatterns.control);
-    console.log("PD patterns:", typingPatterns.pd);
+
   } catch (error) {
     console.error("Error loading typing data:", error);
   }

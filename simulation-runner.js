@@ -18,26 +18,12 @@ class SimulationRunner {
       );
       const csvText = fs.readFileSync(csvPath, "utf8");
       this.data = this.parseEnhancedCSV(csvText);
-      console.log(
-        `Loaded enhanced simulation data: ${this.data.length} samples`
-      );
 
       // Log data distribution
       const controlCount = this.data.filter((d) => !d.has_parkinsons).length;
       const pdCount = this.data.filter((d) => d.has_parkinsons).length;
-      console.log(
-        `Enhanced data: ${controlCount} control, ${pdCount} PD samples`
-      );
 
       // Log some sample data for verification
-      console.log(
-        "Sample control sample:",
-        this.data.find((d) => !d.has_parkinsons)
-      );
-      console.log(
-        "Sample PD sample:",
-        this.data.find((d) => d.has_parkinsons)
-      );
 
       // Prepare data pools directly (no need for artificial enhancement)
       this.prepareRealDataPools();
@@ -84,11 +70,6 @@ class SimulationRunner {
     const controlSamples = this.data.filter((d) => !d.has_parkinsons);
     const pdSamples = this.data.filter((d) => d.has_parkinsons);
 
-    console.log(`\nData preparation:`);
-    console.log(
-      `Control samples: ${controlSamples.length}, PD samples: ${pdSamples.length}`
-    );
-
     // Use the enhanced data directly (it already has proper research patterns)
     this.realDataPools = {
       typingSpeed: {
@@ -106,25 +87,10 @@ class SimulationRunner {
     };
 
     // Log sample statistics for verification
-    console.log("\nData pool sizes:");
     Object.keys(this.realDataPools).forEach((metric) => {
       const controlMean = this.mean(this.realDataPools[metric].control);
       const pdMean = this.mean(this.realDataPools[metric].pd);
       const diffPct = (pdMean / controlMean - 1) * 100;
-      console.log(
-        metric +
-          ": Control=" +
-          this.realDataPools[metric].control.length +
-          " (mean=" +
-          controlMean.toFixed(2) +
-          "), PD=" +
-          this.realDataPools[metric].pd.length +
-          " (mean=" +
-          pdMean.toFixed(2) +
-          ", " +
-          diffPct.toFixed(1) +
-          "%)"
-      );
     });
   }
 
@@ -242,14 +208,7 @@ class SimulationRunner {
     const metrics = ["typingSpeed", "duration", "delay"];
     const runs = 10;
 
-    console.log("\n" + "=".repeat(80));
-    console.log("STATISTICAL SIMULATION RESULTS");
-    console.log("=".repeat(80));
-
     for (const metric of metrics) {
-      console.log(`\n📊 ${metric.toUpperCase()} SIMULATIONS:`);
-      console.log("-".repeat(50));
-
       const results = [];
       let significantCount = 0;
 
@@ -260,13 +219,6 @@ class SimulationRunner {
         if (result.isSignificant) significantCount++;
 
         const precision = metric === "typingSpeed" ? 1 : 4;
-        console.log(
-          `Run ${i.toString().padStart(2)}: ` +
-            `Control=${result.controlMean.toFixed(precision).padStart(8)} | ` +
-            `PD=${result.pdMean.toFixed(precision).padStart(8)} | ` +
-            `p=${result.pValue.toFixed(4)} | ` +
-            `${result.isSignificant ? "✓ SIGNIFICANT" : "✗ not significant"}`
-        );
       }
 
       // Summary statistics
@@ -275,14 +227,7 @@ class SimulationRunner {
       const avgPValue = this.mean(results.map((r) => r.pValue));
       const significanceRate = (significantCount / runs) * 100;
 
-      console.log("-".repeat(50));
       const precision = metric === "typingSpeed" ? 1 : 4;
-      console.log(
-        `SUMMARY - Control Avg: ${avgControlMean.toFixed(precision)} | ` +
-          `PD Avg: ${avgPdMean.toFixed(precision)} | ` +
-          `Avg p-value: ${avgPValue.toFixed(4)} | ` +
-          `Significant: ${significantCount}/${runs} (${significanceRate.toFixed(1)}%)`
-      );
 
       // Effect size calculation
       const pooledStd = Math.sqrt(
@@ -291,12 +236,7 @@ class SimulationRunner {
           2
       );
       const effectSize = Math.abs(avgPdMean - avgControlMean) / pooledStd;
-      console.log(`Effect Size (Cohen's d): ${effectSize.toFixed(3)}`);
     }
-
-    console.log("\n" + "=".repeat(80));
-    console.log("ANALYSIS COMPLETE");
-    console.log("=".repeat(80));
   }
 }
 

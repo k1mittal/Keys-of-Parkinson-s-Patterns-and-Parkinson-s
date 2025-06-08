@@ -1,7 +1,5 @@
 // Wait for DOM to be ready
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("DOM Content Loaded - Starting scatter plot initialization");
-
   const scatterMargin = { top: 20, right: 30, bottom: 60, left: 80 };
   const scatterWidth = 700 - scatterMargin.left - scatterMargin.right;
   const scatterHeight = 500 - scatterMargin.top - scatterMargin.bottom;
@@ -35,9 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Brush event handler
   function brushed(event) {
     const selection = event.selection;
-
-    console.log("Brush event:", event.type, "Selection:", selection); // Debug log
-    console.log("Data available:", data ? data.length : "No data"); // Debug log
 
     // Only proceed if we have data
     if (!data || data.length === 0) {
@@ -92,8 +87,6 @@ document.addEventListener("DOMContentLoaded", function () {
       ? data.filter((d) => isPointSelected(selection, d))
       : [];
 
-    console.log("Selected points count:", selectedPoints.length); // Debug log
-
     const countElement = document.querySelector("#selection-count");
     if (countElement) {
       countElement.textContent = `${
@@ -109,8 +102,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const selectedPoints = selection
       ? data.filter((d) => isPointSelected(selection, d))
       : [];
-
-    console.log("Rendering stats for", selectedPoints.length, "points"); // Debug log
 
     const container = document.getElementById("selection-stats");
 
@@ -177,11 +168,17 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
             <div class="avg-item">
               <span class="avg-label">Key Duration:</span>
-              <span class="avg-value">${(pdPoints.length > 0 ? d3.mean(pdPoints, (d) => d.Duration) * 1000 : 0).toFixed(0)} ms</span>
+              <span class="avg-value">${(pdPoints.length > 0
+                ? d3.mean(pdPoints, (d) => d.Duration) * 1000
+                : 0
+              ).toFixed(0)} ms</span>
             </div>
             <div class="avg-item">
               <span class="avg-label">Inter-key Delay:</span>
-              <span class="avg-value">${(pdPoints.length > 0 ? d3.mean(pdPoints, (d) => d.Delay) * 1000 : 0).toFixed(0)} ms</span>
+              <span class="avg-value">${(pdPoints.length > 0
+                ? d3.mean(pdPoints, (d) => d.Delay) * 1000
+                : 0
+              ).toFixed(0)} ms</span>
             </div>
           </div>
           <div class="group-avg-column control-column">
@@ -196,11 +193,17 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
             <div class="avg-item">
               <span class="avg-label">Key Duration:</span>
-              <span class="avg-value">${(controlPoints.length > 0 ? d3.mean(controlPoints, (d) => d.Duration) * 1000 : 0).toFixed(0)} ms</span>
+              <span class="avg-value">${(controlPoints.length > 0
+                ? d3.mean(controlPoints, (d) => d.Duration) * 1000
+                : 0
+              ).toFixed(0)} ms</span>
             </div>
             <div class="avg-item">
               <span class="avg-label">Inter-key Delay:</span>
-              <span class="avg-value">${(controlPoints.length > 0 ? d3.mean(controlPoints, (d) => d.Delay) * 1000 : 0).toFixed(0)} ms</span>
+              <span class="avg-value">${(controlPoints.length > 0
+                ? d3.mean(controlPoints, (d) => d.Delay) * 1000
+                : 0
+              ).toFixed(0)} ms</span>
             </div>
           </div>
         </div>
@@ -211,7 +214,6 @@ document.addEventListener("DOMContentLoaded", function () {
     `;
 
       container.innerHTML = htmlContent;
-      console.log("Stats updated successfully"); // Debug log
     } else {
       console.error("Stats container not found!"); // Debug log
     }
@@ -220,19 +222,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Load and process the data
   d3.csv("data/clean_subject_data.csv").then((rawData) => {
     // Debug: Check if DOM elements exist
-    console.log("DOM Elements Check:");
-    console.log(
-      "- selection-count:",
-      document.querySelector("#selection-count")
-    );
-    console.log(
-      "- selection-stats:",
-      document.querySelector("#selection-stats")
-    );
-    console.log(
-      "- selection-panel:",
-      document.querySelector("#selection-panel")
-    );
     // Convert and filter out NaN/missing values
     data = rawData
       .map((d) => ({
@@ -330,7 +319,9 @@ document.addEventListener("DOMContentLoaded", function () {
            <strong>Group:</strong> ${d.Group}<br/>
            <strong>UPDRS:</strong> ${d.UPDRS}<br/>
            <strong>Typing Speed:</strong> ${d.TypingSpeed.toFixed(1)} WPM<br/>
-           <strong>Key Duration:</strong> ${(d.Duration * 1000).toFixed(0)} ms<br/>
+           <strong>Key Duration:</strong> ${(d.Duration * 1000).toFixed(
+             0
+           )} ms<br/>
            <strong>Inter-key Delay:</strong> ${(d.Delay * 1000).toFixed(0)} ms`
           )
           .style("left", event.pageX + 15 + "px")
@@ -345,8 +336,6 @@ document.addEventListener("DOMContentLoaded", function () {
         d3.select(this).transition().duration(200).attr("r", 6);
         tooltip.transition().duration(200).style("opacity", 0);
       });
-
-    console.log("Circles created, data bound. Sample data:", data[0]); // Debug log
 
     // Create brush AFTER adding circles
     svg.call(d3.brush().on("start brush end", brushed));

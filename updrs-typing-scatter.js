@@ -351,7 +351,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // PD legend item
     legend
       .append("circle")
-      .attr("cx", 0)
+      .attr("cx", -18)
       .attr("cy", 0)
       .attr("r", 7)
       .attr("fill", "#dc2626")
@@ -360,7 +360,7 @@ document.addEventListener("DOMContentLoaded", function () {
     legend
       .append("text")
       .attr("class", "legend-text")
-      .attr("x", 18)
+      .attr("x", 0)
       .attr("y", 5)
       .attr("font-size", "14px")
       .attr("font-weight", "500")
@@ -370,7 +370,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Control legend item
     legend
       .append("circle")
-      .attr("cx", 0)
+      .attr("cx", -18)
       .attr("cy", 25)
       .attr("r", 7)
       .attr("fill", "#059669")
@@ -379,7 +379,7 @@ document.addEventListener("DOMContentLoaded", function () {
     legend
       .append("text")
       .attr("class", "legend-text")
-      .attr("x", 18)
+      .attr("x", 0)
       .attr("y", 30)
       .attr("font-size", "14px")
       .attr("font-weight", "500")

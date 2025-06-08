@@ -11,7 +11,6 @@ if (themeToggle) {
   themeToggle.textContent = savedTheme === "light" ? "🌙" : "☀️";
 }
 
-
 themeToggle.addEventListener("click", () => {
   const currentTheme = root.getAttribute("data-theme");
   const newTheme = currentTheme === "light" ? "dark" : "light";
@@ -20,7 +19,6 @@ themeToggle.addEventListener("click", () => {
 
   // Update button text
   themeToggle.textContent = newTheme === "light" ? "🌙" : "☀️";
-
 });
 
 // Keyboard layout configuration
@@ -67,10 +65,33 @@ const tooltip = d3
   .style("opacity", 0);
 
 // Load and process data
-d3.json("keyboard_data.json").then(function (data) {
-  let currentGroup = "control";
+d3.json("interactive-keyboard-viz/src/data/hold_data.json").then(
+  function (data) {
+    let currentGroup = "control";
 
-  function updateKeyboard(group) {
+    function updateKeyboard(group) {
+      keyboard.forEach((row, i) => {
+        const rowOffset = (width - row.length * (keySize + keySpacing)) / 2;
+
+        row.forEach((key, j) => {
+          const x = rowOffset + j * (keySize + keySpacing);
+          const y = i * (keySize + keySpacing);
+
+          const keyGroup = svg.select(`#key-${key}`);
+          const frequency = data[group][key.toLowerCase()] || 0;
+
+          keyGroup
+            .select("rect")
+            .transition()
+            .duration(500)
+            .style("fill", colorScale(frequency));
+
+          keyGroup.select(".frequency-text").text(d3.format(".3%")(frequency));
+        });
+      });
+    }
+
+    // Initial keyboard creation
     keyboard.forEach((row, i) => {
       const rowOffset = (width - row.length * (keySize + keySpacing)) / 2;
 
@@ -78,99 +99,77 @@ d3.json("keyboard_data.json").then(function (data) {
         const x = rowOffset + j * (keySize + keySpacing);
         const y = i * (keySize + keySpacing);
 
-        const keyGroup = svg.select(`#key-${key}`);
-        const frequency = data[group][key.toLowerCase()] || 0;
+        const keyGroup = svg
+          .append("g")
+          .attr("id", `key-${key}`)
+          .attr("transform", `translate(${x},${y})`);
+
+        const rect = keyGroup
+          .append("rect")
+          .attr("class", "key")
+          .attr("width", keySize)
+          .attr("height", keySize)
+          .attr("rx", 8);
 
         keyGroup
-          .select("rect")
-          .transition()
-          .duration(500)
-          .style("fill", colorScale(frequency));
+          .append("text")
+          .attr("class", "key-text")
+          .attr("x", keySize / 2)
+          .attr("y", keySize / 2)
+          .attr("dy", ".35em")
+          .text(key.toUpperCase());
 
-        keyGroup.select(".frequency-text").text(d3.format(".3%")(frequency));
+        const freqText = keyGroup
+          .append("text")
+          .attr("class", "frequency-text key-text")
+          .attr("x", keySize / 2)
+          .attr("y", keySize * 0.8)
+          .attr("dy", ".35em");
+
+        keyGroup
+          .on("mouseover", function (event) {
+            // Show tooltip
+            tooltip.transition().duration(200).style("opacity", 0.9);
+            tooltip
+              .html(
+                `Key: ${key.toUpperCase()}<br/>Frequency: ${d3.format(".3%")(
+                  data[currentGroup][key.toLowerCase()] || 0
+                )}`
+              )
+              .style("left", event.pageX + 10 + "px")
+              .style("top", event.pageY - 28 + "px");
+
+            // Show frequency text
+            freqText.style("opacity", 1);
+
+            // Highlight key
+            rect.style("fill-opacity", 0.8).style("stroke-width", 2);
+          })
+          .on("mouseout", function () {
+            // Hide tooltip
+            tooltip.transition().duration(500).style("opacity", 0);
+
+            // Hide frequency text
+            freqText.style("opacity", 0);
+
+            // Reset key appearance
+            rect.style("fill-opacity", 1).style("stroke-width", 1);
+          });
       });
     });
-  }
 
-  // Initial keyboard creation
-  keyboard.forEach((row, i) => {
-    const rowOffset = (width - row.length * (keySize + keySpacing)) / 2;
+    // Initial update
+    updateKeyboard(currentGroup);
 
-    row.forEach((key, j) => {
-      const x = rowOffset + j * (keySize + keySpacing);
-      const y = i * (keySize + keySpacing);
+    // Toggle buttons
+    d3.selectAll(".toggle-btn").on("click", function () {
+      const group = d3.select(this).attr("data-group");
+      currentGroup = group;
 
-      const keyGroup = svg
-        .append("g")
-        .attr("id", `key-${key}`)
-        .attr("transform", `translate(${x},${y})`);
+      d3.selectAll(".toggle-btn").classed("active", false);
+      d3.select(this).classed("active", true);
 
-      const rect = keyGroup
-        .append("rect")
-        .attr("class", "key")
-        .attr("width", keySize)
-        .attr("height", keySize)
-        .attr("rx", 8);
-
-      keyGroup
-        .append("text")
-        .attr("class", "key-text")
-        .attr("x", keySize / 2)
-        .attr("y", keySize / 2)
-        .attr("dy", ".35em")
-        .text(key.toUpperCase());
-
-      const freqText = keyGroup
-        .append("text")
-        .attr("class", "frequency-text key-text")
-        .attr("x", keySize / 2)
-        .attr("y", keySize * 0.8)
-        .attr("dy", ".35em");
-
-      keyGroup
-        .on("mouseover", function (event) {
-          // Show tooltip
-          tooltip.transition().duration(200).style("opacity", 0.9);
-          tooltip
-            .html(
-              `Key: ${key.toUpperCase()}<br/>Frequency: ${d3.format(".3%")(
-                data[currentGroup][key.toLowerCase()] || 0
-              )}`
-            )
-            .style("left", event.pageX + 10 + "px")
-            .style("top", event.pageY - 28 + "px");
-
-          // Show frequency text
-          freqText.style("opacity", 1);
-
-          // Highlight key
-          rect.style("fill-opacity", 0.8).style("stroke-width", 2);
-        })
-        .on("mouseout", function () {
-          // Hide tooltip
-          tooltip.transition().duration(500).style("opacity", 0);
-
-          // Hide frequency text
-          freqText.style("opacity", 0);
-
-          // Reset key appearance
-          rect.style("fill-opacity", 1).style("stroke-width", 1);
-        });
+      updateKeyboard(group);
     });
-  });
-
-  // Initial update
-  updateKeyboard(currentGroup);
-
-  // Toggle buttons
-  d3.selectAll(".toggle-btn").on("click", function () {
-    const group = d3.select(this).attr("data-group");
-    currentGroup = group;
-
-    d3.selectAll(".toggle-btn").classed("active", false);
-    d3.select(this).classed("active", true);
-
-    updateKeyboard(group);
-  });
-});
-
+  }
+);

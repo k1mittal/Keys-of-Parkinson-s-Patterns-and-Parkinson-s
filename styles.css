@@ -13,6 +13,7 @@
   --success-color: #059669;
   --danger-color: #dc2626;
   --warning-color: #d97706;
+  --gradient-color: #df0303f0;
 
   /* Typography */
   --font-primary: "Playfair Display", serif;
@@ -81,9 +82,7 @@ body {
   padding: 0;
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
   min-height: 100vh;
   line-height: 1.6;
 }
@@ -492,7 +491,7 @@ h1 {
   background: linear-gradient(
     135deg,
     var(--accent-primary),
-    var(--warning-color)
+    var(--gradient-color)
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -546,9 +545,7 @@ h1 {
   margin: 1.25rem 0;
   border-radius: 0 8px 8px 0;
   position: relative;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .finding-box:hover {
@@ -703,9 +700,7 @@ p {
   background: rgba(37, 99, 235, 0.1);
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  transition:
-    width 0.6s,
-    height 0.6s;
+  transition: width 0.6s, height 0.6s;
 }
 
 .toggle-btn:hover::before {

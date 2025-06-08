@@ -2149,3 +2149,17 @@ circle.unselected {
     font-size: 0.75rem;
   }
 }
+
+/* Center specific story section titles */
+.story-counter-intuitive h3,
+.story-breakthrough h3,
+.story-trophy h3 {
+  text-align: center;
+}
+
+/* Center paragraphs in specific story sections */
+.story-counter-intuitive p,
+.story-breakthrough p,
+.story-trophy p {
+  text-align: center;
+}

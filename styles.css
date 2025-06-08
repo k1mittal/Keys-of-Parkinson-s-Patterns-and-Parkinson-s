@@ -539,13 +539,28 @@ h1 {
 
 /* Enhanced finding boxes */
 .finding-box {
+  position: relative;
   background: rgba(37, 99, 235, 0.05);
-  border-left: 4px solid var(--accent-primary);
-  padding: 1.25rem;
+  padding: 1.25rem 1.25rem 1.25rem 1.5rem;
   margin: 1.25rem 0;
   border-radius: 0 8px 8px 0;
-  position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.finding-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary),
+    var(--gradient-color)
+  );
+  border-radius: 0;
 }
 
 .finding-box:hover {
@@ -553,19 +568,44 @@ h1 {
   box-shadow: var(--shadow-md);
 }
 
+/* Danger variant */
 .finding-box.danger {
   background: rgba(220, 38, 38, 0.05);
-  border-left-color: var(--danger-color);
+}
+.finding-box.danger::before {
+  background: linear-gradient(
+    135deg,
+    var(--danger-color),
+    color-mix(in srgb, var(--danger-color) 60%, transparent)
+  );
 }
 
+/* Success variant */
 .finding-box.success {
   background: rgba(5, 150, 105, 0.05);
-  border-left-color: var(--success-color);
+}
+.finding-box.success::before {
+  background: linear-gradient(
+    135deg,
+    var(--success-color),
+    color-mix(in srgb, var(--success-color) 60%, transparent)
+  );
 }
 
+/* Warning variant */
 .finding-box.warning {
   background: rgba(217, 119, 6, 0.05);
-  border-left-color: var(--warning-color);
+}
+.finding-box.warning::before {
+  background: linear-gradient(
+    135deg,
+    var(--warning-color),
+    color-mix(in srgb, var(--warning-color) 60%, transparent)
+  );
+}
+
+.finding-box p {
+  margin-bottom: 0;
 }
 
 h2 {
@@ -589,7 +629,7 @@ h2::after {
   background: linear-gradient(
     90deg,
     var(--accent-primary),
-    var(--success-color)
+    var(--gradient-color)
   );
   border-radius: 2px;
 }
@@ -851,24 +891,12 @@ li::before {
   background: linear-gradient(
     135deg,
     var(--accent-primary),
-    var(--success-color)
+    var(--gradient-color)
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 700;
   font-size: 1.1em;
-}
-
-.finding-box {
-  background: rgba(37, 99, 235, 0.05);
-  border-left: 4px solid var(--accent-primary);
-  padding: 1.5rem;
-  margin: 1.5rem 0;
-  border-radius: 0 8px 8px 0;
-}
-
-.finding-box p {
-  margin-bottom: 0;
 }
 
 /* Responsive design */
@@ -1712,11 +1740,26 @@ li::before {
 }
 
 .simulation-explanation {
+  position: relative;
   margin-top: 2rem;
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem; /* extra left padding for pseudo-element */
   background: rgba(37, 99, 235, 0.05);
-  border-left: 4px solid var(--accent-primary);
   border-radius: 0 8px 8px 0;
+}
+
+.simulation-explanation::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px; /* matches your original border-left width */
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary),
+    var(--gradient-color)
+  );
+  border-radius: 0 0 0 0; /* optional: match the look you want */
 }
 
 .simulation-explanation p {

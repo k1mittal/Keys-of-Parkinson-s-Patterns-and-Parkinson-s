@@ -6,8 +6,25 @@ export function toggleVisualizationMode() {
 
 export function updateDistributionChart(selectedKeys, holdData) {
   const margin = { top: 20, right: 20, bottom: 40, left: 70 };
-  const width = 500 - margin.left - margin.right;
-  const height = 300 - margin.top - margin.bottom;
+
+  // Check if mobile device and adjust dimensions accordingly - matching keyboard.js
+  const isMobile = window.innerWidth <= 768;
+  const isSmallMobile = window.innerWidth <= 480;
+
+  let baseWidth, baseHeight;
+  if (isSmallMobile) {
+    baseWidth = 320;
+    baseHeight = 240;
+  } else if (isMobile) {
+    baseWidth = 400;
+    baseHeight = 280;
+  } else {
+    baseWidth = 480;
+    baseHeight = 320;
+  }
+
+  const width = baseWidth - margin.left - margin.right;
+  const height = baseHeight - margin.top - margin.bottom;
 
   // Clear previous chart
   d3.select("#distribution-viz").html("");

@@ -28,13 +28,13 @@ function init() {
   let baseWidth, baseHeight;
   if (isSmallMobile) {
     baseWidth = 320;
-    baseHeight = 160;
+    baseHeight = 240;
   } else if (isMobile) {
     baseWidth = 400;
-    baseHeight = 200;
+    baseHeight = 280;
   } else {
     baseWidth = 480;
-    baseHeight = 240;
+    baseHeight = 320;
   }
 
   const width = baseWidth - margin.left - margin.right;

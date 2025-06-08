@@ -46,7 +46,7 @@ const svg = d3
 // Color scale with more polarized differences
 const colorScale = d3
   .scaleSequential()
-  .domain([0, 0.15])
+  .domain([0, 0.3])
   .interpolator(
     d3.interpolateRgbBasis([
       "#fee5d9", // Very light pink
@@ -78,7 +78,10 @@ d3.json("interactive-keyboard-viz/src/data/hold_data.json").then(
           const y = i * (keySize + keySpacing);
 
           const keyGroup = svg.select(`#key-${key}`);
-          const frequency = data[group][key.toLowerCase()] || 0;
+          // Handle array data structure and calculate mean hold time
+          const holdTimes = data[group] && data[group][key.toLowerCase()];
+          const frequency =
+            holdTimes && holdTimes.length > 0 ? d3.mean(holdTimes) : 0;
 
           keyGroup
             .select("rect")
@@ -86,7 +89,7 @@ d3.json("interactive-keyboard-viz/src/data/hold_data.json").then(
             .duration(500)
             .style("fill", colorScale(frequency));
 
-          keyGroup.select(".frequency-text").text(d3.format(".3%")(frequency));
+          keyGroup.select(".frequency-text").text(d3.format(".3f")(frequency));
         });
       });
     }
@@ -130,11 +133,16 @@ d3.json("interactive-keyboard-viz/src/data/hold_data.json").then(
           .on("mouseover", function (event) {
             // Show tooltip
             tooltip.transition().duration(200).style("opacity", 0.9);
+
+            // Handle array data structure and calculate mean hold time
+            const holdTimes =
+              data[currentGroup] && data[currentGroup][key.toLowerCase()];
+            const frequency =
+              holdTimes && holdTimes.length > 0 ? d3.mean(holdTimes) : 0;
+
             tooltip
               .html(
-                `Key: ${key.toUpperCase()}<br/>Frequency: ${d3.format(".3%")(
-                  data[currentGroup][key.toLowerCase()] || 0
-                )}`
+                `Key: ${key.toUpperCase()}<br/>Mean Hold Time: ${d3.format(".3f")(frequency)}s`
               )
               .style("left", event.pageX + 10 + "px")
               .style("top", event.pageY - 28 + "px");

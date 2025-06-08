@@ -32,7 +32,7 @@
     <a href="https://github.com/k1mittal/Keys-of-Parkinsons"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/k1mittal/Keys-of-Parkinsons">View Demo</a>
+    <a href="https://www.youtube.com/watch?v=REY856nx11Q">View Demo</a>
     ·
     <a href="https://github.com/k1mittal/Keys-of-Parkinsons">Report Bug</a>
     ·

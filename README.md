@@ -19,11 +19,14 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-
+<a href="https://k1mittal.github.io/Keys-of-Parkinsons/">
+    <img src="https://parkinsonsnewstoday.com/wp-content/uploads/2020/02/shutterstock_622368446_zps133prkji.jpg" alt="Logo" width="80" height="80">
+  </a>
 <h3 align="center">Keys of Parkinson's: Patterns and Parkinson's</h3>
 
   <p align="center">
     Keys of Parkinson's: Patterns and Parkinson's Code
+    <br />
     Website can be found <a href="https://k1mittal.github.io/Keys-of-Parkinsons/">here<a>
     <br />
     <a href="https://github.com/k1mittal/Keys-of-Parkinsons"><strong>Explore the docs »</strong></a>
@@ -68,6 +71,8 @@
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With
+
+- [D3](https://d3js.org)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

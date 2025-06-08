@@ -95,11 +95,11 @@
 You can git clone them if needed.
 
 ```
-git clone https://github.com/k1mittal/Keys-of-Parkinson-s-Patterns-and-Parkinson-s.git
+git clone https://github.com/k1mittal/Keys-of-Parkinsons.git
 ```
 
 ```
-cd Keys-of-Parkinson-s-Patterns-and-Parkinson-s
+cd Keys-of-Parkinsons
 ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>

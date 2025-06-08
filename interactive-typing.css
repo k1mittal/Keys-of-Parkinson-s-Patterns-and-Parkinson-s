@@ -794,18 +794,118 @@ header p {
 }
 
 @media (max-width: 768px) {
-  header h1 {
-    font-size: 2rem;
+  .typing-test-section {
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .instructions h2 {
+    font-size: 1.5rem;
+  }
+
+  .instruction-header h3 {
+    font-size: 1.4rem;
   }
 
   .test-text {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     letter-spacing: 1px;
+    padding: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .prompt-text {
+    font-size: 1.1rem;
+  }
+
+  #typing-input {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+
+  .keyboards-container {
+    gap: 1rem;
+    padding: 0.25rem;
+    margin-bottom: 2rem;
+    min-height: auto;
+  }
+
+  .keyboard-wrapper {
+    padding: 0.75rem 0.75rem 1rem 0.75rem;
+    min-height: auto;
+  }
+
+  .keyboard-wrapper h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .keyboard-svg {
+    min-height: 120px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+  }
+
+  .stats span {
+    font-size: 0.75rem;
+  }
+
+  .stats span span {
+    font-size: 0.8rem;
+  }
+
+  .metrics-container {
+    width: 100%;
+    padding: 1rem;
+    min-height: auto;
+  }
+
+  .chart-title {
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
   }
 
   .analysis-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
+    max-width: 100%;
+  }
+
+  .analysis-card {
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+
+  .analysis-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .stat-item {
+    padding: 0.75rem;
+  }
+
+  .stat-item .label {
+    font-size: 0.85rem;
+  }
+
+  .stat-item .value {
+    font-size: 1rem;
+  }
+
+  .score-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .score-circle span {
+    font-size: 1.3rem;
   }
 
   .instruction-header {
@@ -818,12 +918,17 @@ header p {
     gap: 0.5rem;
   }
 
+  .reset-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
   .inline-notification {
     max-width: 100%;
     text-align: center;
     white-space: normal;
-    font-size: 0.85rem;
-    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
     margin-top: 0.5rem;
     transform: translateY(-10px);
     margin-left: 0;
@@ -831,6 +936,146 @@ header p {
 
   .inline-notification.show {
     transform: translateY(0);
+  }
+
+  .progress-bars-container {
+    gap: 0.6rem;
+  }
+
+  .progress-label {
+    font-size: 0.85rem;
+    min-width: 120px;
+  }
+
+  .analysis-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .typing-test-section {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .instructions h2 {
+    font-size: 1.3rem;
+  }
+
+  .instruction-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .test-text {
+    font-size: 1rem;
+    padding: 0.6rem;
+    letter-spacing: 0.5px;
+  }
+
+  .prompt-text {
+    font-size: 1rem;
+  }
+
+  #typing-input {
+    font-size: 0.95rem;
+    padding: 0.6rem;
+  }
+
+  .keyboards-container {
+    gap: 0.75rem;
+    padding: 0;
+  }
+
+  .keyboard-wrapper {
+    padding: 0.5rem 0.5rem 0.75rem 0.5rem;
+  }
+
+  .keyboard-wrapper h3 {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .keyboard-svg {
+    min-height: 100px;
+  }
+
+  .stats {
+    gap: 0.3rem;
+    font-size: 0.7rem;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+  }
+
+  .stats span {
+    font-size: 0.7rem;
+  }
+
+  .stats span span {
+    font-size: 0.75rem;
+  }
+
+  .metrics-container {
+    padding: 0.75rem;
+  }
+
+  .chart-title {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .analysis-card {
+    padding: 1rem;
+  }
+
+  .analysis-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .stat-item {
+    padding: 0.6rem;
+  }
+
+  .stat-item .label {
+    font-size: 0.8rem;
+  }
+
+  .stat-item .value {
+    font-size: 0.9rem;
+  }
+
+  .score-circle {
+    width: 90px;
+    height: 90px;
+  }
+
+  .score-circle span {
+    font-size: 1.2rem;
+  }
+
+  .reset-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .progress-label {
+    font-size: 0.8rem;
+    min-width: 100px;
+  }
+
+  .progress-bar {
+    height: 5px;
+  }
+
+  .analysis-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  #similarity-interpretation {
+    font-size: 0.8rem;
+    max-width: 180px;
   }
 }
 

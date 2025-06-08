@@ -20,12 +20,29 @@ d3.json("./interactive-keyboard-viz/src/data/hold_data.json")
 
 function init() {
   const margin = { top: 15, right: 15, bottom: 15, left: 15 };
-  const width = 480 - margin.left - margin.right;
-  const height = 240 - margin.top - margin.bottom;
+
+  // Check if mobile device and adjust dimensions accordingly
+  const isMobile = window.innerWidth <= 768;
+  const isSmallMobile = window.innerWidth <= 480;
+
+  let baseWidth, baseHeight;
+  if (isSmallMobile) {
+    baseWidth = 320;
+    baseHeight = 160;
+  } else if (isMobile) {
+    baseWidth = 400;
+    baseHeight = 200;
+  } else {
+    baseWidth = 480;
+    baseHeight = 240;
+  }
+
+  const width = baseWidth - margin.left - margin.right;
+  const height = baseHeight - margin.top - margin.bottom;
 
   const keyWidth = width / 12; // Adjusted for proper fit
   const keyHeight = height / 4.5; // Adjusted for space bar
-  const keyPadding = 5;
+  const keyPadding = isMobile ? 3 : 5;
 
   // Clear existing keyboard to prevent duplicates
   d3.select("#keyboard-viz").html("");
@@ -75,7 +92,7 @@ function init() {
         .attr("x", key === " " ? (keyWidth * 5) / 2 : keyWidth / 2) // Center text for spacebar
         .attr("y", keyHeight / 2)
         .attr("dy", ".35em")
-        .attr("font-size", "14px")
+        .attr("font-size", isSmallMobile ? "10px" : isMobile ? "12px" : "14px")
         .attr("fill", "#333")
         .attr("text-anchor", "middle")
         .text(key === " " ? "Space" : key.toUpperCase());
@@ -121,6 +138,23 @@ document.getElementById("viz-clear-selection").addEventListener("click", () => {
   selectedKeys.clear();
   d3.selectAll(".key").classed("selected", false);
   updateDistributionChart(selectedKeys, holdData);
+});
+
+// Handle window resize for responsive behavior
+window.addEventListener("resize", () => {
+  if (holdData) {
+    init();
+    // Restore selected keys after resize
+    selectedKeys.forEach((key) => {
+      d3.selectAll(".key")
+        .filter(function () {
+          const label = d3.select(this.parentNode).select(".key-text").text();
+          return key === " " ? label === "Space" : label === key.toUpperCase();
+        })
+        .classed("selected", true);
+    });
+    updateDistributionChart(selectedKeys, holdData);
+  }
 });
 
 export { init, selectedKeys, holdData };

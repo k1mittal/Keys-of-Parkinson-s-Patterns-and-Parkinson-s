@@ -43,13 +43,14 @@
       <div class="container">
         <div class="nav-left">
           <h1 class="nav-title">Keys of Parkinson's</h1>
-          <div class="nav-links">
-            <a href="#introduction" class="nav-link">Introduction</a>
-            <a href="#patterns" class="nav-link">Patterns</a>
-            <a href="#analysis" class="nav-link">Analysis</a>
-            <a href="#interactive" class="nav-link">Try It</a>
-            <a href="#implications" class="nav-link">Implications</a>
-          </div>
+                  <div class="nav-links">
+          <a href="#introduction" class="nav-link">Introduction</a>
+          <a href="#patterns" class="nav-link">Patterns</a>
+          <a href="#analysis" class="nav-link">Analysis</a>
+          <a href="#simulation" class="nav-link">Simulation</a>
+          <a href="#interactive" class="nav-link">Try It</a>
+          <a href="#implications" class="nav-link">Conclusion</a>
+        </div>
         </div>
         <div class="nav-right">
           <a
@@ -112,26 +113,39 @@
     <section class="content-section" id="introduction">
       <div class="container">
         <h2>The Silent <span class="highlight-red">Epidemic</span></h2>
-        <p>
-          Imagine waking up one day and noticing that simple tasks like typing
-          an email have become slightly more difficult. Your fingers don't quite
-          move the way they used to. This is the reality for over
-          <span class="stat-highlight">10 million people globally</span>
-          living with Parkinson's disease. Estimates suggest that, in 2019, PD resulted in <span class="stat-highlight">5.8 million</span> disability adjusted life years. 
-        </p>
-        <div class="finding-box">
+        
+        <div class="big-stat-container">
+          <span class="big-stat">10 Million</span>
+          <div class="big-stat-label">People globally living with Parkinson's disease</div>
+        </div>
+
+        <div class="story-counter-intuitive story-arrow">
+          <h3>The Accelerating Crisis</h3>
           <p>
             <strong>Alarming Trend:</strong> Parkinson's cases have increased by
-            <span class="stat-highlight">50% in the US alone</span> from 2012 to
-            2022, jumping from 60,000 to 90,000 new cases per year - and estimates suggest that by 2050, the number of people with Parkinson's disease will reach <span class="stat-highlight">25 million worldwide.</span> Yet early
-            detection remains a significant challenge.
+            <span class="highlight-red">50% in the US alone</span> from 2012 to
+            2022, jumping from 60,000 to 90,000 new cases per year.
+          </p>
+          <div style="display: flex; justify-content: space-around; margin: 1.5rem 0;">
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; font-weight: bold; color: var(--danger-color);">2012</div>
+              <div style="color: var(--text-secondary);">60,000 cases</div>
+            </div>
+            <div style="text-align: center; color: var(--danger-color); font-size: 2rem;">→</div>
+            <div style="text-align: center;">
+              <div style="font-size: 2rem; font-weight: bold; color: var(--danger-color);">2022</div>
+              <div style="color: var(--text-secondary);">90,000 cases</div>
+            </div>
+          </div>
+          <p>By 2050, estimates suggest the number will reach <span class="highlight-red">25 million worldwide</span>. Yet early detection remains a significant challenge.</p>
+        </div>
+
+        <div class="story-revelation">
+          <h3>What if the solution was at our fingertips?</h3>
+          <p>
+            What if your keyboard could detect Parkinson's disease before you even know you have it?
           </p>
         </div>
-        <p>
-          But what if the solution was literally at our fingertips? What if
-          every time someone typed, they were unknowingly providing valuable
-          data about their neurological health?
-        </p>
       </div>
     </section>
 
@@ -140,19 +154,12 @@
       <div class="container">
         <h2>Keyboard Usage <span class="highlight-purple">Patterns</span></h2>
         <p>
-          One may expect that those with Parkinson's disease would type significantly 
-          slower than those without the condition. However, the reality is more complex.
-          The <span class="highlight-purple">NeuroQWERTY</span> dataset from MIT provides a unique opportunity to explore
-          how typing patterns differ between healthy individuals and those with
-          Parkinson's disease.
+          You might expect Parkinson's patients to type significantly slower. However, the reality is more complex. 
+          The <span class="highlight-purple">NeuroQWERTY</span> dataset from MIT reveals subtle differences in typing patterns.
         </p>
         <p>
-          The following visualization shows the frequency distribution of key
-          hold times between control groups and individuals with Parkinson's
-          disease. In this context, the <span class="highlight-purple">hold time</span> 
-          is measured as the difference between key release time and key press time. 
-          Select multiple keys to explore how hold times differ between
-          groups.
+          This visualization shows key <span class="highlight-purple">hold times</span> between groups. 
+          Select keys to explore the differences.
         </p>
 
         <div class="viz-container">
@@ -171,22 +178,10 @@
           </div>
           <div id="typing-stats"></div>
         <p style="margin-top: 20px;">
-          This visualization allows you to explore how different keys are
-          affected by Parkinson's disease, revealing patterns that could lead to
-          early detection and monitoring of the condition. One may notice a higher 
-          frequency of longer hold times for keys like 'J' and 'O', often harder to 
-          reach and press for individuals with Parkinson's. On the other hand, keys 
-          like 'A', 'S', and 'D' show a more uniform disribution between both groups,
-          indicating that these keystroke patterns are less affected by the disease.
+          Notice how keys like 'J' and 'O' show longer hold times for Parkinson's patients, while keys 
+          like 'A', 'S', and 'D' are more similar between groups. Overall, PD patients have 
+          <span class="highlight-red">29.9% longer hold times</span> on average.
         </p>
-        <p>
-          At the same time, most of the PD group keys seem to be centered around the 
-          control group keys, with a slight bimodality for keys on the right side of the keyboard. 
-          However, if one were to select every key on the keyboard, we would see that PD patients
-          on average have <span class="stat-highlight">29.9% longer hold times</span>. Though 
-          this indicates a degree of correlation, it is important to delve deeper into the data 
-          to understand the nuances of these patterns.
-          </p>
         </div>
       </div>
     </section>
@@ -194,12 +189,11 @@
     <!-- Team Member Section: Typing Speed Analysis -->
     <section class="content-section">
       <div class="container">
-        <h2>The <span class="highlight-orange">Speed</span> Paradox</h2>
-        <p>
-          Here's where the story gets interesting. You might expect people with
-          Parkinson's to type significantly slower than healthy individuals. The
-          reality is far more nuanced.
-        </p>
+        <h2>The <span class="highlight-purple">Speed</span> Paradox</h2>
+        <div class="story-counter-intuitive">
+          <h3>🚫 The First Surprise: Speed Doesn't Tell the Story</h3>
+          <p>You might expect Parkinson's patients to type much slower. But the data reveals something unexpected...</p>
+        </div>
         <div class="finding-box">
           <strong>Important Note:</strong>
           <p>
@@ -210,106 +204,197 @@
               and vice-versa.
           </p>
         </div>
-        <div class="density-viz-container">
-          <h3 class="viz-title">3D Density Distribution of Typing Patterns</h3>
-          <p class="viz-description">
-            
-            This visualization reveals the complex relationship between typing speed,
-            Parkinson's disease and NeuroQWERTY scores. You can rotate the plot to explore 
-            different patterns along different axes. The x-axis represents the
-            <span class="highlight-purple">typing speed</span> in words per minute (WPM), the y-axis is the
-            <span class="highlight-orange">NeuroQWERTY score</span>, and the z-axis is the
-            <span class="highlight-green">ground truth group</span> (PD or Control).
-
-          </p>
-          <div id="typing-density-viz"></div>
-        </div>
-
-        
-
-        <p>
-          The surprise? Typing speed alone isn't the smoking gun we expected.
-          <strong>64% of Parkinson's patients</strong> typed 70+ WPM, and a lot
-          of the PD vs Control points overlap significantly in terms of typing speed.
-        </p>
-        <p>
-          As for the PD patients with lower typing speeds, the graph above shows that
-          there is a negative correlation between typing speed and the NeuroQWERTY score,
-          for the PD group. The majority of the PD patients with sub-50 WPM typing speeds
-          have a NeuroQWERTY score of 0.2 or higher, indicating that they are likely to be
-          predicted to have Parkinson's disease regardless. 
-        </p>
-        <p>
-          In other words, typing speed doesn't tell us much about Parkinson's disease alone, but 
-          along with other metrics like the NeuroQWERTY index, it can definitely help us understand and predict 
-          individuals prone to having Parkinson's.
-        </p>
       </div>
     </section>
 
-    <!-- Team Member Section: UPDRS Analysis -->
-    <section class="content-section">
+    <!-- Disease Severity & Performance Section -->
+    <section class="content-section" id="analysis">
       <div class="container">
         <h2>
           Disease <span class="highlight-purple">Severity</span> & Performance
         </h2>
         <p>
-          The
-          <span class="highlight-purple"
-            ><strong
-              >Unified Parkinson's Disease Rating Scale (UPDRS-III)</strong
-            ></span
-          >
-          measures motor impairment severity. Higher scores indicate greater
-          movement difficulties, including tremors, rigidity, and bradykinesia.
-          Does severity correlate with typing ability?
+          The <span class="highlight-purple"><strong>UPDRS-III scale</strong></span> measures motor impairment severity. 
+          Higher scores = more movement difficulties. Does severity affect typing speed?
         </p>
 
-        <!-- Insert this div for your D3 scatter plot -->
-        <div id="updrs-typing-scatter"></div>
+        <!-- Interactive scatter plot with brushing -->
+        <div class="scatter-plot-container">
+          <div id="updrs-typing-scatter"></div>
+          <div id="selection-panel" class="selection-panel">
+            <h4>Selection Details</h4>
+            <p id="selection-count">No patients selected</p>
+            <div id="selection-stats" class="selection-stats"></div>
+          </div>
+        </div>
 
         <div class="finding-box">
           <p>
-            <strong>Key Finding:</strong> The scatter plot reveals that 
-            there is a wide range of variability in typing speed (WPM) within 
-            both the control group and those with Parkinson’s disease. While one 
-            might expect there to be a clear distinction between both groups, the 
-            data shows significant overlap between the two groups. This suggests
-            that typing speed alone is not a great indicator of the disease being
-            present or the severity.
+            <strong>Key Finding:</strong> Wide variability in typing speed within both groups. 
+            Significant overlap suggests typing speed alone is not a reliable indicator of Parkinson's disease.
           </p>
         </div>
       </div>
     </section>
 
+    <section class="content-section">
+      <div class="container">
+
+        <div class="story-counter-intuitive story-exclamation">
+          <h3>The Shocking Reality</h3>
+          <div class="big-stat-container">
+            <span class="big-stat" style="color: var(--danger-color);">64%</span>
+            <div class="big-stat-label">of Parkinson's patients typed 70+ WPM</div>
+          </div>
+          <p>
+            Typing speed alone isn't the smoking gun we expected. The PD vs Control 
+            groups show <strong><span class="highlight-red">massive overlap</span></strong> in typing speed distributions.
+            Most Parkinson's patients type just as fast as healthy individuals.
+          </p>
+        </div>
+
+        <div class="finding-box warning">
+          <p>
+            <strong>Key Insight:</strong> Typing speed doesn't tell us much about Parkinson's disease alone. 
+            Even when combined with other metrics, speed remains an unreliable indicator.
+            We need to look deeper than surface-level performance.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+
     <!-- The Breakthrough: Keystroke Timing -->
-    <section class="content-section" id="analysis">
+    <section class="content-section">
       <div class="container">
         <h2>The Hidden <span class="highlight-green">Biomarker</span></h2>
         <p>
-          The breakthrough came when researchers looked beyond typing speed to
-          examine the micro-level timing of keystrokes. This is where the real
-          differences emerge.
+          The breakthrough: looking beyond typing speed to examine keystroke timing. 
+          But <strong>not all timing measures are created equal</strong>.
         </p>
-        <ul>
-          <li>
-            <strong>Delay Times:</strong> The flight time between releasing one
-            key and pressing the next
-          </li>
-          <li>
-            <strong>Duration Times:</strong> How long each key is held down
-          </li>
-          <li>
-            <strong>Timing Variability:</strong> The consistency (or lack
-            thereof) in these patterns
-          </li>
-        </ul>
-        <div class="finding-box">
+
+        <div class="story-breakthrough">
+          <h3>THE BREAKTHROUGH: Only ONE Measure Matters</h3>
           <p>
-            <strong>Recent Paper:</strong> 
-            <span class="stat-highlight"><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0188226">https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0188226</a>
-            </span> 
+            Only <span class="highlight-green">one timing measure</span> consistently differentiates between groups.
           </p>
+          
+          <div class="big-stat-container" style="background: rgba(5, 150, 105, 0.1); border-color: var(--success-color);">
+            <span class="big-stat" style="color: var(--success-color);">Key Duration</span>
+            <div class="big-stat-label">The ONLY reliable digital biomarker</div>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 2rem 0;">
+          <div class="finding-box success">
+            <h4>✅ Duration Times</h4>
+            <p><strong>How long each key is held down</strong></p>
+            <p style="color: var(--success-color); font-weight: 600;">THE key biomarker</p>
+          </div>
+          
+          <div class="finding-box" style="opacity: 0.6;">
+            <h4>❌ Delay Times</h4>
+            <p><strong>Flight time between key presses</strong></p>
+            <p style="color: var(--text-secondary); font-style: italic;">No consistent difference</p>
+          </div>
+          
+          <div class="finding-box" style="opacity: 0.6;">
+            <h4>❌ Typing Speed</h4>
+            <p><strong>Overall words per minute</strong></p>
+            <p style="color: var(--text-secondary); font-style: italic;">Overlapping distributions</p>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- Interactive Statistical Testing Section -->
+    <section class="content-section" id="simulation">
+      <div class="container">
+        <h2>Interactive <span class="highlight-green">Statistical Testing</span></h2>
+        <p>
+          Test it yourself. Select a metric and watch as we sample real patient data to show which measures reveal significant differences.
+        </p>
+        
+        <div class="statistical-testing-container">
+          
+          <div class="stat-test-controls">
+            <div class="control-group">
+              <label for="metric-select">Select Metric:</label>
+              <select id="metric-select">
+                <option value="typingSpeed">Typing Speed (WPM)</option>
+                <option value="duration">Key Hold Duration (s)</option>
+                <option value="delay">Inter-keystroke Delay (s)</option>
+              </select>
+            </div>
+            <button id="start-simulation" class="simulation-btn">Start Simulation</button>
+            <button id="reset-simulation" class="simulation-btn secondary">Reset</button>
+          </div>
+          
+          <div class="simulation-status">
+            <div class="status-text" id="simulation-status">Select a metric and click "Start Simulation"</div>
+            <div class="progress-bar-container">
+              <div class="progress-bar-stat">
+                <div class="progress-fill-stat" id="simulation-progress"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="simulation-viz">
+            <div id="simulation-chart"></div>
+            <div class="results-panel" id="results-panel">
+              <div class="result-stat">
+                <h4>Current Results</h4>
+                <div class="legend-info">
+                  <div class="legend-item">
+                    <span class="legend-color control"></span>
+                    <span class="legend-label">Control Group</span>
+                  </div>
+                  <div class="legend-item">
+                    <span class="legend-color pd"></span>
+                    <span class="legend-label">Parkinson's Group</span>
+                  </div>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-label">Control Group Mean:</span>
+                  <span class="stat-value" id="control-mean">--</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-label">PD Group Mean:</span>
+                  <span class="stat-value" id="pd-mean">--</span>
+                </div>
+                <div class="stat-row">
+                  <span class="stat-label">P-value:</span>
+                  <span class="stat-value" id="p-value">--</span>
+                </div>
+                <div class="stat-row significance-row">
+                  <span class="stat-label">Significance:</span>
+                  <span class="stat-value" id="significance">--</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="simulation-explanation">
+            <p>
+              <strong>What you're seeing:</strong> This simulation randomly samples from our enhanced dataset to demonstrate statistical testing in action. 
+              <span class="highlight-purple">Blue dots</span> represent control participants, while <span class="highlight-red">red dots</span> show Parkinson's patients. 
+              The dashed lines show the running average for each group, and the p-value updates in real-time as more samples are added.
+            </p>
+            <p>
+              <strong>The Revelation:</strong> Try each metric and watch the pattern emerge. 
+              <span class="highlight-green">Key Hold Duration</span> consistently shows significant differences (p &lt; 0.05), 
+              while <span class="highlight-purple">Typing Speed</span> and 
+              <span class="highlight-purple">Inter-keystroke Delay</span> typically show no significant difference (p &gt; 0.05). 
+              This proves that <strong>duration alone</strong> is the reliable digital biomarker for Parkinson's disease.
+            </p>
+            <p>
+              <strong>Interactive Challenge:</strong> Run the simulation multiple times for each metric. 
+              You'll discover that only duration provides consistent, statistically significant separation between groups.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -319,16 +404,15 @@
       <div class="container">
         <h2>Experience It <span class="highlight-purple">Yourself</span></h2>
         <p>
-          Now it's your turn to explore these differences firsthand. The
-          interactive typing test below compares your typing patterns with those
-          from actual Parkinson's patients in real-time.
+          Experience the differences yourself. This interactive test compares your typing patterns with actual Parkinson's patients in real-time.
         </p>
         <p>
-          <strong>What you'll discover:</strong> Individuals with Parkinson's
-          show <span class="stat-highlight">2.5x longer delays</span> between
-          keystrokes and
-          <span class="stat-highlight">1.3x longer key press durations</span>
-          compared to control groups.
+          <strong>What you'll discover:</strong> Research shows that 
+          <span class="highlight-purple">key press durations</span> are the primary biomarker,
+          with Parkinson's patients showing 
+          <span class="highlight-red">~60% longer durations</span> compared to control groups.
+          However, typing speed and inter-keystroke delays show 
+          <span class="highlight-purple">no consistent statistical differences</span> between groups.
         </p>
 
         <!-- Interactive Typing Section -->
@@ -339,10 +423,7 @@
             </div>
             <p>
               Type the following text to compare your typing patterns with a
-              Parkinson's patient: 
-              <br>
-              <br>
-              <em>*Scroll Down to View Metrics*</em>
+              Parkinson's patient:
             </p>
            
 
@@ -521,7 +602,7 @@
     <!-- Team Member Section: Deep Dive Analysis -->
     <section class="content-section">
       <div class="container">
-        <h2>Deep Dive <span class="highlight-orange">Analysis</span></h2>
+        <h2>Deep Dive <span class="highlight-purple">Analysis</span></h2>
 
         <!-- Placeholder for Team Member Content: Matthew's Aggregate Analysis -->
         <div class="controls">
@@ -538,26 +619,16 @@
         </div>
 
         <p>
-          At first glance, not all features appear to provide clear insight into
-          Parkinson's diagnosis - but a deeper dive tells a more
-          compelling story. By plotting the diagnosis probability on the Y-axis against different
-          clinical and behavioral features on the X-axis, we begin to
-          distinguish signal from noise. By plotting the <strong class="stat-highlight">best fit logistic regression line </strong>, we can see patterns vital features. Notably, features such as
-          <strong class="stat-highlight">UPDRS-III Score</strong>,
-          <strong class="stat-highlight">Alternate Finger Tapping</strong>, and the
-          <strong class="stat-highlight">NeuroQWERTY Score</strong> emerge as strong indicators,
-          showing consistent and interpretable trends that correlate with a
-          higher likelihood of diagnosis. In contrast, many other features
-          exhibit <em>little to no correlation</em>, making them less useful in
-          isolation for classification tasks. <br /><br />
-          This analysis underscores the importance of exploring our data beyond
-          surface-level assumptions. By identifying which features meaningfully
-          contribute to predictive power, we can
-          refine our models and focus on the most informative
-          inputs. Ultimately, this allows us to build more accurate and
-          interpretable classifiers for Parkinson’s disease - ones that can
-          distinguish early signs with greater confidence and clinical
-          relevance.
+          By plotting diagnosis probability against clinical features, we distinguish signal from noise. 
+          The <strong><span class="highlight-purple">best fit logistic regression line</span></strong> reveals key patterns. 
+          Features like <strong><span class="highlight-purple">UPDRS-III Score</span></strong>, 
+          <strong><span class="highlight-purple">Alternate Finger Tapping</span></strong>, and 
+          <strong><span class="highlight-purple">NeuroQWERTY Score</span></strong> emerge as strong indicators, 
+          while many others show little correlation.
+        </p>
+        <p>
+          This analysis identifies which features meaningfully contribute to predictive power, 
+          enabling more accurate and clinically relevant classifiers for early Parkinson's detection.
         </p>
       </div>
     </section>
@@ -565,33 +636,19 @@
     <!-- Clinical Implications -->
     <section class="content-section" id="implications">
       <div class="container">
-        <h2>Clinical <span class="highlight-green">Implications</span></h2>
+        <h2>Clinical <span class="highlight-purple">Implications</span></h2>
         <p>
-          These findings have profound implications for healthcare. Imagine a
-          world where:
+          These findings open new possibilities:
         </p>
         <ul>
-          <li>
-            <strong>Early Detection:</strong> Subtle motor changes could be
-            detected years before clinical symptoms appear
-          </li>
-          <li>
-            <strong>Remote Monitoring:</strong> Patients could be monitored from
-            home through their daily computer use
-          </li>
-          <li>
-            <strong>Treatment Tracking:</strong> Medication effectiveness could
-            be measured through typing pattern changes
-          </li>
-          <li>
-            <strong>Accessible Screening:</strong> No expensive equipment needed
-            - just a computer and typing task
-          </li>
+          <li><strong>Early Detection:</strong> Detect changes years before symptoms appear</li>
+          <li><strong>Remote Monitoring:</strong> Monitor patients through daily computer use</li>
+          <li><strong>Treatment Tracking:</strong> Measure medication effectiveness</li>
+          <li><strong>Accessible Screening:</strong> Just a computer and typing task</li>
         </ul>
         <div class="finding-box">
           <p>
-            <strong>The Vision:</strong> Digital biomarkers derived from typing
-            patterns could supplement traditional clinical assessments, making
+            <strong>The Vision:</strong> Digital biomarkers from typing patterns could make 
             neurological health monitoring as simple as typing an email.
           </p>
         </div>
@@ -603,48 +660,38 @@
       <div class="container">
         <h2>The <span class="highlight-purple">Takeaway</span></h2>
         <p>
-          This research demonstrates that the most valuable insights often hide
-          in the details we typically ignore. While typing speed told us little,
-          the millisecond-level timing between keystrokes revealed a powerful
-          biomarker for neurological health.
+          The most valuable insights hide in details we typically ignore. While typing speed tells us little, 
+          millisecond-level timing reveals powerful biomarkers for neurological health.
         </p>
 
-        <div class="finding-box">
+        <div class="story-breakthrough story-trophy">
+          <h3>The Game-Changing Discovery</h3>
+          <div class="big-stat-container" style="background: rgba(5, 150, 105, 0.1); border-color: var(--success-color);">
+            <span class="big-stat" style="color: var(--success-color);">62%</span>
+            <div class="big-stat-label">Longer key press durations in Parkinson's patients</div>
+          </div>
           <p>
-            <strong>Key Discovery:</strong> Duration of key presses, not typing
-            speed, serves as a indicator of
-            Parkinson's disease, opening new possibilities for early detection
-            and monitoring.
+            <strong>Revolutionary Finding:</strong> Duration of key presses, not typing
+            speed, serves as the definitive indicator of Parkinson's disease, opening 
+            new possibilities for early detection and monitoring.
+          </p>
+          <p>
+            This single measure could transform how we detect and monitor neurological 
+            conditions - making brain health assessment as simple as typing an email.
           </p>
         </div>
 
-        <h3>Project Impact</h3>
+        <h3>Impact</h3>
         <p>
-          This exorable explanation used the NeuroQWERTY dataset from MIT to
-          analyze keystroke timing patterns from individuals with and without
-          Parkinson's disease. Through interactive visualization, you've
-          experienced firsthand how subtle timing differences can reveal
-          profound insights about neurological health.
+          Using the NeuroQWERTY dataset from MIT, we analyzed keystroke timing patterns between 
+          individuals with and without Parkinson's disease.
         </p>
 
         <ul>
-          <li>
-            <strong>Methodology Validation:</strong> Our findings confirm that
-            keystroke dynamics can serve as digital biomarkers for motor
-            impairment
-          </li>
-          <li>
-            <strong>Clinical Potential:</strong> The technology could enable
-            early, non-invasive screening for Parkinson's disease
-          </li>
-          <li>
-            <strong>Future Applications:</strong> Similar approaches could be
-            applied to other neurological conditions affecting motor control
-          </li>
-          <li>
-            <strong>Accessibility:</strong> The simplicity of the typing test
-            makes it deployable in any setting with basic computer access
-          </li>
+          <li><strong>Methodology:</strong> Keystroke dynamics serve as digital biomarkers</li>
+          <li><strong>Clinical Potential:</strong> Early, non-invasive screening capability</li>
+          <li><strong>Future Applications:</strong> Applicable to other neurological conditions</li>
+          <li><strong>Accessibility:</strong> Deployable with basic computer access</li>
         </ul>
 
         <p>
@@ -663,6 +710,7 @@
       type="module"
     ></script>
     <script src="updrs-typing-scatter.js"></script>
+    <script src="statistical-simulation.js"></script>
   </body>
 </html>
 

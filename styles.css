@@ -20,20 +20,20 @@
 }
 
 [data-theme="dark"] {
-  --bg-primary: #1a1a1a;
-  --bg-secondary: #252525;
-  --bg-tertiary: #2a2a2a;
-  --text-primary: #e0e0e0;
-  --text-secondary: #a0a0a0;
+  --bg-primary: #000000;
+  --bg-secondary: #111111;
+  --bg-tertiary: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
   --border-color: #333333;
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
-  --accent-primary: #3b82f6;
-  --accent-secondary: #2563eb;
-  --success-color: #10b981;
-  --danger-color: #ef4444;
-  --warning-color: #f59e0b;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.8);
+  --accent-primary: #60a5fa;
+  --accent-secondary: #3b82f6;
+  --success-color: #34d399;
+  --danger-color: #f87171;
+  --warning-color: #fbbf24;
 }
 
 /* Old variable mappings for backward compatibility */
@@ -71,13 +71,19 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-secondary);
   margin: 0;
   padding: 0;
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
   min-height: 100vh;
   line-height: 1.6;
 }
@@ -114,7 +120,7 @@ body::before {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-color);
-  padding: 1rem 0;
+  padding: 0.75rem 0;
   z-index: 1000;
   transition: background-color 0.3s ease;
 }
@@ -242,15 +248,48 @@ body::before {
   z-index: 1;
 }
 
+/* Add side padding for better readability - exclude specific sections */
+.content-section:not(.full-width) .container {
+  max-width: 67rem;
+  padding: 0 3rem;
+}
+
+/* Full width sections for simulation and interactive typing */
+#simulation .container,
+#interactive .container {
+  max-width: 75rem;
+  padding: 0 2rem;
+}
+
+/* Allow patterns section visualizations to extend beyond constraints */
+#patterns .container {
+  max-width: 75rem;
+  padding: 0 2rem;
+}
+
+/* Ensure the patterns visualization stays within bounds */
+#patterns .viz-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 1.5rem auto;
+  padding: 0;
+}
+
 /* Hero Section */
 .hero-section {
   text-align: center;
-  padding: 3rem 0;
-  margin-bottom: 2rem;
+  padding: 2.5rem 0 1.5rem 0;
+  margin-bottom: 1rem;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(37, 99, 235, 0.05) 0%,
+    transparent 70%
+  );
 }
 
 .hero-section .container {
-  padding: 0 2rem;
+  padding: 0 3rem;
+  max-width: 67rem;
 }
 
 .subtitle {
@@ -264,7 +303,7 @@ body::before {
 
 /* Content Sections */
 .content-section {
-  padding: 1rem 0;
+  padding: 1.25rem 0;
   border-bottom: 1px solid rgba(37, 99, 235, 0.1);
   position: relative;
 }
@@ -273,7 +312,12 @@ body::before {
   border-bottom: none;
 }
 
-/* Add visual indicators for different section types */
+/* Story progression styling */
+.content-section {
+  position: relative;
+  scroll-margin-top: 100px;
+}
+
 .content-section:nth-child(even) {
   background: linear-gradient(
     45deg,
@@ -290,6 +334,151 @@ body::before {
     rgba(5, 150, 105, 0.02) 50%,
     transparent 100%
   );
+}
+
+/* Key story callouts */
+.story-revelation {
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.1),
+    rgba(5, 150, 105, 0.1)
+  );
+  border: 2px solid var(--accent-primary);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  position: relative;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.story-revelation::before {
+  content: "💡";
+  position: absolute;
+  top: -18px;
+  left: 30px;
+  background: rgba(37, 99, 235, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  padding: 8px 12px;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.story-revelation h3 {
+  margin-top: 0;
+  color: var(--accent-primary);
+  font-size: 1.5rem;
+}
+
+.story-counter-intuitive {
+  background: linear-gradient(
+    135deg,
+    rgba(220, 38, 38, 0.1),
+    rgba(239, 68, 68, 0.1)
+  );
+  border: 2px solid var(--danger-color);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  position: relative;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-lg);
+}
+
+.story-counter-intuitive::before {
+  content: "🤔";
+  position: absolute;
+  top: -18px;
+  left: 30px;
+  background: rgba(220, 38, 38, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  padding: 8px 12px;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+/* Reduce spacing between h3 and big-stat-container in story callouts */
+.story-counter-intuitive h3 + .big-stat-container,
+.story-breakthrough h3 + .big-stat-container,
+.story-revelation h3 + .big-stat-container {
+  margin-top: 0.75rem;
+}
+
+.story-breakthrough {
+  background: linear-gradient(
+    135deg,
+    rgba(5, 150, 105, 0.15),
+    rgba(16, 185, 129, 0.15)
+  );
+  border: 2px solid var(--success-color);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  position: relative;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-lg);
+  transform: scale(1.02);
+}
+
+.story-breakthrough::before {
+  content: "🎯";
+  position: absolute;
+  top: -18px;
+  left: 30px;
+  background: rgba(5, 150, 105, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  padding: 8px 12px;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.story-breakthrough h3 {
+  margin-top: 0;
+  color: var(--success-color);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.story-trophy::before {
+  content: "🏆";
+  position: absolute;
+  top: -18px;
+  left: 30px;
+  background: rgba(5, 150, 105, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  padding: 8px 12px;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.story-arrow::before {
+  content: "📈";
+  position: absolute;
+  top: -18px;
+  left: 30px;
+  background: rgba(220, 38, 38, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  padding: 8px 12px;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.story-exclamation::before {
+  content: "❗";
+  position: absolute;
+  top: -18px;
+  left: 30px;
+  background: rgba(220, 38, 38, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  padding: 8px 12px;
+  font-size: 1.8rem;
+  line-height: 1;
 }
 
 /* Typography */
@@ -310,11 +499,83 @@ h1 {
   animation: fadeInUp 0.8s ease-out;
 }
 
+/* Large number callouts for statistics */
+.big-stat {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--accent-primary);
+  display: block;
+  text-align: center;
+  margin: 1rem 0;
+  font-family: var(--font-primary);
+}
+
+.big-stat-container {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(37, 99, 235, 0.05);
+  border-radius: 12px;
+  margin: 1.5rem 0;
+  border: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+/* Remove background when big-stat-container is inside story callouts */
+.story-breakthrough .big-stat-container,
+.story-counter-intuitive .big-stat-container,
+.story-revelation .big-stat-container {
+  background: transparent;
+  border: none;
+  padding: 0.5rem 2rem 1rem 2rem;
+  margin: 0.5rem 0 1.5rem 0;
+}
+
+.big-stat-label {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Enhanced finding boxes */
+.finding-box {
+  background: rgba(37, 99, 235, 0.05);
+  border-left: 4px solid var(--accent-primary);
+  padding: 1.25rem;
+  margin: 1.25rem 0;
+  border-radius: 0 8px 8px 0;
+  position: relative;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.finding-box:hover {
+  transform: translateX(5px);
+  box-shadow: var(--shadow-md);
+}
+
+.finding-box.danger {
+  background: rgba(220, 38, 38, 0.05);
+  border-left-color: var(--danger-color);
+}
+
+.finding-box.success {
+  background: rgba(5, 150, 105, 0.05);
+  border-left-color: var(--success-color);
+}
+
+.finding-box.warning {
+  background: rgba(217, 119, 6, 0.05);
+  border-left-color: var(--warning-color);
+}
+
 h2 {
   font-family: var(--font-primary);
   font-size: 2.5rem;
   font-weight: 300;
-  margin: 0 0 2rem 0;
+  margin: 0 0 1.25rem 0;
   letter-spacing: -0.5px;
   line-height: 1.2;
   color: var(--text-primary);
@@ -340,7 +601,7 @@ h3 {
   font-family: var(--font-primary);
   font-size: 1.8rem;
   font-weight: 400;
-  margin: 2rem 0 1rem 0;
+  margin: 1.5rem 0 0.75rem 0;
   color: var(--text-primary);
 }
 
@@ -356,7 +617,7 @@ p {
   font-size: 1.1rem;
   line-height: 1.7;
   color: var(--text-secondary);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   max-width: none;
 }
 
@@ -403,7 +664,9 @@ p {
 /* Visualization Container */
 .viz-container {
   text-align: center;
-  margin: 2rem 0;
+  margin: 1.5rem auto;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .controls {
@@ -440,7 +703,9 @@ p {
   background: rgba(37, 99, 235, 0.1);
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  transition: width 0.6s, height 0.6s;
+  transition:
+    width 0.6s,
+    height 0.6s;
 }
 
 .toggle-btn:hover::before {
@@ -497,6 +762,8 @@ p {
   height: auto;
 }
 
+/* Keyboard now sized appropriately in JavaScript - no scaling needed */
+
 /* Keyboard styles */
 .keyboard {
   margin: 30px auto;
@@ -545,13 +812,13 @@ p {
 ul {
   list-style: none;
   padding: 0;
-  margin: 2rem 0;
+  margin: 1.5rem 0;
 }
 
 li {
   position: relative;
   padding-left: 2rem;
-  margin: 1rem 0;
+  margin: 0.75rem 0;
   line-height: 1.7;
   color: var(--text-secondary);
   font-size: 1.1rem;
@@ -621,6 +888,37 @@ li::before {
 
   .container {
     padding: 0 1rem;
+  }
+
+  /* Reduce side padding on mobile for content sections */
+  .content-section:not(.full-width) .container {
+    max-width: 75rem;
+    padding: 0 1.5rem;
+  }
+
+  .hero-section .container {
+    padding: 0 1.5rem;
+    max-width: 75rem;
+  }
+
+  /* Mobile adjustments for visualizations */
+  .visualization-layout {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  #keyboard-viz,
+  #distribution-viz {
+    min-width: auto;
+    max-width: none;
+    padding: 15px;
+  }
+
+  .selection-panel {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
   }
 
   .controls {
@@ -724,22 +1022,37 @@ li::before {
 .visualization-layout {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  gap: 1rem;
-  margin-top: 1rem;
+  max-width: 1200px;
+  margin: 1rem auto 0 auto;
+  gap: 2rem;
+  box-sizing: border-box;
 }
 
 #keyboard-viz,
 #distribution-viz {
   flex: 1;
-  min-width: 300px;
+  min-width: 400px;
+  max-width: 550px;
+  width: 100%;
   padding: 20px;
   background: var(--container-bg);
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
   font-family: inherit;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+#keyboard-viz {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .key.selected {
@@ -779,12 +1092,7 @@ li::before {
   stroke: var(--text-color);
 }
 
-.distribution-message {
-  color: var(--text-color);
-  text-align: center;
-  padding-top: 120px;
-  font-size: 16px;
-}
+/* Distribution message now handled as SVG text with proper positioning */
 
 .stat-container {
   display: flex;
@@ -851,11 +1159,11 @@ li::before {
 }
 
 .density-viz-container {
-  max-width: 1200px;              /* limit how wide the card can grow */
-  margin: 40px auto;              /* center horizontally, with vertical spacing */
-  padding: 20px;                  /* space inside the card */
-  background-color: #1E1E1E;      /* slightly lighter dark gray than the body */
-  border-radius: 8px;             /* rounded corners */
+  max-width: 1200px; /* limit how wide the card can grow */
+  margin: 40px auto; /* center horizontally, with vertical spacing */
+  padding: 20px; /* space inside the card */
+  background-color: #1e1e1e; /* slightly lighter dark gray than the body */
+  border-radius: 8px; /* rounded corners */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -875,7 +1183,7 @@ li::before {
 }
 
 .viz-title {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-size: 1.5rem;
   color: var(--text-color);
   margin-bottom: 1rem;
@@ -885,7 +1193,7 @@ li::before {
 .viz-description {
   width: 100%;
   padding: 20px;
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-size: 1rem;
   line-height: 1.5;
   color: var(--text-color);
@@ -894,79 +1202,17 @@ li::before {
 }
 
 .legend-title {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-size: 0.9rem;
   fill: var(--text-color);
 }
 
 .typing-density-viz {
   width: 100%;
-  height: 800px;                 /* you can adjust this height if needed */
+  height: 800px; /* you can adjust this height if needed */
   border-radius: 4px;
-  /* We keep this background transparent so Plotly’s transparent‐background settings can show through.
-     But if you’d like a slightly tinted “inner” area behind the points, you could uncomment the next line. */
-  /* background-color: rgba(30,30,30,0.6); */
-  overflow: hidden;
-  position: relative;
-}
-
-
-
-.density-viz-container {
-  max-width: 1200px;              /* limit how wide the card can grow */
-  margin: 40px auto;              /* center horizontally, with vertical spacing */
-  padding: 20px;                  /* space inside the card */
-  background-color: var(--bg-primary);      /* slightly lighter dark gray than the body */
-  border-radius: 8px;             /* rounded corners */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.density-viz-container svg {
-  max-width: 100%;
-  height: auto;
-}
-
-.density-point {
-  cursor: pointer;
-  transition: opacity 0.2s;
-}
-
-.density-point:hover {
-  opacity: 0.9 !important;
-}
-
-.viz-title {
-  font-family: 'Work Sans', sans-serif;
-  font-size: 1.5rem;
-  color: var(--text-color);
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.viz-description {
-  width: 100%;
-  padding: 20px;
-  font-family: 'Work Sans', sans-serif;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: var(--text-color);
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.legend-title {
-  font-family: 'Work Sans', sans-serif;
-  font-size: 0.9rem;
-  fill: var(--text-color);
-}
-
-.typing-density-viz {
-  width: 100%;
-  height: 800px;                 /* you can adjust this height if needed */
-  border-radius: 4px;
-  /* We keep this background transparent so Plotly’s transparent‐background settings can show through.
-     But if you’d like a slightly tinted “inner” area behind the points, you could uncomment the next line. */
+  /* We keep this background transparent so Plotly's transparent-background settings can show through.
+     But if you'd like a slightly tinted "inner" area behind the points, you could uncomment the next line. */
   /* background-color: rgba(30,30,30,0.6); */
   overflow: hidden;
   position: relative;
@@ -1006,4 +1252,596 @@ li::before {
 }
 .grid path {
   stroke-width: 0;
+}
+
+/* Statistical Testing Visualization Styles */
+.statistical-testing-container {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: var(--shadow-md);
+}
+
+.statistical-testing-container h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.statistical-testing-container > p {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+.stat-test-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.stat-test-controls .control-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stat-test-controls label {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.stat-test-controls select {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-family: var(--font-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.stat-test-controls select:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.simulation-btn {
+  padding: 0.75rem 1.5rem;
+  background: var(--accent-primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: var(--font-secondary);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+}
+
+.simulation-btn:hover {
+  background: var(--accent-secondary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+}
+
+.simulation-btn.secondary {
+  background: var(--text-secondary);
+  color: var(--bg-primary);
+  box-shadow: 0 2px 4px rgba(108, 117, 125, 0.2);
+}
+
+.simulation-btn.secondary:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+}
+
+/* Dark mode specific button improvements */
+[data-theme="dark"] .simulation-btn.secondary {
+  background: #6b7280;
+  color: #ffffff;
+  border: 1px solid #9ca3af;
+}
+
+[data-theme="dark"] .simulation-btn.secondary:hover {
+  background: #4b5563;
+  color: #ffffff;
+  border: 1px solid #d1d5db;
+}
+
+.simulation-btn:disabled {
+  background: var(--text-secondary);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Dark mode improvements for primary simulation button */
+[data-theme="dark"] .simulation-btn {
+  background: #3b82f6;
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.3);
+}
+
+[data-theme="dark"] .simulation-btn:hover {
+  background: #2563eb;
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.4);
+}
+
+[data-theme="dark"] .simulation-btn:disabled {
+  background: #4b5563;
+  color: #9ca3af;
+}
+
+.simulation-status {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.status-text {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.progress-bar-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.progress-bar-stat {
+  width: 100%;
+  height: 8px;
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.progress-fill-stat {
+  height: 100%;
+  background: linear-gradient(90deg, #ffb663, #ff8c42);
+  border-radius: 4px;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+[data-theme="dark"] .progress-fill-stat {
+  background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+}
+
+.simulation-viz {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 1rem;
+  align-items: start;
+  width: calc(100% + 4rem);
+  margin-left: -2rem;
+  margin-right: -2rem;
+  padding: 0 1.5rem;
+  max-width: none;
+  box-sizing: border-box;
+}
+
+#simulation-chart {
+  min-height: 400px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.results-panel {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  height: fit-content;
+  width: 300px;
+  max-width: 300px;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.result-stat h4 {
+  margin: 0 0 1rem 0;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.stat-row:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.stat-label {
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.stat-value {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-family: "Courier New", monospace;
+}
+
+.significance-row .stat-value {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.significance-row .stat-value.significant {
+  background: var(--success-color);
+  color: white;
+}
+
+.significance-row .stat-value.not-significant {
+  background: var(--danger-color);
+  color: white;
+}
+
+.legend-info {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.legend-color.control {
+  background-color: #2563eb;
+}
+
+.legend-color.pd {
+  background-color: #dc2626;
+}
+
+.legend-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.simulation-explanation {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(37, 99, 235, 0.05);
+  border-left: 4px solid var(--accent-primary);
+  border-radius: 0 8px 8px 0;
+}
+
+.simulation-explanation p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.simulation-explanation p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive design for simulation */
+@media (max-width: 768px) {
+  .stat-test-controls {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .simulation-viz {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .results-panel {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .statistical-testing-container {
+    padding: 1.5rem;
+  }
+}
+
+/* Animation classes for the simulation */
+.sampling-point {
+  opacity: 0;
+  animation: fadeInPoint 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeInPoint {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+}
+
+.p-value-line {
+  stroke-dasharray: 5, 5;
+  animation: dashAnimation 2s linear infinite;
+}
+
+@keyframes dashAnimation {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 10;
+  }
+}
+
+/* Scatter plot with brushing styles */
+.scatter-plot-container {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  margin: 2rem auto;
+  justify-content: center;
+  max-width: 100%;
+}
+
+#updrs-typing-scatter {
+  flex: 1;
+}
+
+.selection-panel {
+  flex: 0 0 350px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: var(--shadow-md);
+  min-height: 400px;
+  max-width: 350px;
+  overflow-y: auto;
+}
+
+.selection-panel h4 {
+  margin: 0 0 1rem 0;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+#selection-count {
+  font-weight: 600;
+  color: var(--accent-primary);
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.selection-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.stat-group {
+  background: var(--bg-primary);
+  border-radius: 6px;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+}
+
+.stat-group h5 {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
+}
+
+.stat-item:last-child {
+  margin-bottom: 0;
+}
+
+.stat-label {
+  color: var(--text-secondary);
+}
+
+.stat-value {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: "Courier New", monospace;
+}
+
+.group-breakdown {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.group-item {
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+.group-item.pd {
+  background: rgba(220, 38, 38, 0.1);
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  color: var(--danger-color);
+}
+
+.group-item.control {
+  background: rgba(5, 150, 105, 0.1);
+  border: 1px solid rgba(5, 150, 105, 0.3);
+  color: var(--success-color);
+}
+
+/* Group averages comparison grid */
+.group-averages-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.group-avg-column {
+  background: var(--bg-tertiary);
+  border-radius: 6px;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  min-width: 0;
+  overflow: hidden;
+}
+
+.group-avg-column h6 {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.pd-column h6 {
+  color: var(--danger-color);
+}
+
+.control-column h6 {
+  color: var(--success-color);
+}
+
+.avg-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.avg-item:last-child {
+  margin-bottom: 0;
+}
+
+.avg-label {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.avg-value {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: "Courier New", monospace;
+  word-break: break-all;
+  font-size: 0.85rem;
+}
+
+/* Responsive design for group averages */
+@media (max-width: 768px) {
+  .group-averages-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+/* Brush selection styles */
+@keyframes marching-ants {
+  to {
+    stroke-dashoffset: -8;
+  }
+}
+
+.selection {
+  fill: rgba(37, 99, 235, 0.1);
+  fill-opacity: 0.2;
+  stroke: var(--accent-primary);
+  stroke-opacity: 0.8;
+  stroke-width: 2;
+  stroke-dasharray: 5 3;
+  animation: marching-ants 2s linear infinite;
+}
+
+.brush-overlay {
+  pointer-events: all;
+  cursor: crosshair;
+}
+
+/* Selected points styling */
+circle.selected {
+  stroke: var(--accent-primary);
+  stroke-width: 3;
+  stroke-opacity: 0.8;
+  filter: brightness(1.2);
+}
+
+circle.unselected {
+  opacity: 0.3;
+}
+
+/* Responsive design for scatter plot */
+@media (max-width: 768px) {
+  .scatter-plot-container {
+    flex-direction: column;
+  }
+
+  .selection-panel {
+    flex: none;
+    width: 100%;
+    min-height: auto;
+  }
 }

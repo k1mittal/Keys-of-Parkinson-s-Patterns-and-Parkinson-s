@@ -13,10 +13,27 @@ export function updateDistributionChart(selectedKeys, holdData) {
   d3.select("#distribution-viz").html("");
 
   if (!selectedKeys || selectedKeys.size === 0) {
-    d3.select("#distribution-viz")
-      .append("div")
+    // Create SVG with same dimensions as when data is shown
+    const svg = d3
+      .select("#distribution-viz")
+      .append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+      .attr("transform", `translate(${margin.left},${margin.top})`);
+
+    // Add centered message
+    svg
+      .append("text")
       .attr("class", "distribution-message")
+      .attr("x", width / 2)
+      .attr("y", height / 2)
+      .attr("text-anchor", "middle")
+      .attr("dominant-baseline", "middle")
+      .style("font-size", "16px")
+      .style("fill", "var(--text-secondary)")
       .text("Select keys to view distribution");
+
     d3.select("#typing-stats").style("display", "none");
     return;
   }

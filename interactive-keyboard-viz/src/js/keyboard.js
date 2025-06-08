@@ -19,13 +19,13 @@ d3.json("./interactive-keyboard-viz/src/data/hold_data.json")
   .catch((error) => console.error("Error loading data:", error));
 
 function init() {
-  const margin = { top: 20, right: 20, bottom: 20, left: 20 };
-  const width = 800 - margin.left - margin.right;
-  const height = 300 - margin.top - margin.bottom;
+  const margin = { top: 15, right: 15, bottom: 15, left: 15 };
+  const width = 480 - margin.left - margin.right;
+  const height = 240 - margin.top - margin.bottom;
 
-  const keyWidth = width / 14; // Adjusted for number keys
-  const keyHeight = height / 5; // Adjusted for space bar
-  const keyPadding = 7;
+  const keyWidth = width / 12; // Adjusted for proper fit
+  const keyHeight = height / 4.5; // Adjusted for space bar
+  const keyPadding = 5;
 
   // Clear existing keyboard to prevent duplicates
   d3.select("#keyboard-viz").html("");
@@ -42,14 +42,14 @@ function init() {
     // Calculate row offset, with special handling for spacebar
     const rowOffset =
       i == 0
-        ? -keyWidth / 2 + keyPadding
-        : i === 1
         ? keyPadding
-        : i === 2
-        ? keyWidth / 2 + keyPadding
-        : i === 3
-        ? (width - keyWidth * 4) / 5 + keyPadding
-        : keyPadding;
+        : i === 1
+          ? keyWidth / 2 + keyPadding
+          : i === 2
+            ? keyWidth + keyPadding
+            : i === 3
+              ? width / 2 - keyWidth * 2.5 + keyPadding
+              : keyPadding;
 
     row.split("").forEach((key, j) => {
       const keyGroup = svg
@@ -64,21 +64,18 @@ function init() {
       keyGroup
         .append("rect")
         .attr("class", "key")
-        .attr("width", key === " " ? keyWidth * 5 + 4 * keyPadding : keyWidth) // Make spacebar 5x wider
+        .attr("width", key === " " ? keyWidth * 5 : keyWidth) // Make spacebar 5x wider
         .attr("height", keyHeight)
-        .attr("rx", 10)
+        .attr("rx", 6)
         .on("click", () => toggleKey(key));
 
       keyGroup
         .append("text")
         .attr("class", "key-text")
-        .attr(
-          "x",
-          key === " " ? (keyWidth * 5 + 4 * keyPadding) / 2 : keyWidth / 2
-        ) // Center text for spacebar
+        .attr("x", key === " " ? (keyWidth * 5) / 2 : keyWidth / 2) // Center text for spacebar
         .attr("y", keyHeight / 2)
         .attr("dy", ".35em")
-        .attr("font-size", "16px")
+        .attr("font-size", "14px")
         .attr("fill", "#333")
         .attr("text-anchor", "middle")
         .text(key === " " ? "Space" : key.toUpperCase());
@@ -107,7 +104,6 @@ function toggleKey(key) {
 
   // Update the chart with the selected keys
   updateDistributionChart(selectedKeys, holdData);
-  
 }
 
 document

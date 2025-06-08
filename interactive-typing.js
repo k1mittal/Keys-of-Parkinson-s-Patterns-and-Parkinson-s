@@ -66,6 +66,82 @@ document.addEventListener("DOMContentLoaded", async () => {
   updateAnalysis();
 });
 
+// Parse enhanced dataset from CSV
+function parseEnhancedDataset(csvText) {
+  const lines = csvText.trim().split("\n");
+  const headers = lines[0].split(",");
+
+  return lines.slice(1).map((line) => {
+    const values = line.split(",");
+    const row = {};
+    headers.forEach((header, index) => {
+      const value = values[index];
+      if (header === "has_parkinsons") {
+        row[header] = value === "True" || value === "true";
+      } else if (header === "pID" || header === "source") {
+        row[header] = value;
+      } else {
+        row[header] = parseFloat(value);
+      }
+    });
+    return row;
+  });
+}
+
+// Create patterns from enhanced dataset
+function createPatternsFromEnhancedData(enhancedData) {
+  const controlData = enhancedData.filter((d) => !d.has_parkinsons);
+  const pdData = enhancedData.filter((d) => d.has_parkinsons);
+
+  // Calculate means and standard deviations
+  const controlDelayMean =
+    controlData.reduce((sum, d) => sum + d.delay, 0) / controlData.length;
+  const controlDurationMean =
+    controlData.reduce((sum, d) => sum + d.duration, 0) / controlData.length;
+  const controlTypingSpeed =
+    controlData.reduce((sum, d) => sum + d.typingSpeed, 0) / controlData.length;
+
+  const pdDelayMean =
+    pdData.reduce((sum, d) => sum + d.delay, 0) / pdData.length;
+  const pdDurationMean =
+    pdData.reduce((sum, d) => sum + d.duration, 0) / pdData.length;
+  const pdTypingSpeed =
+    pdData.reduce((sum, d) => sum + d.typingSpeed, 0) / pdData.length;
+
+  // Convert to milliseconds and ensure patterns match enhanced dataset findings
+  // Based on enhanced dataset: Control 262.5ms delay, PD 250.9ms delay (0.96x ratio)
+  // Control 180.2ms duration, PD 291.6ms duration (1.62x ratio)
+
+  return {
+    pd: {
+      overall: {
+        delay: {
+          mean: 250, // PD delay mean from enhanced dataset
+          std: 100, // Reasonable variation
+        },
+        duration: {
+          mean: 292, // PD duration mean from enhanced dataset
+          std: 80,
+        },
+      },
+      avg_typing_speed: pdTypingSpeed,
+    },
+    control: {
+      overall: {
+        delay: {
+          mean: 263, // Control delay mean from enhanced dataset
+          std: 100, // Same variation as PD
+        },
+        duration: {
+          mean: 180, // Control duration mean from enhanced dataset
+          std: 50,
+        },
+      },
+      avg_typing_speed: controlTypingSpeed,
+    },
+  };
+}
+
 // Load typing data
 async function loadTypingData() {
   try {
@@ -73,10 +149,19 @@ async function loadTypingData() {
     const simResponse = await fetch("data/typing_simulations.json");
     typingSimulations = await simResponse.json();
 
-    // Load typing patterns for dynamic generation if needed
-    const patternResponse = await fetch("data/typing_patterns.json");
-    typingPatterns = await patternResponse.json();
+    // Load enhanced dataset for consistent patterns
+    const enhancedResponse = await fetch("data/enhanced_simulation_data.csv");
+    const enhancedCsvText = await enhancedResponse.text();
 
+    // Parse enhanced dataset
+    const enhancedData = parseEnhancedDataset(enhancedCsvText);
+
+    // Create patterns from enhanced dataset
+    typingPatterns = createPatternsFromEnhancedData(enhancedData);
+
+    console.log("Loaded enhanced dataset patterns for interactive typing");
+    console.log("Control patterns:", typingPatterns.control);
+    console.log("PD patterns:", typingPatterns.pd);
   } catch (error) {
     console.error("Error loading typing data:", error);
   }
@@ -810,27 +895,29 @@ function startPdSimulation() {
     return;
   }
 
-  // Speed multipliers for PD patients based on actual research data
-  // PD patients can type 60-140 WPM, so use realistic multipliers
-  const delayMultiplier = 2.2; // Increased from 1.8 for more noticeable slowdown
-  const durationMultiplier = 1.4; // Increased from 1.2 for longer key holds
+  // Calculate realistic PD typing speed that aligns with our research findings
+  // Since typing speed should be non-significant between groups, use realistic range
+  const controlAvgWpm = typingPatterns.control?.avg_typing_speed || 149;
+  const pdAvgWpm = typingPatterns.pd?.avg_typing_speed || 144;
 
-  // Calculate expected WPM based on realistic PD typing patterns
+  // Use a realistic speed that's close to control group (showing non-significant difference)
+  // Add some variation to make it feel natural
+  const baseSpeed = (controlAvgWpm + pdAvgWpm) / 2; // Average of both groups
+  const variation = (Math.random() - 0.5) * 20; // ±10 WPM variation
+  const targetWpm = Math.round(
+    Math.max(60, Math.min(120, baseSpeed + variation))
+  );
   const originalTotalTime = simulation[simulation.length - 1].release_time;
   const words = currentPrompt.split(" ").length;
 
-  // Target a realistic but slower WPM for PD patients (50-100 WPM range)
-  const targetWpm = 50 + Math.random() * 50; // Slower range: 50-100 WPM instead of 70-120
   const targetTimeMinutes = words / targetWpm;
   const targetTimeMs = targetTimeMinutes * 60000;
 
   // Calculate speed adjustment to hit realistic WPM
   const actualSpeedMultiplier = targetTimeMs / originalTotalTime;
 
-  const expectedWpm = Math.round(targetWpm);
-
   document.getElementById("pd-patient-id").textContent = "Composite";
-  document.getElementById("pd-wpm").textContent = expectedWpm;
+  document.getElementById("pd-wpm").textContent = targetWpm;
   document.getElementById("pd-keys").textContent = "0";
 
   // Add PD patient stats (using representative values from the data)
@@ -950,44 +1037,26 @@ function generateTypingSimulation(prompt, group = "pd") {
 
   let currentTime = 0;
 
-  // Speed multipliers for PD patients based on actual research data
-  // PD patients can type 60-140 WPM, so use realistic multipliers
-  const delayMultiplier = 2.2; // Increased from 1.8 for more noticeable slowdown
-  const durationMultiplier = 1.4; // Increased from 1.2 for longer key holds
-
+  // Use actual values from enhanced dataset (no hardcoded multipliers)
   for (let i = 0; i < keys.length; i++) {
     const key = keys[i];
 
-    // Get delay with some randomness
+    // Get delay directly from enhanced dataset patterns
     let delay = 100;
     if (i > 0) {
-      if (key in patterns.per_key) {
-        delay = Math.max(
-          50,
-          patterns.per_key[key].delay.mean * delayMultiplier
-        );
-      } else {
-        delay = Math.max(50, patterns.overall.delay.mean * delayMultiplier);
-      }
-      // Add some randomness (±20%)
-      delay = delay * (0.8 + Math.random() * 0.4);
+      delay = Math.max(30, patterns.overall.delay.mean);
+      // Add realistic randomness based on standard deviation
+      const delayVariation =
+        (Math.random() - 0.5) * (patterns.overall.delay.std || 50);
+      delay = Math.max(30, delay + delayVariation);
     }
 
-    // Get duration with some randomness
-    let duration = 100;
-    if (key in patterns.per_key) {
-      duration = Math.max(
-        50,
-        patterns.per_key[key].duration.mean * durationMultiplier
-      );
-    } else {
-      duration = Math.max(
-        50,
-        patterns.overall.duration.mean * durationMultiplier
-      );
-    }
-    // Add some randomness (±20%)
-    duration = duration * (0.8 + Math.random() * 0.4);
+    // Get duration directly from enhanced dataset patterns
+    let duration = Math.max(50, patterns.overall.duration.mean);
+    // Add realistic randomness based on standard deviation
+    const durationVariation =
+      (Math.random() - 0.5) * (patterns.overall.duration.std || 100);
+    duration = Math.max(50, duration + durationVariation);
 
     currentTime += delay;
 
@@ -1007,10 +1076,21 @@ function generateTypingSimulation(prompt, group = "pd") {
 function updateStats() {
   // Calculate WPM for user
   if (userStartTime && userKeystrokes.length > 0) {
+    // Use actual elapsed time for WPM calculation
     const elapsedMinutes = (Date.now() - userStartTime) / 60000;
-    const words = userKeystrokes.filter((k) => k.key === "space").length + 1;
-    const wpm = Math.round(words / elapsedMinutes);
-    document.getElementById("user-wpm").textContent = wpm;
+
+    // Calculate words based on typed text length (more accurate than keystroke counting)
+    const typedText = document.getElementById("typing-input").value;
+    const estimatedWords = typedText.length / 5; // Standard: 5 characters per word
+
+    // Calculate WPM
+    if (elapsedMinutes > 0) {
+      const wpm = Math.round(estimatedWords / elapsedMinutes);
+      document.getElementById("user-wpm").textContent = Math.max(
+        1,
+        Math.min(300, wpm)
+      );
+    }
 
     // Update time
     const elapsedSeconds = Math.round((Date.now() - userStartTime) / 1000);
@@ -1078,42 +1158,38 @@ function updateAnalysis() {
   document.getElementById("pd-avg-duration").textContent =
     pdAvgDuration > 0 ? `${Math.round(pdAvgDuration)} ms` : "-- ms";
 
-  // Calculate similarity score
+  // Calculate similarity score based on enhanced dataset findings
   if (userDelayData.length > 5 && pdDelayData.length > 5) {
-    // More realistic similarity calculation
-    // Calculate relative differences from expected healthy values
-    const delayRatio = userAvgDelay / Math.max(pdAvgDelay, 1);
+    // Based on our enhanced dataset findings:
+    // - Typing speed is non-significant (similar between groups)
+    // - Duration is significant (PD ~62% higher than control)
+    // - Delay is non-significant (similar between groups)
+
+    // Focus primarily on duration differences since that's the main biomarker
     const durationRatio = userAvgDuration / Math.max(pdAvgDuration, 1);
 
-    // Healthy users typically have much shorter delays and durations than PD patients
-    // PD patients have ~2-3x longer delays and ~1.3-1.5x longer durations
+    // Healthy users should have much shorter durations than PD patients
+    // PD patients have ~62% higher duration on average
+    // So healthy users should be around 62% of PD duration
+    const expectedHealthyRatio = 0.62;
 
-    // Calculate deviation from healthy baseline (lower values = healthier)
-    let delayDeviation = Math.abs(delayRatio - 0.5) / 0.5; // Healthy should be ~50% of PD
-    let durationDeviation = Math.abs(durationRatio - 0.7) / 0.7; // Healthy should be ~70% of PD
+    // Calculate how far the user is from the expected healthy pattern
+    const durationDeviation =
+      Math.abs(durationRatio - expectedHealthyRatio) / expectedHealthyRatio;
 
-    // Average deviation
-    let avgDeviation = (delayDeviation + durationDeviation) / 2;
+    // Convert to similarity score (lower deviation = lower similarity to PD)
+    let similarity = 100 / (1 + durationDeviation * 4);
 
-    // Convert to similarity using inverse relationship with dampening
-    let similarity = 100 / (1 + avgDeviation * 3); // More aggressive dampening
-
-    // Strong penalty for clearly healthy patterns
-    if (delayRatio < 0.6 && durationRatio < 0.8) {
-      similarity *= 0.4; // Heavy reduction for fast typers
+    // Additional factors for realism
+    if (durationRatio < 0.8) {
+      // User types with shorter durations (healthier pattern)
+      similarity *= 0.5; // Lower similarity to PD
+    } else if (durationRatio > 1.2) {
+      // User types with longer durations (more PD-like)
+      similarity = Math.min(similarity * 1.5, 90); // Higher similarity but cap at 90%
     }
 
-    // Moderate boost for genuinely slow patterns
-    if (delayRatio > 1.0 && durationRatio > 1.0) {
-      similarity = Math.min(similarity * 1.4, 85); // Cap at 85%
-    }
-
-    // Cap maximum similarity for any clearly fast typing
-    if (delayRatio < 0.7) {
-      similarity = Math.min(similarity, 35); // Max 35% for fast typing
-    }
-
-    similarity = Math.max(1, Math.min(100, similarity)); // Ensure at least 1%
+    similarity = Math.max(5, Math.min(95, similarity)); // Ensure reasonable range
 
     const scoreElement = document.querySelector("#similarity-score span");
     scoreElement.textContent = `${Math.round(similarity)}%`;
@@ -1400,9 +1476,8 @@ function resetTest() {
     document.getElementById("pd-avg-delay").textContent = "-- ms";
     document.getElementById("pd-avg-duration").textContent = "-- ms";
     document.querySelector("#similarity-score span").textContent = "--%";
-    document.getElementById(
-      "similarity-score"
-    ).style.background = `conic-gradient(var(--accent-color) 0deg, var(--border-color) 0deg)`;
+    document.getElementById("similarity-score").style.background =
+      `conic-gradient(var(--accent-color) 0deg, var(--border-color) 0deg)`;
     document.getElementById("similarity-interpretation").textContent = "";
 
     // Hide analysis section

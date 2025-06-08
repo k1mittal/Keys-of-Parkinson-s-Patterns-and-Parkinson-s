@@ -24,15 +24,16 @@
 
   <p align="center">
     Keys of Parkinson's: Patterns and Parkinson's Code
+    Website can be found <a href="https://k1mittal.github.io/Keys-of-Parkinsons/">here<a>
     <br />
-    <a href="https://github.com/k1mittal/Keys-of-Parkinson-s-Patterns-and-Parkinson-s"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/k1mittal/Keys-of-Parkinsons"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/k1mittal/Keys-of-Parkinson-s-Patterns-and-Parkinson-s">View Demo</a>
+    <a href="https://github.com/k1mittal/Keys-of-Parkinsons">View Demo</a>
     ·
-    <a href="https://github.com/k1mittal/Keys-of-Parkinson-s-Patterns-and-Parkinson-s">Report Bug</a>
+    <a href="https://github.com/k1mittal/Keys-of-Parkinsons">Report Bug</a>
     ·
-    <a href="https://github.com/k1mittal/Keys-of-Parkinson-s-Patterns-and-Parkinson-s">Request Feature</a>
+    <a href="https://github.com/k1mittal/Keys-of-Parkinsons">Request Feature</a>
   </p>
 </div>
 

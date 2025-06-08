@@ -982,7 +982,7 @@ function startPdSimulation() {
   // Set a shorter timeout for test completion (20 seconds instead of 30)
   completionTimeout = setTimeout(() => {
     if (!testComplete) {
-      completeTest();
+      // do nothing
     }
   }, 20000);
 }
